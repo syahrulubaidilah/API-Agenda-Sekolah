@@ -20,4 +20,11 @@ class Activity extends Model
         'name', 'description', 'date_activity', 'time', 'place', 'participant', 'user_id',
     ];
 
+    protected $with=['users'];
+    public function users()
+    {
+        return $this->belongsTo('App\Domain\Entities\User', 'user_id');
+        
+    }
+
 }
