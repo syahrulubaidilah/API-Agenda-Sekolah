@@ -76,6 +76,7 @@ class UserRepository extends AbstractRepository implements UserInterface, Crudab
     {
         return parent::update($id, [
             'name'    => e($data['name']),
+            'email'   => e($data['email']),
             'password' => e($data['password']),
             'level'   => e($data['level']),
             'position'   => e($data['position'])
