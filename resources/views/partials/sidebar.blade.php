@@ -39,8 +39,8 @@
 				</div><!-- /.sidebar-shortcuts -->
 
 				<ul class="nav nav-list">
-        <li class="">
-          <a href="index.html">
+        <li class="" id="nav-dashboard">
+          <a href={{route('page.dashboard')}}>
             <i class="menu-icon fa fa-tachometer"></i>
             <span class="menu-text"> Dashboard </span>
           </a>
@@ -48,8 +48,8 @@
           <b class="arrow"></b>
         </li>
 
-        <li class="">
-          <a href="list-siswa.html">
+        <li class="" id="nav-list-siswa">
+          <a href={{route('page.list-siswa')}}>
             <i class="menu-icon fa fa-list-alt"></i>
             <span class="menu-text"> Siswa </span>
           </a>
@@ -57,8 +57,8 @@
           <b class="arrow"></b>
         </li>
 
-        <li class="">
-          <a href="list-guru.html">
+        <li class="" id="nav-list-guru">
+          <a href={{route('page.list-guru')}}>
             <i class="menu-icon fa fa-list-alt"></i>
             <span class="menu-text"> Guru </span>
           </a>
@@ -66,8 +66,8 @@
           <b class="arrow"></b>
         </li>
 
-        <li class="">
-          <a href="list-staf.html">
+        <li class="" id="nav-list-staf">
+          <a href={{route('page.list-staf')}}>
             <i class="menu-icon fa fa-list-alt"></i>
             <span class="menu-text"> Staf </span>
           </a>
@@ -75,8 +75,8 @@
           <b class="arrow"></b>
         </li>
 
-        <li class="">
-          <a href="list-activity.html">
+        <li class="" id="nav-list-agenda">
+          <a href={{route('page.list-agenda')}}>
             <i class="menu-icon fa fa-list-alt"></i>
             <span class="menu-text"> Agenda </span>
           </a>
@@ -84,8 +84,8 @@
           <b class="arrow"></b>
         </li>
 
-        <li class="">
-          <a href="calendar.html">
+        <li class="" id="nav-calendar">
+          <a href={{route('page.calendar')}}>
             <i class="menu-icon fa fa-calendar"></i>
             <span class="menu-text"> Kalender </span>
           </a>
