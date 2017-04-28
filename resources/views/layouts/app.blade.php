@@ -82,7 +82,7 @@
 				$('#nav-list-agenda').removeClass('active');
                 $('#nav-calendar').removeClass('active');
                 $('#nav-dashboard').removeClass('active');
-                $('#nav-list-siswa').addClass('active');
+                $('#nav-listsiswa').addClass('active');
                 break; 
             case '/list-guru':
                $('#nav-list-siswa').removeClass('active');
@@ -90,7 +90,7 @@
 				$('#nav-list-agenda').removeClass('active');
                 $('#nav-calendar').removeClass('active');
                 $('#nav-dashboard').removeClass('active');
-                $('#nav-list-guru').addClass('active');
+                $('#nav-listguru').addClass('active');
                 break;  
             case '/list-staf':
                 $('#nav-list-siswa').removeClass('active');
@@ -98,7 +98,7 @@
 				$('#nav-list-agenda').removeClass('active');
                 $('#nav-calendar').removeClass('active');
                 $('#nav-dashboard').removeClass('active');
-                $('#nav-list-staf').addClass('active');
+                $('#nav-liststaf').addClass('active');
                 break;
 			case '/list-agenda':
                 $('#nav-list-siswa').removeClass('active');
@@ -106,7 +106,7 @@
                 $('#nav-list-staf').removeClass('active');
                 $('#nav-calendar').removeClass('active');
                 $('#nav-dashboard').removeClass('active');
-				$('#nav-list-agenda').addClass('active');
+				$('#nav-listagenda').addClass('active');
                 break;
 			case '/calendar':
                 $('#nav-list-siswa').removeClass('active');
