@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Ini Dashboard Page Title')
+@section('title', 'Calendar')
 @section('style')
 <!-- page specific plugin styles -->
   <link rel="stylesheet" href="assets/css/jquery-ui.custom.min.css" />

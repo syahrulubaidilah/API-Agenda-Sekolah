@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Ini Dashboard Page Title')
+@section('title', 'Form Create Activity')
 @section('content')
            <div class="main-content-inner">
 				<div class="breadcrumbs ace-save-state" id="breadcrumbs">

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Ini Dashboard Page Title')
+@section('title', 'Form Update User')
 @section('content')
            <div class="main-content-inner">
 				<div class="breadcrumbs ace-save-state" id="breadcrumbs">
@@ -26,7 +26,7 @@
 				<div class="page-content">
 					<div class="page-header">
 						<h1>
-							Form Input User
+							Form Edit User
 							<small>
 									<i class="ace-icon fa fa-angle-double-right"></i>
 								</small>
