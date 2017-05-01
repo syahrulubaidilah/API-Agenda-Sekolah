@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Ini Dashboard Page Title')
+@section('title', 'Guru')
 @section('content')
       <div class="main-content-inner">
         <div class="breadcrumbs ace-save-state" id="breadcrumbs">
@@ -41,7 +41,7 @@
                 <div class="col-xs-12">
                    <div class="col-md-8 pull-left">
                       <div class="font-icon-list">
-                        <a class="btn btn-success submit fa fa-plus bigger-120" href="#">
+                        <a class="btn btn-success submit fa fa-plus bigger-120" href={{route('page.create-user')}}>
                           <i class="pe-7s-plus"></i>
                         </a>
                         <button class="btn btn-default submit fa fa-refresh bigger-120 ">
@@ -72,7 +72,7 @@
                         <td></td>
                         <td></td>
                         <td>
-                          <a class="btn btn-info fa fa-pencil bigger-120" href='#'>
+                          <a class="btn btn-info fa fa-pencil bigger-120" href={{route('page.edit-user')}}>
                             <i class="pe-7s-pen"></i>
                           </a>
                           <button class="btn btn-danger fa fa-trash bigger-120">
