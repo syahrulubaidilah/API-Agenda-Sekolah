@@ -8,11 +8,7 @@
 							<i class="ace-icon fa fa-home home-icon"></i>
 							<a href="#">Home</a>
 						</li>
-
-						<li>
-							<a href="#">Forms</a>
-						</li>
-						<li class="active">Form Elements</li>
+						<li class="active">Form Update User</li>
 					</ul>
 					<!-- /.breadcrumb -->
 
