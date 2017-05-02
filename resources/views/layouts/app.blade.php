@@ -69,50 +69,50 @@
         console.log('url path =>',pathname);
         switch (pathname) {
             case '/':
-                $('#nav-list-siswa').removeClass('active');
-                $('#nav-list-guru').removeClass('active');
-                $('#nav-list-staf').removeClass('active');
-				$('#nav-list-agenda').removeClass('active');
+                $('#nav-siswa').removeClass('active');
+                $('#nav-guru').removeClass('active');
+                $('#nav-staf').removeClass('active');
+				$('#nav-agenda').removeClass('active');
                 $('#nav-calendar').removeClass('active');
                 $('#nav-dashboard').addClass('active');
                 break; 
-            case '/list-siswa':
-                $('#nav-list-guru').removeClass('active');
-                $('#nav-list-staf').removeClass('active');
-				$('#nav-list-agenda').removeClass('active');
+            case '/siswa':
+                $('#nav-guru').removeClass('active');
+                $('#nav-staf').removeClass('active');
+				$('#nav-agenda').removeClass('active');
                 $('#nav-calendar').removeClass('active');
                 $('#nav-dashboard').removeClass('active');
-                $('#nav-listsiswa').addClass('active');
+                $('#nav-siswa').addClass('active');
                 break; 
-            case '/list-guru':
-               $('#nav-list-siswa').removeClass('active');
-                $('#nav-list-staf').removeClass('active');
-				$('#nav-list-agenda').removeClass('active');
+            case '/guru':
+               $('#nav-siswa').removeClass('active');
+                $('#nav-staf').removeClass('active');
+				$('#nav-agenda').removeClass('active');
                 $('#nav-calendar').removeClass('active');
                 $('#nav-dashboard').removeClass('active');
-                $('#nav-listguru').addClass('active');
+                $('#nav-guru').addClass('active');
                 break;  
-            case '/list-staf':
-                $('#nav-list-siswa').removeClass('active');
-                $('#nav-list-guru').removeClass('active');
-				$('#nav-list-agenda').removeClass('active');
+            case '/staf':
+                $('#nav-siswa').removeClass('active');
+                $('#nav-guru').removeClass('active');
+				$('#nav-agenda').removeClass('active');
                 $('#nav-calendar').removeClass('active');
                 $('#nav-dashboard').removeClass('active');
-                $('#nav-liststaf').addClass('active');
+                $('#nav-staf').addClass('active');
                 break;
-			case '/list-agenda':
-                $('#nav-list-siswa').removeClass('active');
-                $('#nav-list-guru').removeClass('active');
-                $('#nav-list-staf').removeClass('active');
+			case '/activity':
+                $('#nav-siswa').removeClass('active');
+                $('#nav-guru').removeClass('active');
+                $('#nav-staf').removeClass('active');
                 $('#nav-calendar').removeClass('active');
                 $('#nav-dashboard').removeClass('active');
-				$('#nav-listagenda').addClass('active');
+				$('#nav-agenda').addClass('active');
                 break;
 			case '/calendar':
-                $('#nav-list-siswa').removeClass('active');
-                $('#nav-list-guru').removeClass('active');
-                $('#nav-list-staf').removeClass('active');
-				$('#nav-list-agenda').removeClass('active');
+                $('#nav-siswa').removeClass('active');
+                $('#nav-guru').removeClass('active');
+                $('#nav-staf').removeClass('active');
+				$('#nav-agenda').removeClass('active');
                 $('#nav-dashboard').removeClass('active');
                 $('#nav-calendar').addClass('active');
                 break;  
