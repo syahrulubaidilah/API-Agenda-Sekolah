@@ -41,7 +41,7 @@
                 <div class="col-xs-12">
                    <div class="col-md-8 pull-left">
                       <div class="font-icon-list">
-                        <a class="btn btn-success submit fa fa-plus bigger-120" href={{route('page.create-agenda')}}>
+                        <a class="btn btn-success submit fa fa-plus bigger-120" href={{route('page.create-activity')}}>
                           <i class="pe-7s-plus"></i>
                         </a>
                         <button class="btn btn-default submit fa fa-refresh bigger-120 ">
@@ -57,28 +57,27 @@
                   </div>
                   <table id="saimple-table" class="table  table-bordered table-hover">
                     <thead>
-                      <th>Id</th>
                       <th>Nama</th>
                       <th>Deskripsi</th>
                       <th><i class="fa fa-calendar"></i> Tanggal</th>
                       <th><i class="fa fa-clock-o"></i> Waktu</th>
                       <th>Tempat</th>
                       <th>Peserta</th>
-                      <th>Pembuat</th>
+                      <th>Id Pembuat</th>
                       <th></th>
                     </thead>
                     <tbody>
+                       @foreach ($activities as $activity)
                       <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>{{ $activity->name }}</td>
+                        <td>{{ $activity->description }}</td>
+                        <td>{{ $activity->date_activity }}</td>
+                        <td>{{ $activity->time }}</td>
+                        <td>{{ $activity->place }}</td>
+                        <td>{{ $activity->participant }}</td>
+                        <td>{{ $activity->user_id }}</td>
                         <td>
-                          <a class="btn btn-info fa fa-pencil bigger-120" href={{route('page.edit-agenda')}}>
+                          <a class="btn btn-info fa fa-pencil bigger-120" href={{route('page.edit-activity',['id' => $activity->id])}}>
                             <i class="pe-7s-pen"></i>
                           </a>
                           <button class="btn btn-danger fa fa-trash bigger-120">
@@ -86,6 +85,7 @@
                               </button>
                         </td>
                       </tr>
+                       @endforeach
                     </tbody>
                   </table>
                 </div>

@@ -57,22 +57,21 @@
                   </div>
                   <table id="saimple-table" class="table  table-bordered table-hover">
                     <thead>
-                      <th>Id</th>
-                      <th>Nsma</th>
+                      <th>Nama</th>
                       <th>Email</th>
                       <th>Level</th>
                       <th>Jabatan</th>
                       <th></th>
                     </thead>
                     <tbody>
+                      @foreach ($user_staf as $user)
                       <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>{{ $user->name }}</td>
+                        <td>{{ $user->email }}</td>
+                        <td>{{ $user->level }}</td>
+                        <td>{{ $user->position }}</td>
                         <td>
-                          <a class="btn btn-info fa fa-pencil bigger-120" href={{route('page.edit-user')}}>
+                          <a class="btn btn-info fa fa-pencil bigger-120" href={{route('page.edit-user',['id' => $user->id])}}>
                             <i class="pe-7s-pen"></i>
                           </a>
                           <button class="btn btn-danger fa fa-trash bigger-120">
@@ -80,6 +79,7 @@
                               </button>
                         </td>
                       </tr>
+                      @endforeach
                     </tbody>
                   </table>
                 </div>
