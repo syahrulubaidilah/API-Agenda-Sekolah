@@ -48,7 +48,7 @@
           <b class="arrow"></b>
         </li>
 
-        <li class="" id="nav-listsiswa">
+        <li class="" id="nav-siswa">
           <a href={{route('page.list-siswa')}}>
             <i class="menu-icon fa fa-list-alt"></i>
             <span class="menu-text"> Siswa </span>
@@ -57,7 +57,7 @@
           <b class="arrow"></b>
         </li>
 
-        <li class="" id="nav-listguru">
+        <li class="" id="nav-guru">
           <a href={{route('page.list-guru')}}>
             <i class="menu-icon fa fa-list-alt"></i>
             <span class="menu-text"> Guru </span>
@@ -66,7 +66,7 @@
           <b class="arrow"></b>
         </li>
 
-        <li class="" id="nav-liststaf">
+        <li class="" id="nav-staf">
           <a href={{route('page.list-staf')}}>
             <i class="menu-icon fa fa-list-alt"></i>
             <span class="menu-text"> Staf </span>
@@ -75,8 +75,8 @@
           <b class="arrow"></b>
         </li>
 
-        <li class="" id="nav-listagenda">
-          <a href={{route('page.list-agenda')}}>
+        <li class="" id="nav-agenda">
+          <a href={{route('page.list-activity')}}>
             <i class="menu-icon fa fa-list-alt"></i>
             <span class="menu-text"> Agenda </span>
           </a>
