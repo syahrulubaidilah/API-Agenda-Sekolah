@@ -172,6 +172,9 @@
  	        success: function( data, textStatus, jQxhr ){
  	            console.log('status =>', textStatus);
  	            console.log('data =>', data);
+				// clear validation error messsages
+ 	            $('#errMsg').addClass('hide');
+ 	            $('#errData').html('');
  	            // scroll up
  	            // $('html, body').animate({
  	            //     scrollTop: $("#nav-top").offset().top
@@ -183,27 +186,31 @@
  	            // kembali kelist User
  	        },
  	        error: function( data, textStatus, errorThrown ){
- 	          console.log('data', data.responseText);
- 	            console.log( errorThrown );
- 	            // $('html, body').animate({
- 	            //     scrollTop: $("#nav-top").offset().top
- 	            // }, 2000);
- 	            // scroll up 
- 	            // tampilkan pesan error
- 	            $('#errMsg').toggleClass('hide');
- 	            $('#errMsg').addClass('alert-warning');
-				
- 	            // jangan clear data
+ 	          var messages = jQuery.parseJSON(data.responseText);
+ 		      console.log( errorThrown );
+ 		      // $('html, body').animate({
+ 		      //     scrollTop: $("#nav-top").offset().top
+ 		      // }, 2000);
+ 		      // scroll up 
+ 		      // tampilkan pesan error
+ 		      $('#errData').html('');
+ 		      $('#errMsg').addClass('alert-warning');
+ 		      $('#errMsg').removeClass('hide');
+ 		      $.each(messages, function(i, val) {
+ 		        $('#errData').append('<p>'+ i +' : ' + val +'</p>')
+ 		        console.log(i,val);
+ 		      });          
+ 		      // jangan clear data
  	        }
  	      });
  	    });
 		
  	    function showNotifSuccess(){
  	    	$.gritter.add({
-						title: 'This is a centered notification',
-						text: 'Just add a "gritter-center" class_name to your $.gritter.add or globally to $.gritter.options.class_name',
-						class_name: 'gritter-info gritter-center'
-					});
+				title: 'This is a centered notification',
+				text: 'Just add a "gritter-center" class_name to your $.gritter.add or globally to $.gritter.options.class_name',
+				class_name: 'gritter-info gritter-center'
+			});
  		  }
  	</script>
 
