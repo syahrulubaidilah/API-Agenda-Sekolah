@@ -1,5 +1,10 @@
 @extends('layouts.app')
 @section('title', 'Form Update User')
+@section('style')
+			<!-- page specific plugin styles -->
+ 		<link rel="stylesheet" href={{asset('assets/css/jquery-ui.custom.min.css')}} />
+		<link rel="stylesheet" href={{asset('assets/css/jquery.gritter.min.css')}} />
+@endsection
 @section('content')
            <div class="main-content-inner">
 				<div class="breadcrumbs ace-save-state" id="breadcrumbs">
@@ -37,12 +42,13 @@
 					<div class="row">
 						<div class="col-xs-12">
 							<!-- PAGE CONTENT BEGINS -->
-							<form class="form-horizontal" role="form">
+							<form class="form-horizontal" id="formUser" role="form">
+								<input type="hidden" class="form-control" value="{{$user->id}}">
 								<div class="form-group">
 									<label class="col-sm-3 control-label no-padding-right" for="form-field-2">Name</label>
 
 									<div class="col-sm-9">
-										<input type="text" id="form-field-2" placeholder="Name" class="col-xs-10 col-sm-5" />
+										<input type="text" id="form-field-2" name="name" placeholder="Name" value="{{$user->name}}" class="col-xs-10 col-sm-5" />
 									</div>
 								</div>
 
@@ -50,7 +56,7 @@
 									<label class="col-sm-3 control-label no-padding-right" for="form-field-2-2">Email</label>
 
 									<div class="col-sm-9">
-										<input type="text" id="form-field-2-2" placeholder="Email" class="col-xs-10 col-sm-5" />
+										<input type="text" id="form-field-2-2" name="email" placeholder="Email" value="{{$user->email}}" class="col-xs-10 col-sm-5" />
 									</div>
 								</div>
 
@@ -58,7 +64,7 @@
 									<label class="col-sm-3 control-label no-padding-right" for="form-field-2-3"> Password</label>
 
 									<div class="col-sm-9">
-										<input type="password" id="form-field-2-3" placeholder="Password" class="col-xs-10 col-sm-5" />
+										<input type="password" id="form-field-2-3" name="password" placeholder="Password" value="{{$user->password}}" class="col-xs-10 col-sm-5" />
 									</div>
 								</div>
 
@@ -66,7 +72,7 @@
 									<label class="col-sm-3 control-label no-padding-right" for="form-field-2-4">Level</label>
 
 									<div class="col-sm-9">
-										<input type="text" id="form-field-2-4" placeholder="Level" class="col-xs-10 col-sm-5" />
+										<input type="text" id="form-field-2-4" name="level" placeholder="Level" value="{{$user->level}}" class="col-xs-10 col-sm-5" />
 									</div>
 								</div>
 
@@ -74,15 +80,15 @@
 									<label class="col-sm-3 control-label no-padding-right" for="form-field-2-5">Jabatan</label>
 
 									<div class="col-sm-9">
-										<input type="text" id="form-field-2-5" placeholder="Jabatan" class="col-xs-10 col-sm-5" />
+										<input type="text" id="form-field-2-5" name="position" placeholder="Jabatan" value="{{$user->position}}" class="col-xs-10 col-sm-5" />
 									</div>
 								</div>
 
 								<div class="clearfix form-actions">
 									<div class="col-md-offset-3 col-md-9">
-										<button class="btn btn-info" type="button">
+										<button class="btn btn-info" type="button" id="btnUpdate">
 												<i class="ace-icon fa fa-check bigger-110"></i>
-												Submit
+												Update
 											</button> &nbsp; &nbsp; &nbsp;
 										<button class="btn" type="reset">
 												<i class="ace-icon fa fa-undo bigger-110"></i>
@@ -125,6 +131,8 @@
 	<script src={{asset('assets/js/jquery.inputlimiter.min.js')}}></script>
 	<script src={{asset('assets/js/jquery.maskedinput.min.js')}}></script>
 	<script src={{asset('assets/js/bootstrap-tag.min.js')}}></script>
+	<script src={{asset('assets/js/jquery.gritter.min.js')}}></script>
+
 
 	<script>
 	$(document).ready(function(){
@@ -135,7 +143,67 @@
     	$('#nav-siswa').addClass('active');
     	$('#nav-guru').addClass('active');
     });
-	</script>
+	</script>	
+
+ 	<script>
+ 	 $(document).ready(function(){
+	
+ 	    });
+	 
+ 	    // ini adalah proses submit data menggunakan Ajax
+ 	    $("#btnUpdate").click(function(event) {
+ 	      // kasih ini dong biar gag hard reload
+ 	      event.preventDefault();
+ 	      $.ajax({
+ 	        url: '{{route("user.update",['id' => $user->id])}}', // url edit data
+ 	        dataType: 'JSON',
+ 	        type: 'PUT',
+ 	        contentType: 'application/x-www-form-urlencoded',
+ 	        data: $("#formUser").serialize(), // data tadi diserialize berdasarkan name
+ 	        success: function( data, textStatus, jQxhr ){
+ 	            console.log('status =>', textStatus);
+ 	            console.log('data =>', data);
+ 	            // clear validation error messsages
+ 	            $('#errMsg').addClass('hide');
+ 	            $('#errData').html('');
+ 	            // scroll up
+ 	            // $('html, body').animate({
+ 	            //     scrollTop: $("#nav-top").offset().top
+ 	            // }, 2000);
+ 	            // tampilkan pesan sukses
+ 	            showNotifSuccess();
+ 	            // kembali kelist book
+ 	            
+ 	        },
+ 	        error: function( data, textStatus, errorThrown ){
+ 	          var messages = jQuery.parseJSON(data.responseText);
+ 	            console.log( errorThrown );
+ 	            // $('html, body').animate({
+ 	            //     scrollTop: $("#nav-top").offset().top
+ 	            // }, 2000);
+ 	            // scroll up 
+ 	            // tampilkan pesan error
+ 	             $('#errData').html('');
+ 	          $('#errMsg').addClass('alert-warning');
+ 	          $('#errMsg').removeClass('hide');
+ 	          $.each(messages, function(i, val) {
+ 	            $('#errData').append('<p>'+ i +' : ' + val +'</p>')
+ 	            console.log(i,val);
+ 	          });          
+ 	          // jangan clear data
+ 	        }
+ 	      });
+ 	    });
+	 
+ 	    function showNotifSuccess(){
+ 	    	$.gritter.add({
+				title: 'Succes',
+				text: 'Data User berhasil di tambahkan',
+				class_name: 'gritter-info'
+			});
+ 		  }
+ 		  
+ 	</script>
 
 	<!-- inline scripts related to this page -->
 	<script type="text/javascript">

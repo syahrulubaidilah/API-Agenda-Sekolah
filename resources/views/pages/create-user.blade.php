@@ -207,10 +207,11 @@
 		
  	    function showNotifSuccess(){
  	    	$.gritter.add({
-				title: 'This is a centered notification',
-				text: 'Just add a "gritter-center" class_name to your $.gritter.add or globally to $.gritter.options.class_name',
-				class_name: 'gritter-info gritter-center'
+				title: 'Succes',
+				text: 'Data User berhasil di tambahkan',
+				class_name: 'gritter-info'
 			});
+			
  		  }
  	</script>
 
