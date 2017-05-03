@@ -3,7 +3,7 @@
 namespace App\Domain\Contracts;
 
 /**
- * Interface ContactInterface
+ * Interface UserInterface
  * @package App\Domain\Contracts
  */
 interface UserInterface {

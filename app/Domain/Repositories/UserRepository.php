@@ -21,7 +21,7 @@ class UserRepository extends AbstractRepository implements UserInterface, Crudab
 
     /**
      * UserRepository constructor.
-     * @param User $contact
+     * @param User $user
      */
     public function __construct(User $user)
     {

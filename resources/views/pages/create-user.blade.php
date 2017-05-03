@@ -1,5 +1,10 @@
 @extends('layouts.app')
 @section('title', 'Form Create User')
+@section('style')
+			<!-- page specific plugin styles -->
+ 		<link rel="stylesheet" href={{asset('assets/css/jquery-ui.custom.min.css')}} />
+		<link rel="stylesheet" href={{asset('assets/css/jquery.gritter.min.css')}} />
+@endsection
 @section('content')
            <div class="main-content-inner">
 				<div class="breadcrumbs ace-save-state" id="breadcrumbs">
@@ -35,14 +40,36 @@
 					<!-- /.page-header -->
 
 					<div class="row">
+			          <div class="col-md-8">
+			           <div class="alert alert-dismissible hide" id="errMsg" role="alert">
+			             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			             <span id="errData"></span>
+			           </div>
+			          </div>
+			        </div>
+
+					<div class="row">
+			          	<div class="col-md-6">
+							<div class="alert alert-info hide" id="succesMsg">
+								<button type="button" class="close" data-dismiss="alert">
+								<i class="ace-icon fa fa-times"></i>
+									</button>
+								This alert needs your attention, but it's not super important.
+								<br />
+							</div>
+						</div>
+			        </div>
+					<!-- Notification -->
+
+					<div class="row">
 						<div class="col-xs-12">
 							<!-- PAGE CONTENT BEGINS -->
-							<form class="form-horizontal" role="form">
+							<form class="form-horizontal" id="formUser" role="form">
 								<div class="form-group">
 									<label class="col-sm-3 control-label no-padding-right" for="form-field-2">Name</label>
 
 									<div class="col-sm-9">
-										<input type="text" id="form-field-2" placeholder="Name" class="col-xs-10 col-sm-5" />
+										<input type="text" id="form-field-2" name="name" placeholder="Name" class="col-xs-10 col-sm-5" />
 									</div>
 								</div>
 
@@ -50,7 +77,7 @@
 									<label class="col-sm-3 control-label no-padding-right" for="form-field-2-2">Email</label>
 
 									<div class="col-sm-9">
-										<input type="text" id="form-field-2-2" placeholder="Email" class="col-xs-10 col-sm-5" />
+										<input type="text" id="form-field-2-2" name="email" placeholder="Email" class="col-xs-10 col-sm-5" />
 									</div>
 								</div>
 
@@ -58,7 +85,7 @@
 									<label class="col-sm-3 control-label no-padding-right" for="form-field-2-3"> Password</label>
 
 									<div class="col-sm-9">
-										<input type="password" id="form-field-2-3" placeholder="Password" class="col-xs-10 col-sm-5" />
+										<input type="password" id="form-field-2-3" name="password" placeholder="Password" class="col-xs-10 col-sm-5" />
 									</div>
 								</div>
 
@@ -66,7 +93,7 @@
 									<label class="col-sm-3 control-label no-padding-right" for="form-field-2-4">Level</label>
 
 									<div class="col-sm-9">
-										<input type="text" id="form-field-2-4" placeholder="Level" class="col-xs-10 col-sm-5" />
+										<input type="text" id="form-field-2-4" name="level" placeholder="Level" class="col-xs-10 col-sm-5" />
 									</div>
 								</div>
 
@@ -74,20 +101,20 @@
 									<label class="col-sm-3 control-label no-padding-right" for="form-field-2-5">Jabatan</label>
 
 									<div class="col-sm-9">
-										<input type="text" id="form-field-2-5" placeholder="Jabatan" class="col-xs-10 col-sm-5" />
+										<input type="text" id="form-field-2-5" name="position" placeholder="Jabatan" class="col-xs-10 col-sm-5" />
 									</div>
 								</div>
 
 								<div class="clearfix form-actions">
 									<div class="col-md-offset-3 col-md-9">
-										<button class="btn btn-info" type="button">
+										<button class="btn btn-info" id="btnSimpan" type="button">
 												<i class="ace-icon fa fa-check bigger-110"></i>
 												Submit
-											</button> &nbsp; &nbsp; &nbsp;
+										</button> &nbsp; &nbsp; &nbsp;
 										<button class="btn" type="reset">
 												<i class="ace-icon fa fa-undo bigger-110"></i>
 												Reset
-											</button>
+										</button>
 									</div>
 								</div>
 
@@ -125,16 +152,70 @@
 	<script src={{asset('assets/js/jquery.inputlimiter.min.js')}}></script>
 	<script src={{asset('assets/js/jquery.maskedinput.min.js')}}></script>
 	<script src={{asset('assets/js/bootstrap-tag.min.js')}}></script>
+	<script src={{asset('assets/js/jquery.gritter.min.js')}}></script>
 
 	<script>
-	$(document).ready(function(){
+ 	    $(document).ready(function(){
+		
+ 	    });
+		
+ 	    // ini adalah proses submit data menggunakan Ajax
+ 	    $("#btnSimpan").click(function(event) {
+ 	      // kasih ini dong biar gag hard reload
+ 	      event.preventDefault();
+ 	      $.ajax({
+ 	        url: '{{route("user.store")}}', // url post data
+ 	        dataType: 'JSON',
+ 	        type: 'POST',
+ 	        contentType: 'application/x-www-form-urlencoded',
+ 	        data: $("#formUser").serialize(), // data tadi diserialize berdasarkan name
+ 	        success: function( data, textStatus, jQxhr ){
+ 	            console.log('status =>', textStatus);
+ 	            console.log('data =>', data);
+ 	            // scroll up
+ 	            // $('html, body').animate({
+ 	            //     scrollTop: $("#nav-top").offset().top
+ 	            // }, 2000);
+ 	            // tampilkan pesan sukses
+ 	            showNotifSuccess();
+ 	            // clear data inputan
+ 	            $('#formUser').find("input[type=text], textarea").val("");
+ 	            // kembali kelist User
+ 	        },
+ 	        error: function( data, textStatus, errorThrown ){
+ 	          console.log('data', data.responseText);
+ 	            console.log( errorThrown );
+ 	            // $('html, body').animate({
+ 	            //     scrollTop: $("#nav-top").offset().top
+ 	            // }, 2000);
+ 	            // scroll up 
+ 	            // tampilkan pesan error
+ 	            $('#errMsg').toggleClass('hide');
+ 	            $('#errMsg').addClass('alert-warning');
+				
+ 	            // jangan clear data
+ 	        }
+ 	      });
+ 	    });
+		
+ 	    function showNotifSuccess(){
+ 	    	$.gritter.add({
+						title: 'This is a centered notification',
+						text: 'Just add a "gritter-center" class_name to your $.gritter.add or globally to $.gritter.options.class_name',
+						class_name: 'gritter-info gritter-center'
+					});
+ 		  }
+ 	</script>
+
+	<script>
+		$(document).ready(function(){
     	$('#nav-calendar').removeClass('active');
     	$('#nav-dashboard').removeClass('active');
 		$('#nav-agenda').removeClass('active');
     	$('#nav-staf').addClass('active');
     	$('#nav-siswa').addClass('active');
     	$('#nav-guru').addClass('active');
-    });
+    	});
 	</script>
 
 	<!-- inline scripts related to this page -->

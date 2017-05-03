@@ -37,16 +37,16 @@ class UserController extends Controller
     }
 
     /**
-     * @api {get} api/contacts/id Request Get Contact
-     * @apiName GetContact
-     * @apiGroup Contact
+     * @api {get} api/users/id Request Get User
+     * @apiName GetUser
+     * @apiGroup User
      *
-     * @apiParam {Number} id id_contact
-     * @apiSuccess {Number} id id_contact
-     * @apiSuccess {Varchar} name name of contact
+     * @apiParam {Number} id id_user
+     * @apiSuccess {Number} id id_user
+     * @apiSuccess {Varchar} name name of user
      * @apiSuccess {Varchar} address name of address
-     * @apiSuccess {Varchar} email email of contact
-     * @apiSuccess {Number} phone phone of contact
+     * @apiSuccess {Varchar} email email of user
+     * @apiSuccess {Number} phone phone of user
      */
     public function show($id)
     {
@@ -54,16 +54,16 @@ class UserController extends Controller
     }
 
     /**
-     * @api {post} api/contacts/ Request Post Contact
-     * @apiName PostContact
-     * @apiGroup Contact
+     * @api {post} api/users/ Request Post User
+     * @apiName PostUser
+     * @apiGroup User
      *
      *
-     * @apiParam {Varchar} name name of contact
-     * @apiParam {Varchar} email email of contact
+     * @apiParam {Varchar} name name of user
+     * @apiParam {Varchar} email email of user
      * @apiParam {Varchar} address email of address
-     * @apiParam {Float} phone phone of contact
-     * @apiSuccess {Number} id id of contact
+     * @apiParam {Float} phone phone of user
+     * @apiSuccess {Number} id id of user
      */
     public function store(UserCreateRequest $request)
     {
@@ -71,15 +71,15 @@ class UserController extends Controller
     }
 
     /**
-     * @api {put} api/contacts/id Request Update Contact by ID
-     * @apiName UpdateContactByID
-     * @apiGroup Contact
+     * @api {put} api/users/id Request Update User by ID
+     * @apiName UpdateUserByID
+     * @apiGroup User
      *
      *
-     * @apiParam {Varchar} name name of contact
-     * @apiParam {Varchar} email email of contact
-     * @apiParam {Varchar} address address of contact
-     * @apiParam {Float} phone phone of contact
+     * @apiParam {Varchar} name name of user
+     * @apiParam {Varchar} email email of user
+     * @apiParam {Varchar} address address of user
+     * @apiParam {Float} phone phone of user
      *
      *
      * @apiError EmailHasRegitered The Email must diffrerent.
@@ -90,14 +90,14 @@ class UserController extends Controller
     }
 
     /**
-     * @api {delete} api/contacts/id Request Delete Contact by ID
-     * @apiName DeleteContactByID
-     * @apiGroup Contact
+     * @api {delete} api/users/id Request Delete User by ID
+     * @apiName DeleteUserByID
+     * @apiGroup User
      *
-     * @apiParam {Number} id id of contact
+     * @apiParam {Number} id id of user
      *
      *
-     * @apiError ContactNotFound The <code>id</code> of the Contact was not found.
+     * @apiError UserNotFound The <code>id</code> of the User was not found.
      * @apiError NoAccessRight Only authenticated Admins can access the data.
      */
     public function destroy($id)
