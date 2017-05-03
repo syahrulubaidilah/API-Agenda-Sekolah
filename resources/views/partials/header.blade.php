@@ -10,7 +10,7 @@
 					<span class="icon-bar"></span>
 				</button>
 
-				<div class="navbar-header pull-left">
+				<div class="navbar-header pull-left" id="nav-top">
 					<a href="index.html" class="navbar-brand">
 						<small>
 							<i class="fa fa-leaf"></i>
