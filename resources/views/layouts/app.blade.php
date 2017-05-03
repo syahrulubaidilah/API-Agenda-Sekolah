@@ -21,6 +21,7 @@
 		<link rel="stylesheet" href={{asset('assets/css/ace.min.css')}} class="ace-main-stylesheet" id="main-ace-style" />
 		<link rel="stylesheet" href={{asset('assets/css/ace-skins.min.css')}} />
 		<link rel="stylesheet" href={{asset('assets/css/ace-rtl.min.css')}} />
+		<link rel="stylesheet" type="text/css" href={{asset('assets/css/sweetalert.css')}}>
 
 		<!-- ace settings handler -->
 		<script src={{asset('assets/js/ace-extra.min.js')}}></script>
@@ -63,11 +64,12 @@
 		<!-- ace scripts -->
 		<script src={{asset('assets/js/ace-elements.min.js')}}></script>
 		<script src={{asset('assets/js/ace.min.js')}}></script>
+		<script src={{asset('assets/js/sweetalert.min.js')}}></script>
 		<script>
-    $(document).ready(function(){
-        var pathname = window.location.pathname;
-        console.log('url path =>',pathname);
-        switch (pathname) {
+    		$(document).ready(function(){
+        	var pathname = window.location.pathname;
+        	console.log('url path =>',pathname);
+        	switch (pathname) {
             case '/':
                 $('#nav-siswa').removeClass('active');
                 $('#nav-guru').removeClass('active');
@@ -118,9 +120,9 @@
                 break;  
             default: 
                 text = "Looking forward to the Weekend";
-        }
-    });
-</script>
+        	}
+    		});
+		</script>
 
 	</body>
 </html>
