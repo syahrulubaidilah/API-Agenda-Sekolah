@@ -142,9 +142,16 @@
 	<script src={{asset('assets/js/jquery.maskedinput.min.js')}}></script>
 	<script src={{asset('assets/js/bootstrap-tag.min.js')}}></script>
 
-	<!-- ace scripts -->
-	<script src={{asset('assets/js/ace-elements.min.js')}}></script>
-	<script src={{asset('assets/js/ace.min.js')}}></script>
+	<script>
+	$(document).ready(function(){
+    	$('#nav-guru').removeClass('active');
+    	$('#nav-siswa').removeClass('active');
+    	$('#nav-staf').removeClass('active');
+    	$('#nav-calendar').removeClass('active');
+    	$('#nav-dashboard').removeClass('active');
+		$('#nav-agenda').addClass('active');
+    });
+	</script>
 
 	<!-- inline scripts related to this page -->
 	<script type="text/javascript">

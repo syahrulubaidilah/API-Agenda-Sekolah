@@ -39,10 +39,10 @@
 							<!-- PAGE CONTENT BEGINS -->
 							<form class="form-horizontal" role="form">
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-field-2">Activity Name</label>
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-2">Name</label>
 
 									<div class="col-sm-9">
-										<input type="text" id="form-field-2" placeholder="Activity Name" class="col-xs-10 col-sm-5" />
+										<input type="text" id="form-field-2" placeholder="Name" class="col-xs-10 col-sm-5" />
 									</div>
 								</div>
 
@@ -126,9 +126,16 @@
 	<script src={{asset('assets/js/jquery.maskedinput.min.js')}}></script>
 	<script src={{asset('assets/js/bootstrap-tag.min.js')}}></script>
 
-	<!-- ace scripts -->
-	<script src={{asset('assets/js/ace-elements.min.js')}}></script>
-	<script src={{asset('assets/js/ace.min.js')}}></script>
+	<script>
+	$(document).ready(function(){
+    	$('#nav-calendar').removeClass('active');
+    	$('#nav-dashboard').removeClass('active');
+		$('#nav-agenda').removeClass('active');
+    	$('#nav-staf').addClass('active');
+    	$('#nav-siswa').addClass('active');
+    	$('#nav-guru').addClass('active');
+    });
+	</script>
 
 	<!-- inline scripts related to this page -->
 	<script type="text/javascript">
