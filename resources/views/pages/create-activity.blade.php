@@ -133,7 +133,7 @@
 												<i class="ace-icon fa fa-undo bigger-110"></i>
 												Reset
 										</button> &nbsp; &nbsp; &nbsp;
-										<button class="btn" type="button" href='{{route("page.list-activity")}}'>
+										<button class="btn" type="button" href={{route('page.list-activity')}}>
 												<i class="ace-icon fa fa-undo bigger-110"></i>
 												Back
 										</button>
@@ -215,6 +215,51 @@
  	            $('#formActivity').find("input[type=text], textarea").val("");
  	            // kembali kelist User
 				window.location.href = '{{route("page.list-activity")}}'
+ 	        },
+ 	        error: function( data, textStatus, errorThrown ){
+ 	          var messages = jQuery.parseJSON(data.responseText);
+ 		      console.log( errorThrown );
+ 		      // $('html, body').animate({
+ 		      //     scrollTop: $("#nav-top").offset().top
+ 		      // }, 2000);
+ 		      // scroll up 
+ 		      // tampilkan pesan error
+ 		      $('#errData').html('');
+ 		      $('#errMsg').addClass('alert-warning');
+ 		      $('#errMsg').removeClass('hide');
+ 		      $.each(messages, function(i, val) {
+ 		        $('#errData').append('<p>'+ i +' : ' + val +'</p>')
+ 		        console.log(i,val);
+ 		      });          
+ 		      // jangan clear data
+ 	        }
+ 	      });
+ 	    });
+		
+		$("#btnSimpanKembali").click(function(event) {
+ 	      // kasih ini dong biar gag hard reload
+ 	      event.preventDefault();
+ 	      $.ajax({
+ 	        url: '{{route("activity.store")}}', // url post data
+ 	        dataType: 'JSON',
+ 	        type: 'POST',
+ 	        contentType: 'application/x-www-form-urlencoded',
+ 	        data: $("#formActivity").serialize(), // data tadi diserialize berdasarkan name
+ 	        success: function( data, textStatus, jQxhr ){
+ 	            console.log('status =>', textStatus);
+ 	            console.log('data =>', data);
+				// clear validation error messsages
+ 	            $('#errMsg').addClass('hide');
+ 	            $('#errData').html('');
+ 	            // scroll up
+ 	            // $('html, body').animate({
+ 	            //     scrollTop: $("#nav-top").offset().top
+ 	            // }, 2000);
+ 	            // tampilkan pesan sukses
+ 	            showNotifSuccess();
+ 	            // clear data inputan
+ 	            $('#formActivity').find("input[type=text], textarea").val("");
+ 	            // kembali kelist User
  	        },
  	        error: function( data, textStatus, errorThrown ){
  	          var messages = jQuery.parseJSON(data.responseText);
