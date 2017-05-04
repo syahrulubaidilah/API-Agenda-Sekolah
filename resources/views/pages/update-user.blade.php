@@ -40,6 +40,15 @@
 					<!-- /.page-header -->
 
 					<div class="row">
+			          <div class="col-md-8">
+			           <div class="alert alert-dismissible hide" id="errMsg" role="alert">
+			             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			             <span id="errData"></span>
+			           </div>
+			          </div>
+			        </div>
+
+					<div class="row">
 						<div class="col-xs-12">
 							<!-- PAGE CONTENT BEGINS -->
 							<form class="form-horizontal" id="formUser" role="form">
