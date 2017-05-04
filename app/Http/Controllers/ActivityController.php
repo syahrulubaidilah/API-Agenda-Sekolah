@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\Activty\ActivityCreateRequest;
-use App\Http\Requests\Activty\ActivityEditRequest;
+use App\Http\Requests\Activity\ActivityCreateRequest;
+use App\Http\Requests\Activity\ActivityEditRequest;
 use Illuminate\Http\Request;
 use App\Domain\Contracts\ActivityInterface;
 
@@ -54,7 +54,7 @@ class ActivityController extends Controller
     }
 
     /**
-     * @api {post} api/contacts/ Request Post Contact
+     * @api {post} api/activity/ Request Post Contact
      * @apiName PostContact
      * @apiGroup Contact
      *
@@ -71,7 +71,7 @@ class ActivityController extends Controller
     }
 
     /**
-     * @api {put} api/contacts/id Request Update Contact by ID
+     * @api {put} api/activity/id Request Update Contact by ID
      * @apiName UpdateContactByID
      * @apiGroup Contact
      *
@@ -90,7 +90,7 @@ class ActivityController extends Controller
     }
 
     /**
-     * @api {delete} api/contacts/id Request Delete Contact by ID
+     * @api {delete} api/activity/id Request Delete Contact by ID
      * @apiName DeleteContactByID
      * @apiGroup Contact
      *

@@ -24,7 +24,7 @@ class ActivityController extends Controller
     public function index(Request $request)
     {
         $activities = $this->activity->paginate(10, $request->input('name'), $column = ['*'], '', $request->input('search'));
-        return view('pages.list-activity', ['activities' => $activities]); 
+        return view('pages.list-activity', compact('activities')); 
     }
     public function create()
     {
@@ -32,6 +32,7 @@ class ActivityController extends Controller
     }
     public function edit($id)
     {
-        return view('pages.update-activity'); 
+        $activity = $this->activity->findById($id);
+        return view('pages.update-activity' ,compact('activity')); 
     }
 }

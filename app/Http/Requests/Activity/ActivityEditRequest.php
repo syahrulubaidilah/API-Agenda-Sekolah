@@ -3,16 +3,17 @@
 namespace App\Http\Requests\Activity;
 
 use App\Http\Requests\Request;
+use Illuminate\Contracts\Validation\Validator;
 
 /**
- * Class UserCreateRequest
+ * Class RequestCreateRequest
  *
- * @package App\Http\Requests\User
+ * @package App\Http\Requests\Request
  */
 class ActivityEditRequest extends Request
 {
     /**
-     * Determine if the user is authorized to make this request.
+     * Determine if the request is authorized to make this request.
      *
      * @return bool
      */
@@ -46,7 +47,7 @@ class ActivityEditRequest extends Request
         return [
             'name'    => 'required|max:225',
             'description' => 'required|max:60',
-            'date_activity'   => 'required|max:30',
+            'date_activity'   => 'required|max:50',
             'time'   => 'required|max:30',
             'place'   => 'required|max:30',
             'participant'   => 'required|max:30',
