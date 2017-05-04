@@ -105,4 +105,20 @@ class UserController extends Controller
         return $this->user->delete($id);
     }
 
+    public function getListSiswa(Request $request)
+    {
+        return $this->user->getList(10, $request->input('page'), $column = ['*'], '', $request->input('search'),$level=2);
+    }
+
+    public function getListGuru(Request $request)
+    {
+        return $this->user->getList(10, $request->input('page'), $column = ['*'], '', $request->input('search'),$level=0);
+    }
+
+    public function getListStaf(Request $request)
+    {
+        return $this->user->getList(10, $request->input('page'), $column = ['*'], '', $request->input('search'),$level=1);
+    }
+
+
 }

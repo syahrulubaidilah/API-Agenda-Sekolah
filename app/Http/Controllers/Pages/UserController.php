@@ -23,17 +23,18 @@ class UserController extends Controller
     }
     public function siswa(Request $request)
     {
-        $user_siswa = $this->user->paginate(10, $request->input('name'), $column = ['*'], '', $request->input('search'));
+        $user_siswa = $this->user->getList(10, $request->input('page'), $column = ['*'], '', $request->input('search'),$level=2);
+        
         return view('pages.list-siswa', compact('user_siswa')); 
     }
      public function guru(Request $request)
     {
-        $user_guru = $this->user->paginate(10, $request->input('name'), $column = ['*'], '', $request->input('search'));
+        $user_guru = $this->user->getList(10, $request->input('page'), $column = ['*'], '', $request->input('search'),$level=0);
         return view('pages.list-guru', compact('user_guru')); 
     }
      public function staf(Request $request)
     {
-        $user_staf = $this->user->paginate(10, $request->input('name'), $column = ['*'], '', $request->input('search'));
+        $user_staf = $this->user->getList(10, $request->input('page'), $column = ['*'], '', $request->input('search'),$level=1);
         return view('pages.list-staf', compact('user_staf')); 
     }
     public function create()

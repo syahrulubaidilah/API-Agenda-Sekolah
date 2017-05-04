@@ -151,6 +151,11 @@ abstract class AbstractRepository implements RepositoryContract
         return $this->make()->where($key, 'like', '%' . $value . '%')->paginate($limit, $columns);
     }
 
+    public function paginateWhere($limit = 10, $page = 1, array $columns = ['*'], $key, $value = '')
+    {
+        return $this->make()->where($key, $value)->paginate($limit, $columns);
+    }
+
     /**
      * Search for many results by key and value
      *

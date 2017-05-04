@@ -19,3 +19,6 @@ Route::get('/user', function (Request $request) {
 
 Route::resource('user','UserController');
 Route::resource('activity','ActivityController');
+Route::get('list-siswa','UserController@getListSiswa')->name('user.list.siswa');
+Route::get('list-guru','UserController@getListGuru')->name('user.list.guru');
+Route::get('list-staf','UserController@getListStaf')->name('user.list.staf');

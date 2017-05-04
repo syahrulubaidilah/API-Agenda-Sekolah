@@ -77,7 +77,7 @@ class UserRepository extends AbstractRepository implements UserInterface, Crudab
         return parent::update($id, [
             'name'    => e($data['name']),
             'email'   => e($data['email']),
-            'password' => e($data['password']),
+            // 'password' => e($data['password']),
             'level'   => e($data['level']),
             'position'   => e($data['position'])
         ]);
@@ -101,6 +101,12 @@ class UserRepository extends AbstractRepository implements UserInterface, Crudab
     public function findById($id, array $columns = ['*'])
     {
         return parent::find($id, $columns);
+    }
+
+    public function getList($limit = 10, $page = 1, array $column = ['*'], $field, $search = '', $level)
+    {
+        // query to aql
+        return parent::paginateWhere($limit, $page, $column, 'level', $level);
     }
 
 }
