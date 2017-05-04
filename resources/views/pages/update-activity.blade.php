@@ -1,5 +1,10 @@
 @extends('layouts.app')
 @section('title', 'Form Update Activity<')
+@section('style')
+			<!-- page specific plugin styles -->
+ 		<link rel="stylesheet" href={{asset('assets/css/jquery-ui.custom.min.css')}} />
+		<link rel="stylesheet" href={{asset('assets/css/jquery.gritter.min.css')}} />
+@endsection
 @section('content')
             <div class="main-content-inner">
 				<div class="breadcrumbs ace-save-state" id="breadcrumbs">
@@ -37,12 +42,13 @@
 					<div class="row">
 						<div class="col-xs-12">
 							<!-- PAGE CONTENT BEGINS -->
-							<form class="form-horizontal" role="form">
+							<form class="form-horizontal" id="formActivity" role="form">
+								<input type="hidden" class="form-control" value="{{$activity->id}}">
 								<div class="form-group">
 									<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Activity Name</label>
 
 									<div class="col-sm-9">
-										<input type="text" id="form-field-1" placeholder="Activity Name" class="col-xs-10 col-sm-5" />
+										<input type="text" id="form-field-1" name="name" placeholder="Activity Name" value="{{$activity->name}}" class="col-xs-10 col-sm-5" />
 									</div>
 								</div>
 
@@ -50,7 +56,7 @@
 									<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">Description</label>
 
 									<div class="col-sm-9">
-										<input type="text" id="form-field-1-1" placeholder="Description" class="form-control" />
+										<input type="text" id="form-field-1-1" name="description" placeholder="Description" value="{{$activity->description}}" class="form-control" />
 									</div>
 								</div>
 
@@ -63,7 +69,7 @@
 												<i class="fa fa-calendar bigger-110"></i>
 											</span>
 
-											<input class="col-xs-10 col-sm-5" type="text" name="date-range-picker" id="id-date-range-picker-1" />
+											<input class="col-xs-10 col-sm-5" type="text" name="date_activity" value="{{$activity->date_activity}}" />
 										</div>
 									</div>
 								</div>
@@ -76,7 +82,7 @@
 											<span class="input-group-addon">
 												<i class="fa fa-clock-o bigger-110"></i>
 											</span>
-											<input id="timepicker1" type="text" class="col-xs-10 col-sm-5" />
+											<input id="timepicker1" type="text" name="time" class="col-xs-10 col-sm-5" value="{{$activity->time}}" />
 										</div>
 									</div>
 								</div>
@@ -85,7 +91,7 @@
 									<label class="col-sm-3 control-label no-padding-right" for="form-field-1-4">Place</label>
 
 									<div class="col-sm-9">
-										<input type="text" id="form-field-1-4" placeholder="Place" class="col-xs-10 col-sm-5" />
+										<input type="text" id="form-field-1-4" name="place" placeholder="Place" value="{{$activity->place}}" class="col-xs-10 col-sm-5" />
 									</div>
 								</div>
 
@@ -93,15 +99,23 @@
 									<label class="col-sm-3 control-label no-padding-right" for="form-field-1-5">Participant</label>
 
 									<div class="col-sm-9">
-										<input type="text" id="form-field-1-5" placeholder="Participant" class="col-xs-10 col-sm-5" />
+										<input type="text" id="form-field-1-5" name="participant" placeholder="Participant" value="{{$activity->participant}}" class="col-xs-10 col-sm-5" />
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-1-5">User</label>
+
+									<div class="col-sm-9">
+										<input type="text" id="form-field-1-6" name="user_id" placeholder="Participant" value="{{$activity->user_id}}" class="col-xs-10 col-sm-5" />
 									</div>
 								</div>
 
 								<div class="clearfix form-actions">
 									<div class="col-md-offset-3 col-md-9">
-										<button class="btn btn-info" type="button">
+										<button class="btn btn-info" type="button" id="btnUpdate">
 												<i class="ace-icon fa fa-check bigger-110"></i>
-												Submit
+												Update
 											</button> &nbsp; &nbsp; &nbsp;
 										<button class="btn" type="reset">
 												<i class="ace-icon fa fa-undo bigger-110"></i>
@@ -140,6 +154,7 @@
 	<script src={{asset('assets/js/jquery.inputlimiter.min.js')}}></script>
 	<script src={{asset('assets/js/jquery.maskedinput.min.js')}}></script>
 	<script src={{asset('assets/js/bootstrap-tag.min.js')}}></script>
+	<script src={{asset('assets/js/jquery.gritter.min.js')}}></script>
 
 	<script>
 	$(document).ready(function(){
@@ -151,6 +166,66 @@
 		$('#nav-agenda').addClass('active');
     });
 	</script>
+
+	<script>
+ 	 $(document).ready(function(){
+	
+ 	    });
+	 
+ 	    // ini adalah proses submit data menggunakan Ajax
+ 	    $("#btnUpdate").click(function(event) {
+ 	      // kasih ini dong biar gag hard reload
+ 	      event.preventDefault();
+ 	      $.ajax({
+ 	        url: '{{route("activity.update",['id' => $activity->id])}}', // url edit data
+ 	        dataType: 'JSON',
+ 	        type: 'PUT',
+ 	        contentType: 'application/x-www-form-urlencoded',
+ 	        data: $("#formActivity").serialize(), // data tadi diserialize berdasarkan name
+ 	        success: function( data, textStatus, jQxhr ){
+ 	            console.log('status =>', textStatus);
+ 	            console.log('data =>', data);
+ 	            // clear validation error messsages
+ 	            $('#errMsg').addClass('hide');
+ 	            $('#errData').html('');
+ 	            // scroll up
+ 	            // $('html, body').animate({
+ 	            //     scrollTop: $("#nav-top").offset().top
+ 	            // }, 2000);
+ 	            // tampilkan pesan sukses
+ 	            showNotifSuccess();
+ 	            // kembali kelist book
+ 	            
+ 	        },
+ 	        error: function( data, textStatus, errorThrown ){
+ 	          var messages = jQuery.parseJSON(data.responseText);
+ 	            console.log( errorThrown );
+ 	            // $('html, body').animate({
+ 	            //     scrollTop: $("#nav-top").offset().top
+ 	            // }, 2000);
+ 	            // scroll up 
+ 	            // tampilkan pesan error
+ 	            $('#errData').html('');
+ 	          	$('#errMsg').addClass('alert-warning');
+ 	          	$('#errMsg').removeClass('hide');
+ 	          	$.each(messages, function(i, val) {
+ 	            $('#errData').append('<p>'+ i +' : ' + val +'</p>')
+ 	            console.log(i,val);
+ 	          });          
+ 	          // jangan clear data
+ 	        }
+ 	      });
+ 	    });
+	 
+ 	    function showNotifSuccess(){
+ 	    	$.gritter.add({
+				title: 'Succes',
+				text: 'Data Activity berhasil di update',
+				class_name: 'gritter-info'
+			});
+ 		  }
+ 		  
+ 	</script>
 
 	<!-- inline scripts related to this page -->
 	<script type="text/javascript">
@@ -452,7 +527,7 @@
 
 
 			//to translate the daterange picker, please copy the "examples/daterange-fr.js')}} contents here before initialization
-			$('input[name=date-range-picker]').daterangepicker({
+			$('input[id="date-range-picker"]').daterangepicker({
 				'applyClass': 'btn-sm btn-success',
 				'cancelClass': 'btn-sm btn-default',
 				locale: {

@@ -63,7 +63,7 @@
 												<i class="fa fa-calendar bigger-110"></i>
 											</span>
 
-											<input class="col-xs-10 col-sm-5" type="text" name="date-range-picker" id="id-date-range-picker-1" />
+											<input class="col-xs-10 col-sm-5" type="text" name="date-range-picker" id="date-range-picker" />
 										</div>
 									</div>
 								</div>
@@ -94,6 +94,14 @@
 
 									<div class="col-sm-9">
 										<input type="text" id="form-field-1-5" placeholder="Participant" class="col-xs-10 col-sm-5" />
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-1-5">User</label>
+
+									<div class="col-sm-9">
+										<input type="text" id="form-field-1-6" placeholder="Participant" class="col-xs-10 col-sm-5" />
 									</div>
 								</div>
 
@@ -453,7 +461,7 @@
 
 
 			//to translate the daterange picker, please copy the "examples/daterange-fr.js')}} contents here before initialization
-			$('input[name=date-range-picker]').daterangepicker({
+			$('input[id="date-range-picker"]').daterangepicker({
 				'applyClass': 'btn-sm btn-success',
 				'cancelClass': 'btn-sm btn-default',
 				locale: {
