@@ -78,7 +78,7 @@
 												<i class="fa fa-calendar bigger-110"></i>
 											</span>
 
-											<input class="col-xs-10 col-sm-5" type="text" name="date_activity" value="{{$activity->date_activity}}" />
+											<input class="col-xs-10 col-sm-5" type="text" name="date_activity"  value="{{$activity->date_activity}}" id="date-range-picker" />
 										</div>
 									</div>
 								</div>
@@ -112,13 +112,13 @@
 									</div>
 								</div>
 
-								<div class="form-group">
+								<!--<div class="form-group">
 									<label class="col-sm-3 control-label no-padding-right" for="form-field-1-5">User</label>
 
 									<div class="col-sm-9">
 										<input type="text" id="form-field-1-6" name="user_id" placeholder="Participant" value="{{$activity->user_id}}" class="col-xs-10 col-sm-5" />
 									</div>
-								</div>
+								</div>-->
 
 								<div class="clearfix form-actions">
 									<div class="col-md-offset-3 col-md-9">
@@ -204,6 +204,7 @@
  	            // tampilkan pesan sukses
  	            showNotifSuccess();
  	            // kembali kelist book
+				window.location.href = '{{route("page.list-activity")}}'
  	            
  	        },
  	        error: function( data, textStatus, errorThrown ){

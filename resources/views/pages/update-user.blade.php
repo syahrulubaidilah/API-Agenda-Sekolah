@@ -70,14 +70,6 @@
 								</div>
 
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-field-2-3"> Password</label>
-
-									<div class="col-sm-9">
-										<input type="password" id="form-field-2-3" name="password" placeholder="Password" value="{{$user->password}}" class="col-xs-10 col-sm-5" />
-									</div>
-								</div>
-
-								<div class="form-group">
 									<label class="col-sm-3 control-label no-padding-right" for="form-field-2-4">Level</label>
 
 									<div class="col-sm-9">
