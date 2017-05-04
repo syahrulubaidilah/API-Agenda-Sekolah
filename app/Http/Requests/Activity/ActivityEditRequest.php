@@ -34,7 +34,7 @@ class ActivityEditRequest extends Request
         'time'   => 'Time',
         'place'   => 'Place',
         'participant'   => 'Participant',
-        'user_id'   => 'User_Id'
+        // 'user_id'   => 'User_Id'
     ];
 
     /**
@@ -51,7 +51,7 @@ class ActivityEditRequest extends Request
             'time'   => 'required|max:30',
             'place'   => 'required|max:30',
             'participant'   => 'required|max:30',
-            'user_id'   => 'required|max:30'
+            // 'user_id'   => 'required|max:30'
         ];
     }
 

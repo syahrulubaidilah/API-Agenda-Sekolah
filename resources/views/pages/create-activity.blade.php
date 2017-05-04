@@ -1,5 +1,10 @@
 @extends('layouts.app')
 @section('title', 'Form Create Activity')
+@section('style')
+			<!-- page specific plugin styles -->
+ 		<link rel="stylesheet" href={{asset('assets/css/jquery-ui.custom.min.css')}} />
+		<link rel="stylesheet" href={{asset('assets/css/jquery.gritter.min.css')}} />
+@endsection
 @section('content')
            <div class="main-content-inner">
 				<div class="breadcrumbs ace-save-state" id="breadcrumbs">
@@ -35,14 +40,23 @@
 					<!-- /.page-header -->
 
 					<div class="row">
+			          <div class="col-md-8">
+			           <div class="alert alert-dismissible hide" id="errMsg" role="alert">
+			             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			             <span id="errData"></span>
+			           </div>
+			          </div>
+			        </div>
+
+					<div class="row">
 						<div class="col-xs-12">
 							<!-- PAGE CONTENT BEGINS -->
-							<form class="form-horizontal" role="form">
+							<form class="form-horizontal" id="formActivity" role="form">
 								<div class="form-group">
 									<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Activity Name</label>
 
 									<div class="col-sm-9">
-										<input type="text" id="form-field-1" placeholder="Activity Name" class="col-xs-10 col-sm-5" />
+										<input type="text" id="form-field-1" name="name" placeholder="Activity Name" class="col-xs-10 col-sm-5" />
 									</div>
 								</div>
 
@@ -50,7 +64,7 @@
 									<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">Description</label>
 
 									<div class="col-sm-9">
-										<input type="text" id="form-field-1-1" placeholder="Description" class="form-control" />
+										<input type="text" id="form-field-1-1"  name="description" placeholder="Description" class="form-control" />
 									</div>
 								</div>
 
@@ -63,7 +77,7 @@
 												<i class="fa fa-calendar bigger-110"></i>
 											</span>
 
-											<input class="col-xs-10 col-sm-5" type="text" name="date-range-picker" id="date-range-picker" />
+											<input class="col-xs-10 col-sm-5" type="text" name="date_activity" id="date-range-picker" />
 										</div>
 									</div>
 								</div>
@@ -76,7 +90,7 @@
 											<span class="input-group-addon">
 												<i class="fa fa-clock-o bigger-110"></i>
 											</span>
-											<input id="timepicker1" type="text" class="col-xs-10 col-sm-5" />
+											<input id="timepicker1" type="text" name="time" class="col-xs-10 col-sm-5" />
 										</div>
 									</div>
 								</div>
@@ -85,7 +99,7 @@
 									<label class="col-sm-3 control-label no-padding-right" for="form-field-1-4">Place</label>
 
 									<div class="col-sm-9">
-										<input type="text" id="form-field-1-4" placeholder="Place" class="col-xs-10 col-sm-5" />
+										<input type="text" id="form-field-1-4"  name="place" placeholder="Place" class="col-xs-10 col-sm-5" />
 									</div>
 								</div>
 
@@ -93,28 +107,36 @@
 									<label class="col-sm-3 control-label no-padding-right" for="form-field-1-5">Participant</label>
 
 									<div class="col-sm-9">
-										<input type="text" id="form-field-1-5" placeholder="Participant" class="col-xs-10 col-sm-5" />
+										<input type="text" id="form-field-1-5"  name="participant" placeholder="Participant" class="col-xs-10 col-sm-5" />
 									</div>
 								</div>
 
-								<div class="form-group">
+								<!--<div class="form-group">
 									<label class="col-sm-3 control-label no-padding-right" for="form-field-1-5">User</label>
 
 									<div class="col-sm-9">
 										<input type="text" id="form-field-1-6" placeholder="Participant" class="col-xs-10 col-sm-5" />
 									</div>
-								</div>
+								</div>-->
 
 								<div class="clearfix form-actions">
 									<div class="col-md-offset-3 col-md-9">
-										<button class="btn btn-info" type="button">
+										<button class="btn btn-info" id="btnSimpan" type="button">
 												<i class="ace-icon fa fa-check bigger-110"></i>
 												Submit
-											</button> &nbsp; &nbsp; &nbsp;
+										</button> &nbsp; &nbsp; &nbsp;
+										<button class="btn btn-info" id="btnSimpanKembali" type="button">
+												<i class="ace-icon fa fa-check bigger-110"></i>
+												Submit and Back
+										</button> &nbsp; &nbsp; &nbsp;
 										<button class="btn" type="reset">
 												<i class="ace-icon fa fa-undo bigger-110"></i>
 												Reset
-											</button>
+										</button> &nbsp; &nbsp; &nbsp;
+										<button class="btn" type="button" href='{{route("page.list-activity")}}'>
+												<i class="ace-icon fa fa-undo bigger-110"></i>
+												Back
+										</button>
 									</div>
 								</div>
 
@@ -149,6 +171,7 @@
 	<script src={{asset('assets/js/jquery.inputlimiter.min.js')}}></script>
 	<script src={{asset('assets/js/jquery.maskedinput.min.js')}}></script>
 	<script src={{asset('assets/js/bootstrap-tag.min.js')}}></script>
+	<script src={{asset('assets/js/jquery.gritter.min.js')}}></script>
 
 	<script>
 	$(document).ready(function(){
@@ -160,6 +183,68 @@
 		$('#nav-agenda').addClass('active');
     });
 	</script>
+
+	<script>
+ 	    $(document).ready(function(){
+		
+ 	    });
+		
+ 	    // ini adalah proses submit data menggunakan Ajax
+ 	    $("#btnSimpan").click(function(event) {
+ 	      // kasih ini dong biar gag hard reload
+ 	      event.preventDefault();
+ 	      $.ajax({
+ 	        url: '{{route("activity.store")}}', // url post data
+ 	        dataType: 'JSON',
+ 	        type: 'POST',
+ 	        contentType: 'application/x-www-form-urlencoded',
+ 	        data: $("#formActivity").serialize(), // data tadi diserialize berdasarkan name
+ 	        success: function( data, textStatus, jQxhr ){
+ 	            console.log('status =>', textStatus);
+ 	            console.log('data =>', data);
+				// clear validation error messsages
+ 	            $('#errMsg').addClass('hide');
+ 	            $('#errData').html('');
+ 	            // scroll up
+ 	            // $('html, body').animate({
+ 	            //     scrollTop: $("#nav-top").offset().top
+ 	            // }, 2000);
+ 	            // tampilkan pesan sukses
+ 	            showNotifSuccess();
+ 	            // clear data inputan
+ 	            $('#formActivity').find("input[type=text], textarea").val("");
+ 	            // kembali kelist User
+				window.location.href = '{{route("page.list-activity")}}'
+ 	        },
+ 	        error: function( data, textStatus, errorThrown ){
+ 	          var messages = jQuery.parseJSON(data.responseText);
+ 		      console.log( errorThrown );
+ 		      // $('html, body').animate({
+ 		      //     scrollTop: $("#nav-top").offset().top
+ 		      // }, 2000);
+ 		      // scroll up 
+ 		      // tampilkan pesan error
+ 		      $('#errData').html('');
+ 		      $('#errMsg').addClass('alert-warning');
+ 		      $('#errMsg').removeClass('hide');
+ 		      $.each(messages, function(i, val) {
+ 		        $('#errData').append('<p>'+ i +' : ' + val +'</p>')
+ 		        console.log(i,val);
+ 		      });          
+ 		      // jangan clear data
+ 	        }
+ 	      });
+ 	    });
+		
+ 	    function showNotifSuccess(){
+ 	    	$.gritter.add({
+				title: 'Succes',
+				text: 'Data Activity berhasil di tambahkan',
+				class_name: 'gritter-info'
+			});
+			
+ 		  }
+ 	</script>
 
 	<!-- inline scripts related to this page -->
 	<script type="text/javascript">

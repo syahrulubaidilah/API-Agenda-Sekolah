@@ -63,7 +63,7 @@
                       <th><i class="fa fa-clock-o"></i> Waktu</th>
                       <th>Tempat</th>
                       <th>Peserta</th>
-                      <th>Id Pembuat</th>
+                      <th>Pembuat</th>
                       <th></th>
                     </thead>
                     <tbody>
@@ -75,7 +75,7 @@
                         <td>{{ $activity->time }}</td>
                         <td>{{ $activity->place }}</td>
                         <td>{{ $activity->participant }}</td>
-                        <td>{{ $activity->user_id }}</td>
+                        <td><!-- {{ $activity->user_id }} --></td>
                         <td>
                           <a class="btn btn-info fa fa-pencil bigger-120" href={{route('page.edit-activity',['id' => $activity->id])}}>
                             <i class="pe-7s-pen"></i>
