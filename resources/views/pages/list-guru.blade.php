@@ -68,7 +68,11 @@
                       <tr>
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
-                        <td>{{ $user->level }}</td>
+                        <td>
+                          @if($user->level == 2)
+                            <span class="label label-primary">Guru</span>
+                          @endif
+                        </td>
                         <td>{{ $user->position }}</td>
                         <td>
                           <a class="btn btn-info fa fa-pencil bigger-120" href={{route('page.edit-user',['id' => $user->id])}}>
