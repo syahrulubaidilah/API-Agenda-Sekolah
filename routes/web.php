@@ -29,3 +29,6 @@ Route::get('/calendar', function () {
     return view('pages.calendar');
 })->name('page.calendar');
 
+Route::get('/login', function () {
+    return view('pages.login');
+})->name('page.login');
