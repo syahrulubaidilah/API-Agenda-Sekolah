@@ -5,26 +5,21 @@ namespace App\Domain\Entities;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-/**
- * Class Activity
- * @package App\Domain\Entities
- */
-class Activity extends Model
+class Activity extends Entities
 {
+    
     use SoftDeletes;
-
-    /**
-     * @var array
-     */
+    
     protected $fillable = [
         'name', 'description', 'date_activity', 'time', 'place', 'participant', 'user_id',
     ];
 
+    protected $primaryKey = 'id';
+    
     protected $with=['users'];
+    
     public function users()
     {
         return $this->belongsTo('App\Domain\Entities\User', 'user_id');
-        
     }
-
 }

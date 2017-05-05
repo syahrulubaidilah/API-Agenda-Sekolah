@@ -7,14 +7,14 @@ use Illuminate\Database\Migrations\Migration;
 class CreateActivitysTable extends Migration
 {
     /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+    * Run the migrations.
+    *
+    * @return void
+    */
     public function up()
     {
         Schema::create('activities', function (Blueprint $table) {
-            $table->increments('id');
+            $table->string('id');
             $table->string('name');
             $table->string('description');
             $table->string('date_activity');
@@ -24,14 +24,15 @@ class CreateActivitysTable extends Migration
             $table->integer('user_id' , false);
             $table->timestamps();
             $table->softDeletes();
+            $table->primary('id');
         });
     }
-
+    
     /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+    * Reverse the migrations.
+    *
+    * @return void
+    */
     public function down()
     {
         Schema::drop('activities');
