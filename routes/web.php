@@ -11,7 +11,8 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/','Auth\LoginController@getLogin')->name('landingpage');
+Route::get('/dashboard', function () {
     return view('pages.dashboard');
 })->name('page.dashboard');
 
@@ -29,6 +30,4 @@ Route::get('/calendar', function () {
     return view('pages.calendar');
 })->name('page.calendar');
 
-Route::get('/login', function () {
-    return view('pages.login');
-})->name('page.login');
+Route::get('/login','Auth\LoginController@getLogin')->name('page.login');

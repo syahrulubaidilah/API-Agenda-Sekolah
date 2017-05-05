@@ -2,18 +2,20 @@
 
 namespace App\Domain\Entities;
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Auth\Authenticatable;
+use Illuminate\Auth\Passwords\CanResetPassword;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
-class User extends Authenticatable
+class User extends Entities implements AuthenticatableContract, CanResetPasswordContract
 {
-    use Notifiable;
-
+    use Authenticatable, CanResetPassword;
+    
     protected $fillable = [
-        'name', 'email', 'password', 'level', 'position',
+    'name', 'email', 'password', 'level', 'position',
     ];
-
+    
     protected $hidden = [
-        'password', 'remember_token',
+    'password', 'remember_token',
     ];
 }
