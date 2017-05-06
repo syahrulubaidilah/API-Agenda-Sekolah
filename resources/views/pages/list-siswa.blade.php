@@ -41,7 +41,7 @@
                 <div class="col-xs-12">
                    <div class="col-md-8 pull-left">
                       <div class="font-icon-list">
-                        <a class="btn btn-success submit fa fa-plus bigger-120" href={{route('page.create-user')}}>
+                        <a class="btn btn-success submit fa fa-plus bigger-120" href={{route('page.create-siswa')}}>
                           <i class="pe-7s-plus"></i>
                         </a>
                         <button class="btn btn-default submit fa fa-refresh bigger-120 ">
@@ -75,7 +75,7 @@
                         </td>
                         <td>{{ $user->position }}</td>
                         <td>
-                          <a class="btn btn-info fa fa-pencil bigger-120" href={{route('page.edit-user',['id' => $user->id])}}>
+                          <a class="btn btn-info fa fa-pencil bigger-120" href={{route('page.edit-siswa',['id' => $user->id])}}>
                             <i class="pe-7s-pen"></i>
                           </a>
                           <button class="btn btn-danger fa fa-trash bigger-120" onClick="deleteData('{{$user->id}}')">
