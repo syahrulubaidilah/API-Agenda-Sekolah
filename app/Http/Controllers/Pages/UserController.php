@@ -23,7 +23,7 @@ class UserController extends Controller
     }
      public function staf(Request $request)
     {
-        $user_staf = $this->user->getList(10, $request->input('page'), $column = ['*'], '', $request->input('search'),$level=1);
+        $user_staf = $this->user->getList(10, $request->input('page'), $column = ['*'], '', $request->input('search'));
         return view('pages.list-staf', compact('user_staf')); 
     }
     public function create()

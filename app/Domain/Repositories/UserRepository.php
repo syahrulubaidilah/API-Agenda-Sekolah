@@ -102,10 +102,21 @@ class UserRepository extends AbstractRepository implements UserInterface, Crudab
         return parent::find($id, $columns);
     }
 
-    public function getList($limit = 10, $page = 1, array $column = ['*'], $field, $search = '', $level)
+    public function getList($limit = 10, $page = 1, array $column = ['*'], $field, $search = '')
     {
         // query to aql
-        return parent::paginateWhere($limit, $page, $column, 'level', $level);
+        $user = $this->model
+            ->where('level' == '1')
+            ->where(function ($query) use ($search) {
+                $query->where('name', 'like', '%' . $search . '%');
+
+            })
+            ->select('level' == '1')
+            ->paginate($limit)
+            ->toArray();
+            
+        return $user
+        // return parent::paginateWhere($limit, $page, $column, 'level', $level);
     }
 
 }

@@ -21,3 +21,16 @@ $factory->define(App\Domain\Entities\User::class, function (Faker\Generator $fak
         'position' => $faker->randomElement($array = array ('Siswa','Staf','Guru'))
      ];
 });
+
+$factory->define(App\Domain\Entities\Activity::class, function (Faker\Generator $faker) {
+
+     return [
+        'name' => $faker->name,
+        'description' => $faker->randomElement($array = array ('Penting','Santai')),
+        'date_activity' => $faker->date,
+        'time' => $faker->time,
+        'place' => $faker->randomElement($array = array ('Aula','Lapangan','Kelas')),
+        'participant' => $faker->randomElement($array = array ('Semua Siswa','Semua Warga Sekolah','Semua Guru','Siswa / Guru Pilihan')),
+        'user_id' => '1'
+     ];
+});
