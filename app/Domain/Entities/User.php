@@ -15,6 +15,8 @@ class User extends Entities implements AuthenticatableContract, CanResetPassword
     'name', 'email', 'password', 'level', 'position',
     ];
     
+    protected $primaryKey = 'id';
+    
     protected $hidden = [
     'password', 'remember_token',
     ];

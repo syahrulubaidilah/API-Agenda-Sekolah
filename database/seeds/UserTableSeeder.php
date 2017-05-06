@@ -13,7 +13,7 @@ class UserTableSeeder extends Seeder
     public function run()
     {
         // truncate record
-        DB::table('users')->truncate();
+        // DB::table('users')->truncate();
         
         // $users = [
         // ['id' => 1, 'name' => 'Hasan', 'email' => 'hasan@gmail.com', 'password' => bcrypt('qwerty'), 'level' => '1', 'position' => 'staf', 'created_at' => \Carbon\Carbon::now()],
@@ -24,7 +24,7 @@ class UserTableSeeder extends Seeder
         // ['id' => 6, 'name' => 'Siwi', 'email' => 'siwi@gmail.com', 'password' => bcrypt('qwerty'), 'level' => '1', 'position' => 'staf', 'created_at' => \Carbon\Carbon::now()],
         // ];
         
-        // // insert batch
+        // insert batch
         // DB::table('users')->insert($users);
 
         // generate dummy data with 100 records using Faker
