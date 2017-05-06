@@ -90,14 +90,6 @@
 								</div>
 
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-field-2-4">Level</label>
-
-									<div class="col-sm-9">
-										<input type="text" id="form-field-2-4" name="level" placeholder="Level" class="col-xs-10 col-sm-5" />
-									</div>
-								</div>
-
-								<div class="form-group">
 									<label class="col-sm-3 control-label no-padding-right" for="form-field-2-5">Jabatan</label>
 
 									<div class="col-sm-9">

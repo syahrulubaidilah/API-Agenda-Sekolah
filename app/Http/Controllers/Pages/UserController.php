@@ -21,17 +21,6 @@ class UserController extends Controller
     {
         $this->user = $user;
     }
-    public function siswa(Request $request)
-    {
-        $user_siswa = $this->user->getList(10, $request->input('page'), $column = ['*'], '', $request->input('search'),$level=2);
-        
-        return view('pages.list-siswa', compact('user_siswa')); 
-    }
-     public function guru(Request $request)
-    {
-        $user_guru = $this->user->getList(10, $request->input('page'), $column = ['*'], '', $request->input('search'),$level=0);
-        return view('pages.list-guru', compact('user_guru')); 
-    }
      public function staf(Request $request)
     {
         $user_staf = $this->user->getList(10, $request->input('page'), $column = ['*'], '', $request->input('search'),$level=1);

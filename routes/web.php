@@ -16,10 +16,12 @@ Route::get('/dashboard', function () {
     return view('pages.dashboard');
 })->name('page.dashboard');
 
-Route::get('/siswa','Pages\UserController@siswa')->name('page.list-siswa');
-Route::get('/guru','Pages\UserController@guru')->name('page.list-guru');
+Route::get('/siswa','Pages\SiswaController@siswa')->name('page.list-siswa');
+Route::get('/guru','Pages\GuruController@guru')->name('page.list-guru');
 Route::get('/staf','Pages\UserController@staf')->name('page.list-staf');
-Route::get('/users/create','Pages\UserController@create')->name('page.create-user');
+Route::get('/staf/create','Pages\UserController@create')->name('page.create-user');
+Route::get('/siswa/create','Pages\SiswaController@createSiswa')->name('page.create-siswa');
+Route::get('/guru/create','Pages\GuruController@createGuru')->name('page.create-guru');
 Route::get('/users/{id}/edit','Pages\UserController@edit')->name('page.edit-user');
 
 Route::get('/activity','Pages\ActivityController@index')->name('page.list-activity');

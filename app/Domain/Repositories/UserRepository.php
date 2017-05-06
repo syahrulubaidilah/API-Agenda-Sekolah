@@ -60,13 +60,12 @@ class UserRepository extends AbstractRepository implements UserInterface, Crudab
         return parent::create([
             'name'    => e($data['name']),
             'email'   => e($data['email']),
-            'password' => e($data['password']),
-            'level'   => e($data['level']),
+            'password' => bcrypt($data['password']),
+            'level'   => '1',
             'position'   => e($data['position'])
         ]);
 
     }
-
     /**
      * @param $id
      * @param array $data
