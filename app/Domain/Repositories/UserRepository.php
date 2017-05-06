@@ -114,8 +114,8 @@ class UserRepository extends AbstractRepository implements UserInterface, Crudab
             ->select('level' == '1')
             ->paginate($limit)
             ->toArray();
-            
-        return $user
+
+        return $user();
         // return parent::paginateWhere($limit, $page, $column, 'level', $level);
     }
 
