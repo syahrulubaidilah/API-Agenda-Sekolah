@@ -23,7 +23,7 @@ class GuruController extends Controller
     }
      public function guru(Request $request)
     {
-        $user_guru = $this->user->getList(10, $request->input('page'), $column = ['*'], '', $request->input('search'),$level=0);
+        $user_guru = $this->user->getList(10, $request->input('page'), $column = ['*'], '', $request->input('search'));
         return view('pages.list-guru', compact('user_guru')); 
     }
     public function createGuru()
@@ -33,6 +33,6 @@ class GuruController extends Controller
     public function edit($id)
     {
          $user = $this->user->findById($id);
-         return view('pages.update-user',compact('user')); 
+         return view('pages.update-guru',compact('user')); 
     }
 }

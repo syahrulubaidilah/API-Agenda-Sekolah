@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\Siswa\SiswaCreateRequest;
 use App\Http\Requests\Siswa\SiswaEditRequest;
 use Illuminate\Http\Request;
-use App\Domain\Contracts\UserInterface;
+use App\Domain\Contracts\SiswaInterface;
 
 class SiswaController extends Controller
 {
@@ -19,7 +19,7 @@ class SiswaController extends Controller
      * UserController constructor.
      * @param UserInterface $user
      */
-    public function __construct(UserInterface $user)
+    public function __construct(SiswaInterface $user)
     {
         $this->user = $user;
     }
@@ -109,16 +109,5 @@ class SiswaController extends Controller
     {
         return $this->user->getList(10, $request->input('page'), $column = ['*'], '', $request->input('search'),$level=2);
     }
-
-    public function getListGuru(Request $request)
-    {
-        return $this->user->getList(10, $request->input('page'), $column = ['*'], '', $request->input('search'),$level=0);
-    }
-
-    public function getListStaf(Request $request)
-    {
-        return $this->user->getList(10, $request->input('page'), $column = ['*'], '', $request->input('search'),$level=1);
-    }
-
 
 }

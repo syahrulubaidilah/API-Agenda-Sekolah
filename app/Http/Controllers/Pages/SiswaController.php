@@ -23,7 +23,7 @@ class SiswaController extends Controller
     }
     public function siswa(Request $request)
     {
-        $user_siswa = $this->user->getList(10, $request->input('page'), $column = ['*'], '', $request->input('search'),$level=2);
+        $user_siswa = $this->user->getList(10, $request->input('page'), $column = ['*'], '', $request->input('search'));
         
         return view('pages.list-siswa', compact('user_siswa')); 
     }
@@ -34,6 +34,6 @@ class SiswaController extends Controller
     public function edit($id)
     {
          $user = $this->user->findById($id);
-         return view('pages.update-user',compact('user')); 
+         return view('pages.update-siswa',compact('user')); 
     }
 }

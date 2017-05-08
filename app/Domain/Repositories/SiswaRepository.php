@@ -102,10 +102,15 @@ class SiswaRepository extends AbstractRepository implements SiswaInterface, Crud
         return parent::find($id, $columns);
     }
 
-    public function getList($limit = 10, $page = 1, array $column = ['*'], $field, $search = '', $level)
+    public function getList($limit = 10, $page = 1, array $column = ['*'], $field, $search = '')
     {
         // query to aql
-        return parent::paginateWhere($limit, $page, $column, 'level', $level);
+        $user = $this->model
+        ->where('name', 'like', '%' . $search . '%')
+        ->where('level','2')
+        ->paginate($limit);
+        
+        return $user;
     }
 
 }
