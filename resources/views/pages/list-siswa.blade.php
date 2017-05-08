@@ -62,7 +62,6 @@
                       <th>Nama</th>
                       <th>Email</th>
                       <th>Level</th>
-                      <th>Kelas</th>
                       <th></th>
                     </thead>
                     <tbody>
@@ -75,7 +74,6 @@
                             <span class="label label-primary">Siswa</span>
                           @endif
                         </td>
-                        <td>{{ $user->position }}</td>
                         <td>
                           <a class="btn btn-info fa fa-pencil bigger-120" href={{route('page.edit-siswa',['id' => $user->id])}}>
                             <i class="pe-7s-pen"></i>
