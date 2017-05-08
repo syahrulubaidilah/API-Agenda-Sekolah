@@ -44,7 +44,7 @@ class UserCreateRequest extends Request
     {
         return [
             'name'    => 'required|max:225',
-            'email'   => 'required|email|unique:users,email|max:225',
+            'email'   => 'required|email|max:225',
             'password' => 'required|max:60',
             // 'level'   => 'required|max:30',
             'position'   => 'required|max:30'
