@@ -17,7 +17,7 @@ $factory->define(App\Domain\Entities\User::class, function (Faker\Generator $fak
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
         'password' => $faker->randomElement($array = array ('qwerty','123456')),
-        'level' => $faker->numberBetween(0,1,2),
+        'level' => $faker->randomElement($array = array ('0','1','2')),
         'position' => $faker->randomElement($array = array ('Siswa','Staf','Guru'))
      ];
 });
@@ -31,6 +31,6 @@ $factory->define(App\Domain\Entities\Activity::class, function (Faker\Generator 
         'time' => $faker->time,
         'place' => $faker->randomElement($array = array ('Aula','Lapangan','Kelas')),
         'participant' => $faker->randomElement($array = array ('Semua Siswa','Semua Warga Sekolah','Semua Guru','Siswa / Guru Pilihan')),
-        'user_id' => '1'
+        'user_id' => $faker->randomElement($array = array ('1','2','3','4','5','6'))
      ];
 });
