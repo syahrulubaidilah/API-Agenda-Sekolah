@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Form Create Activity')
+@section('title', 'Form Update User')
 @section('style')
 			<!-- page specific plugin styles -->
  		<link rel="stylesheet" href={{asset('assets/css/jquery-ui.custom.min.css')}} />
@@ -13,7 +13,7 @@
 							<i class="ace-icon fa fa-home home-icon"></i>
 							<a href="#">Home</a>
 						</li>
-						<li class="active">Form Create Activity</li>
+						<li class="active">Form Update Siswa</li>
 					</ul>
 					<!-- /.breadcrumb -->
 
@@ -31,7 +31,7 @@
 				<div class="page-content">
 					<div class="page-header">
 						<h1>
-							Form Input Data Activity
+							Form Edit Data Siswa
 							<small>
 									<i class="ace-icon fa fa-angle-double-right"></i>
 								</small>
@@ -51,92 +51,50 @@
 					<div class="row">
 						<div class="col-xs-12">
 							<!-- PAGE CONTENT BEGINS -->
-							<form class="form-horizontal" id="formActivity" role="form">
+							<form class="form-horizontal" id="formUser" role="form">
+								<input type="hidden" class="form-control" value="{{$user->id}}">
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Activity Name</label>
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-2">Name</label>
 
 									<div class="col-sm-9">
-										<input type="text" id="form-field-1" name="name" placeholder="Activity Name" class="col-xs-10 col-sm-5" />
+										<input type="text" id="form-field-2" name="name" placeholder="Name" value="{{$user->name}}" class="col-xs-10 col-sm-5" />
 									</div>
 								</div>
 
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">Description</label>
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-2-2">Email</label>
 
 									<div class="col-sm-9">
-										<input type="text" id="form-field-1-1"  name="description" placeholder="Description" class="form-control" />
+										<input type="text" id="form-field-2-2" name="email" placeholder="Email" value="{{$user->email}}" class="col-xs-10 col-sm-5" />
 									</div>
 								</div>
 
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-field-1-2">Date Activity</label>
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-2-4">Level</label>
 
 									<div class="col-sm-9">
-										<div class="input-group">
-											<span class="input-group-addon">
-												<i class="fa fa-calendar bigger-110"></i>
-											</span>
-
-											<input class="col-xs-10 col-sm-5" type="text" name="date_activity" id="date-range-picker" />
-										</div>
+										<input type="text" id="form-field-2-4" name="level" placeholder="Level" value="{{$user->level}}" class="col-xs-10 col-sm-5" />
 									</div>
 								</div>
 
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-field-1-3">Time</label>
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-2-5">Jabatan</label>
 
 									<div class="col-sm-9">
-										<div class="input-group bootstrap-timepicker">
-											<span class="input-group-addon">
-												<i class="fa fa-clock-o bigger-110"></i>
-											</span>
-											<input id="timepicker1" type="text" name="time" class="col-xs-10 col-sm-5" />
-										</div>
+										<input type="text" id="form-field-2-5" name="position" placeholder="Jabatan" value="{{$user->position}}" class="col-xs-10 col-sm-5" />
 									</div>
 								</div>
-
-								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-field-1-4">Place</label>
-
-									<div class="col-sm-9">
-										<input type="text" id="form-field-1-4"  name="place" placeholder="Place" class="col-xs-10 col-sm-5" />
-									</div>
-								</div>
-
-								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-field-1-5">Participant</label>
-
-									<div class="col-sm-9">
-										<input type="text" id="form-field-1-5"  name="participant" placeholder="Participant" class="col-xs-10 col-sm-5" />
-									</div>
-								</div>
-
-								<!--<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-field-1-5">User</label>
-
-									<div class="col-sm-9">
-										<input type="text" id="form-field-1-6" placeholder="Participant" class="col-xs-10 col-sm-5" />
-									</div>
-								</div>-->
 
 								<div class="clearfix form-actions">
 									<div class="col-md-offset-3 col-md-9">
-										<button class="btn btn-info" id="btnSimpan" type="button">
+										<button class="btn btn-info" type="button" id="btnUpdate">
 												<i class="ace-icon fa fa-check bigger-110"></i>
-												Submit
-										</button> &nbsp; &nbsp; &nbsp;
-										<button class="btn btn-info" id="btnSimpanKembali" type="button">
-												<i class="ace-icon fa fa-check bigger-110"></i>
-												Submit and Back
-										</button> &nbsp; &nbsp; &nbsp;
+												Update
+											</button> &nbsp; &nbsp; &nbsp;
 										<button class="btn" type="reset">
 												<i class="ace-icon fa fa-undo bigger-110"></i>
 												Reset
-										</button> &nbsp; &nbsp; &nbsp;
-										<button class="btn" type="button" href={{route('page.list-activity')}}>
-												<i class="ace-icon fa fa-undo bigger-110"></i>
-												Back
-										</button>
+											</button>
 									</div>
 								</div>
 
@@ -154,8 +112,11 @@
 			</div>
 @endsection
 @section('scripts')
+<!-- page specific plugin scripts -->
 
-		<!-- page specific plugin scripts -->
+	<!--[if lte IE 8]>
+		  <script src={{asset('assets/js/excanvas.min.js')}}></script>
+		<![endif]-->
 	<script src={{asset('assets/js/jquery-ui.custom.min.js')}}></script>
 	<script src={{asset('assets/js/jquery.ui.touch-punch.min.js')}}></script>
 	<script src={{asset('assets/js/chosen.jquery.min.js')}}></script>
@@ -173,36 +134,37 @@
 	<script src={{asset('assets/js/bootstrap-tag.min.js')}}></script>
 	<script src={{asset('assets/js/jquery.gritter.min.js')}}></script>
 
-	<script>
-	$(document).ready(function(){
-    	$('#nav-guru').removeClass('active');
-    	$('#nav-siswa').removeClass('active');
-    	$('#nav-staf').removeClass('active');
-    	$('#nav-calendar').removeClass('active');
-    	$('#nav-dashboard').removeClass('active');
-		$('#nav-agenda').addClass('active');
-    });
-	</script>
 
 	<script>
- 	    $(document).ready(function(){
-		
+	$(document).ready(function(){
+    	$('#nav-calendar').removeClass('active');
+    	$('#nav-dashboard').removeClass('active');
+		$('#nav-agenda').removeClass('active');
+    	$('#nav-staf').removeClass('active');
+    	$('#nav-guru').removeClass('active');
+    	$('#nav-siswa').addClass('active');
+    });
+	</script>	
+
+ 	<script>
+ 	 $(document).ready(function(){
+	
  	    });
-		
+	 
  	    // ini adalah proses submit data menggunakan Ajax
- 	    $("#btnSimpan").click(function(event) {
+ 	    $("#btnUpdate").click(function(event) {
  	      // kasih ini dong biar gag hard reload
  	      event.preventDefault();
  	      $.ajax({
- 	        url: '{{route("activity.store")}}', // url post data
+ 	        url: '{{route("user.update",['id' => $user->id])}}', // url edit data
  	        dataType: 'JSON',
- 	        type: 'POST',
+ 	        type: 'PUT',
  	        contentType: 'application/x-www-form-urlencoded',
- 	        data: $("#formActivity").serialize(), // data tadi diserialize berdasarkan name
+ 	        data: $("#formUser").serialize(), // data tadi diserialize berdasarkan name
  	        success: function( data, textStatus, jQxhr ){
  	            console.log('status =>', textStatus);
  	            console.log('data =>', data);
-				// clear validation error messsages
+ 	            // clear validation error messsages
  	            $('#errMsg').addClass('hide');
  	            $('#errData').html('');
  	            // scroll up
@@ -211,85 +173,38 @@
  	            // }, 2000);
  	            // tampilkan pesan sukses
  	            showNotifSuccess();
- 	            // clear data inputan
- 	            $('#formActivity').find("input[type=text], textarea").val("");
- 	            // kembali kelist User
-				
+ 	            // kembali kelist book
+				window.location.href = '{{route("page.list-siswa")}}'
+ 	            
  	        },
  	        error: function( data, textStatus, errorThrown ){
  	          var messages = jQuery.parseJSON(data.responseText);
- 		      console.log( errorThrown );
- 		      // $('html, body').animate({
- 		      //     scrollTop: $("#nav-top").offset().top
- 		      // }, 2000);
- 		      // scroll up 
- 		      // tampilkan pesan error
- 		      $('#errData').html('');
- 		      $('#errMsg').addClass('alert-warning');
- 		      $('#errMsg').removeClass('hide');
- 		      $.each(messages, function(i, val) {
- 		        $('#errData').append('<p>'+ i +' : ' + val +'</p>')
- 		        console.log(i,val);
- 		      });          
- 		      // jangan clear data
- 	        }
- 	      });
- 	    });
-		
-		$("#btnSimpanKembali").click(function(event) {
- 	      // kasih ini dong biar gag hard reload
- 	      event.preventDefault();
- 	      $.ajax({
- 	        url: '{{route("activity.store")}}', // url post data
- 	        dataType: 'JSON',
- 	        type: 'POST',
- 	        contentType: 'application/x-www-form-urlencoded',
- 	        data: $("#formActivity").serialize(), // data tadi diserialize berdasarkan name
- 	        success: function( data, textStatus, jQxhr ){
- 	            console.log('status =>', textStatus);
- 	            console.log('data =>', data);
-				// clear validation error messsages
- 	            $('#errMsg').addClass('hide');
- 	            $('#errData').html('');
- 	            // scroll up
+ 	            console.log( errorThrown );
  	            // $('html, body').animate({
  	            //     scrollTop: $("#nav-top").offset().top
  	            // }, 2000);
- 	            // tampilkan pesan sukses
- 	            showNotifSuccess();
- 	            // clear data inputan
- 	            $('#formActivity').find("input[type=text], textarea").val("");
- 	            // kembali kelist User
-				window.location.href = '{{route("page.list-activity")}}'
- 	        },
- 	        error: function( data, textStatus, errorThrown ){
- 	          var messages = jQuery.parseJSON(data.responseText);
- 		      console.log( errorThrown );
- 		      // $('html, body').animate({
- 		      //     scrollTop: $("#nav-top").offset().top
- 		      // }, 2000);
- 		      // scroll up 
- 		      // tampilkan pesan error
- 		      $('#errData').html('');
- 		      $('#errMsg').addClass('alert-warning');
- 		      $('#errMsg').removeClass('hide');
- 		      $.each(messages, function(i, val) {
- 		        $('#errData').append('<p>'+ i +' : ' + val +'</p>')
- 		        console.log(i,val);
- 		      });          
- 		      // jangan clear data
+ 	            // scroll up 
+ 	            // tampilkan pesan error
+ 	             $('#errData').html('');
+ 	          $('#errMsg').addClass('alert-warning');
+ 	          $('#errMsg').removeClass('hide');
+ 	          $.each(messages, function(i, val) {
+ 	            $('#errData').append('<p>'+ i +' : ' + val +'</p>')
+ 	            console.log(i,val);
+ 	          });          
+ 	          // jangan clear data
  	        }
  	      });
  	    });
-		
+	 
  	    function showNotifSuccess(){
  	    	$.gritter.add({
 				title: 'Succes',
-				text: 'Data Activity berhasil di tambahkan',
+				text: 'Data User berhasil di tambahkan',
 				class_name: 'gritter-info'
 			});
-			
  		  }
+ 		  
  	</script>
 
 	<!-- inline scripts related to this page -->
@@ -592,7 +507,7 @@
 
 
 			//to translate the daterange picker, please copy the "examples/daterange-fr.js')}} contents here before initialization
-			$('input[id="date-range-picker"]').daterangepicker({
+			$('input[name=date-range-picker]').daterangepicker({
 				'applyClass': 'btn-sm btn-success',
 				'cancelClass': 'btn-sm btn-default',
 				locale: {

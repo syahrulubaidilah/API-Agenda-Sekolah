@@ -13,7 +13,7 @@
 							<i class="ace-icon fa fa-home home-icon"></i>
 							<a href="#">Home</a>
 						</li>
-						<li class="active">Form Update User</li>
+						<li class="active">Form Update Staf</li>
 					</ul>
 					<!-- /.breadcrumb -->
 
@@ -31,7 +31,7 @@
 				<div class="page-content">
 					<div class="page-header">
 						<h1>
-							Form Edit User
+							Form Edit Data Staf
 							<small>
 									<i class="ace-icon fa fa-angle-double-right"></i>
 								</small>
@@ -140,9 +140,9 @@
     	$('#nav-calendar').removeClass('active');
     	$('#nav-dashboard').removeClass('active');
 		$('#nav-agenda').removeClass('active');
+    	$('#nav-siswa').removeClass('active');
+    	$('#nav-guru').removeClass('active');
     	$('#nav-staf').addClass('active');
-    	$('#nav-siswa').addClass('active');
-    	$('#nav-guru').addClass('active');
     });
 	</script>	
 
@@ -174,6 +174,7 @@
  	            // tampilkan pesan sukses
  	            showNotifSuccess();
  	            // kembali kelist book
+				window.location.href = '{{route("page.list-staf")}}'
  	            
  	        },
  	        error: function( data, textStatus, errorThrown ){

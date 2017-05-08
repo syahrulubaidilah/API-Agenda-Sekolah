@@ -22,7 +22,9 @@ Route::get('/staf','Pages\UserController@staf')->name('page.list-staf');
 Route::get('/staf/create','Pages\UserController@create')->name('page.create-user');
 Route::get('/siswa/create','Pages\SiswaController@createSiswa')->name('page.create-siswa');
 Route::get('/guru/create','Pages\GuruController@createGuru')->name('page.create-guru');
-Route::get('/users/{id}/edit','Pages\UserController@edit')->name('page.edit-user');
+Route::get('/staf/{id}/edit','Pages\UserController@edit')->name('page.edit-user');
+Route::get('/guru/{id}/edit','Pages\GuruController@edit')->name('page.edit-guru');
+Route::get('/siswa/{id}/edit','Pages\SiswaController@edit')->name('page.edit-siswa');
 
 Route::get('/activity','Pages\ActivityController@index')->name('page.list-activity');
 Route::get('/activity/create','Pages\ActivityController@create')->name('page.create-activity');

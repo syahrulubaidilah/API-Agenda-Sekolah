@@ -13,7 +13,7 @@
 							<i class="ace-icon fa fa-home home-icon"></i>
 							<a href="#">Home</a>
 						</li>
-						<li class="active">Form Create User</li>
+						<li class="active">Form Create Guru</li>
 					</ul>
 					<!-- /.breadcrumb -->
 
@@ -31,7 +31,7 @@
 				<div class="page-content">
 					<div class="page-header">
 						<h1>
-							Form Input User
+							Form Input Data Guru
 							<small>
 									<i class="ace-icon fa fa-angle-double-right"></i>
 								</small>
@@ -64,7 +64,7 @@
 					<div class="row">
 						<div class="col-xs-12">
 							<!-- PAGE CONTENT BEGINS -->
-							<form class="form-horizontal" id="formUser" role="form">
+							<form class="form-horizontal" id="formSiswa" role="form">
 								<div class="form-group">
 									<label class="col-sm-3 control-label no-padding-right" for="form-field-2">Name</label>
 
@@ -103,9 +103,17 @@
 												<i class="ace-icon fa fa-check bigger-110"></i>
 												Submit
 										</button> &nbsp; &nbsp; &nbsp;
+										<button class="btn btn-info" id="btnSimpanKembali" type="button">
+												<i class="ace-icon fa fa-check bigger-110"></i>
+												Submit and Back
+										</button> &nbsp; &nbsp; &nbsp;
 										<button class="btn" type="reset">
 												<i class="ace-icon fa fa-undo bigger-110"></i>
 												Reset
+										</button> &nbsp; &nbsp; &nbsp;
+										<button class="btn" type="button" href={{route('page.list-guru')}}>
+												<i class="ace-icon fa fa-undo bigger-110"></i>
+												Back
 										</button>
 									</div>
 								</div>
@@ -156,11 +164,11 @@
  	      // kasih ini dong biar gag hard reload
  	      event.preventDefault();
  	      $.ajax({
- 	        url: '{{route("user.store")}}', // url post data
+ 	        url: '{{route("guru.store")}}', // url post data
  	        dataType: 'JSON',
  	        type: 'POST',
  	        contentType: 'application/x-www-form-urlencoded',
- 	        data: $("#formUser").serialize(), // data tadi diserialize berdasarkan name
+ 	        data: $("#formSiswa").serialize(), // data tadi diserialize berdasarkan name
  	        success: function( data, textStatus, jQxhr ){
  	            console.log('status =>', textStatus);
  	            console.log('data =>', data);
@@ -174,7 +182,53 @@
  	            // tampilkan pesan sukses
  	            showNotifSuccess();
  	            // clear data inputan
- 	            $('#formUser').find("input[type=text], textarea").val("");
+ 	            $('#formSiswa').find("input[type=text], textarea").val("");
+ 	            // kembali kelist User
+				 window.location.href = '{{route("page.list-guru")}}'
+ 	        },
+ 	        error: function( data, textStatus, errorThrown ){
+ 	          var messages = jQuery.parseJSON(data.responseText);
+ 		      console.log( errorThrown );
+ 		      // $('html, body').animate({
+ 		      //     scrollTop: $("#nav-top").offset().top
+ 		      // }, 2000);
+ 		      // scroll up 
+ 		      // tampilkan pesan error
+ 		      $('#errData').html('');
+ 		      $('#errMsg').addClass('alert-warning');
+ 		      $('#errMsg').removeClass('hide');
+ 		      $.each(messages, function(i, val) {
+ 		        $('#errData').append('<p>'+ i +' : ' + val +'</p>')
+ 		        console.log(i,val);
+ 		      });          
+ 		      // jangan clear data
+ 	        }
+ 	      });
+ 	    });
+
+		$("#btnSimpanKembali").click(function(event) {
+ 	      // kasih ini dong biar gag hard reload
+ 	      event.preventDefault();
+ 	      $.ajax({
+ 	        url: '{{route("guru.store")}}', // url post data
+ 	        dataType: 'JSON',
+ 	        type: 'POST',
+ 	        contentType: 'application/x-www-form-urlencoded',
+ 	        data: $("#formSiswa").serialize(), // data tadi diserialize berdasarkan name
+ 	        success: function( data, textStatus, jQxhr ){
+ 	            console.log('status =>', textStatus);
+ 	            console.log('data =>', data);
+				// clear validation error messsages
+ 	            $('#errMsg').addClass('hide');
+ 	            $('#errData').html('');
+ 	            // scroll up
+ 	            // $('html, body').animate({
+ 	            //     scrollTop: $("#nav-top").offset().top
+ 	            // }, 2000);
+ 	            // tampilkan pesan sukses
+ 	            showNotifSuccess();
+ 	            // clear data inputan
+ 	            $('#formSiswa').find("input[type=text], textarea").val("");
  	            // kembali kelist User
  	        },
  	        error: function( data, textStatus, errorThrown ){
@@ -212,8 +266,8 @@
     	$('#nav-calendar').removeClass('active');
     	$('#nav-dashboard').removeClass('active');
 		$('#nav-agenda').removeClass('active');
-    	$('#nav-staf').addClass('active');
-    	$('#nav-siswa').addClass('active');
+    	$('#nav-staf').removeClass('active');
+    	$('#nav-siswa').removeClass('active');
     	$('#nav-guru').addClass('active');
     	});
 	</script>
