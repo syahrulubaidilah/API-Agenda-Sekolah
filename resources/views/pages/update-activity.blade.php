@@ -204,7 +204,7 @@
  	            // tampilkan pesan sukses
  	            showNotifSuccess();
  	            // kembali kelist book
-				window.location.href = '{{route("page.list-activity")}}'
+				window.location.replace('{{route("page.list-activity")}}')
  	            
  	        },
  	        error: function( data, textStatus, errorThrown ){

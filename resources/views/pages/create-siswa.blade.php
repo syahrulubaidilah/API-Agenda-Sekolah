@@ -176,7 +176,6 @@
  	            // clear data inputan
  	            $('#formUser').find("input[type=text], textarea").val("");
  	            // kembali kelist User
-				 window.location.href = '{{route("page.list-siswa")}}'
  	        },
  	        error: function( data, textStatus, errorThrown ){
  	          var messages = jQuery.parseJSON(data.responseText);
@@ -222,6 +221,8 @@
  	            // clear data inputan
  	            $('#formUser').find("input[type=text], textarea").val("");
  	            // kembali kelist User
+				window.location.replace('{{route("page.list-siswa")}}');
+
  	        },
  	        error: function( data, textStatus, errorThrown ){
  	          var messages = jQuery.parseJSON(data.responseText);

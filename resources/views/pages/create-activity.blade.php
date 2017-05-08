@@ -260,7 +260,7 @@
  	            // clear data inputan
  	            $('#formActivity').find("input[type=text], textarea").val("");
  	            // kembali kelist User
-				window.location.href = '{{route("page.list-activity")}}'
+				window.location.replace('{{route("page.list-activity")}}');
  	        },
  	        error: function( data, textStatus, errorThrown ){
  	          var messages = jQuery.parseJSON(data.responseText);

@@ -174,7 +174,7 @@
  	            // tampilkan pesan sukses
  	            showNotifSuccess();
  	            // kembali kelist book
-				window.location.href = '{{route("page.list-staf")}}'
+				window.location.replace('{{route("page.list-staf")}}')
  	            
  	        },
  	        error: function( data, textStatus, errorThrown ){

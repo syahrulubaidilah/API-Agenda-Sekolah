@@ -174,7 +174,7 @@
  	            // tampilkan pesan sukses
  	            showNotifSuccess();
  	            // kembali kelist book
-				window.location.href = '{{route("page.list-siswa")}}'
+				window.location.replace('{{route("page.list-siswa")}}')
  	            
  	        },
  	        error: function( data, textStatus, errorThrown ){
