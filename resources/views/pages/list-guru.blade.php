@@ -50,9 +50,11 @@
                       </div>
                     </div>
                     <div class="col-md-4 pull-right">
-                      <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search" value="">
-                      </div>
+                      <form method="GET" action="{{route('page.list-guru')}}"> 
+                       <div class="form-group">
+                         <input type="text" class="form-control" name="search" placeholder="Pencarian..." value="">
+                       </div>
+                     </form>
                     </div>
                   </div>
                   <table id="saimple-table" class="table  table-bordered table-hover">
@@ -69,13 +71,13 @@
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
                         <td>
-                          @if($user->level == 2)
+                          @if($user->level == 0)
                             <span class="label label-primary">Guru</span>
                           @endif
                         </td>
                         <td>{{ $user->position }}</td>
                         <td>
-                          <a class="btn btn-info fa fa-pencil bigger-120" href={{route('page.edit-guru',['id' => $user->id])}}>
+                          <a class="btn btn-info fa fa-pencil bigger-120"  href={{route('page.edit-guru',['id' => $user->id])}}>
                             <i class="pe-7s-pen"></i>
                           </a>
                           <button class="btn btn-danger fa fa-trash bigger-120" onClick="deleteData('{{$user->id}}')">
@@ -95,6 +97,10 @@
             <!-- /.col -->
           </div>
           <!-- /.row -->
+          <div class="col-md-12 text-center">
+              <!--pagination-->
+              {{$user_guru->links()}}
+          </div>
         </div>
         <!-- /.row -->
       </div>

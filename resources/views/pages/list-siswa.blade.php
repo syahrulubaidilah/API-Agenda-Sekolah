@@ -50,9 +50,11 @@
                       </div>
                     </div>
                     <div class="col-md-4 pull-right">
-                      <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search" value="">
-                      </div>
+                      <form method="GET" action="{{route('page.list-siswa')}}"> 
+                       <div class="form-group">
+                         <input type="text" class="form-control" name="search" placeholder="Pencarian..." value="">
+                       </div>
+                     </form>
                     </div>
                   </div>
                   <table id="saimple-table" class="table  table-bordered table-hover">
@@ -95,6 +97,10 @@
             <!-- /.col -->
           </div>
           <!-- /.row -->
+          <div class="col-md-12 text-center">
+              <!--pagination-->
+              {{$user_siswa->links()}}
+          </div>
         </div>
         <!-- /.page-content -->
       </div>
