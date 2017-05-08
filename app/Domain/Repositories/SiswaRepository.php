@@ -106,6 +106,7 @@ class SiswaRepository extends AbstractRepository implements SiswaInterface, Crud
     {
         // query to aql
         $user = $this->model
+        ->orderBy('created_at', 'desc')
         ->where('name', 'like', '%' . $search . '%')
         ->where('level','2')
         ->paginate($limit);

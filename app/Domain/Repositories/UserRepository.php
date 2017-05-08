@@ -106,6 +106,7 @@ class UserRepository extends AbstractRepository implements UserInterface, Crudab
     {
         // query to aql
         $user = $this->model
+        ->orderBy('created_at', 'desc')
         ->where('name', 'like', '%' . $search . '%')
         ->where('level','1')
         ->paginate($limit);

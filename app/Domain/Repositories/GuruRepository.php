@@ -106,6 +106,7 @@ class GuruRepository extends AbstractRepository implements GuruInterface, Crudab
     {
         // query to aql
         $user = $this->model
+        ->orderBy('created_at', 'desc')
         ->where('name', 'like', '%' . $search . '%')
         ->where('level','0')
         ->paginate($limit);
