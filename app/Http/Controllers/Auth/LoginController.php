@@ -65,6 +65,9 @@ class LoginController extends Controller
             if (Auth::user()->level == 1) {
                 // redirect ke backoffice
                 return redirect()->route('page.dashboard');
+            } elseif (Auth::user()->level == 0) {
+                // redirect ke backoffice
+                return redirect()->route('page.dashboard');
             } else {
                 return redirect()->route('landingpage');
             }
