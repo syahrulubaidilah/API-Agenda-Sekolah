@@ -77,7 +77,7 @@
                         <td>{{ $activity->time }}</td>
                         <td>{{ $activity->place }}</td>
                         <td>{{ $activity->participant }}</td>
-                        <td>{{ $activity->users->name }} </td>
+                        <td>{{ $activity->users->name === null ? "null" : $activity->users->name }}</td>
                         <td>
                           <a class="btn btn-info fa fa-pencil bigger-120" href={{route('page.edit-activity',['id' => $activity->id])}}>
                             <i class="pe-7s-pen"></i>
