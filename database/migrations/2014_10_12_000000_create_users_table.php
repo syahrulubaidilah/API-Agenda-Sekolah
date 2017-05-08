@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->tinyinteger('level',false);
             $table->string('position');
             $table->rememberToken();
+            $table->softDeletes();
             $table->timestamps();
             $table->primary('id');
         });
