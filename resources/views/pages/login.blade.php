@@ -18,6 +18,7 @@
   <!-- ace styles -->
   <link rel="stylesheet" href={{asset( 'assets/css/ace.min.css')}} />
   <link rel="stylesheet" href={{asset( 'assets/css/ace-rtl.min.css')}} />
+  <link rel="stylesheet" href={{asset('assets/css/jquery.gritter.min.css')}} />
 
 </head>
 
@@ -29,12 +30,13 @@
           <div class="login-container">
             <div class="center">
               <h1>
-<i class="ace-icon fa fa-home green"></i>
-<span class="red">Agenda</span>
-<span class="white" id="id-text2">Sekolahku</span>
-</h1>
+                <i class="ace-icon fa fa-home green"></i>
+                <span class="red">Agenda</span>
+                <span class="white" id="id-text2">Sekolahku</span>
+                </h1>
               <h4 class="blue" id="id-company-text">&copy; SMK NEGERI 1 KEPANJEN</h4>
             </div>
+           
 
             <div class="space-6"></div>
 
@@ -59,16 +61,16 @@
                       <fieldset>
                         <label class="block clearfix">
                           <span class="block input-icon input-icon-right">
-<input type="text" name="email" class="form-control" placeholder="Email"/>
-<i class="ace-icon fa fa-user"></i>
-</span>
+                            <input type="text" name="email" class="form-control" placeholder="Email"/>
+                            <i class="ace-icon fa fa-user"></i>
+                            </span>
                         </label>
 
                         <label class="block clearfix">
                           <span class="block input-icon input-icon-right">
-<input type="password" name="password" class="form-control" placeholder="Password" />
-<i class="ace-icon fa fa-lock"></i>
-</span>
+                            <input type="password" name="password" class="form-control" placeholder="Password" />
+                            <i class="ace-icon fa fa-lock"></i>
+                            </span>
                         </label>
 
                         <div class="space"></div>
@@ -101,9 +103,9 @@
 
                     <div>
                       <a href="#" data-target="#signup-box" class="user-signup-link">
-Register
-<i class="ace-icon fa fa-arrow-right"></i>
-</a>
+                        Register
+                        <i class="ace-icon fa fa-arrow-right"></i>
+                        </a>
                     </div>
                   </div>
                 </div>
@@ -115,9 +117,9 @@ Register
                 <div class="widget-body">
                   <div class="widget-main">
                     <h4 class="header red lighter bigger">
-<i class="ace-icon fa fa-key"></i>
-Retrieve Password
-</h4>
+                      <i class="ace-icon fa fa-key"></i>
+                      Retrieve Password
+                      </h4>
 
                     <div class="space-6"></div>
                     <p>
@@ -128,9 +130,9 @@ Retrieve Password
                       <fieldset>
                         <label class="block clearfix">
                           <span class="block input-icon input-icon-right">
-<input type="email" class="form-control" placeholder="Email" />
-<i class="ace-icon fa fa-envelope"></i>
-</span>
+                            <input type="email" class="form-control" placeholder="Email" />
+                            <i class="ace-icon fa fa-envelope"></i>
+                            </span>
                         </label>
 
                         <div class="clearfix">
@@ -146,9 +148,9 @@ Retrieve Password
 
                   <div class="toolbar center">
                     <a href="#" data-target="#login-box" class="back-to-login-link">
-Back to login
-<i class="ace-icon fa fa-arrow-right"></i>
-</a>
+                      Back to login
+                      <i class="ace-icon fa fa-arrow-right"></i>
+                      </a>
                   </div>
                 </div>
                 <!-- /.widget-body -->
@@ -159,64 +161,58 @@ Back to login
                 <div class="widget-body">
                   <div class="widget-main">
                     <h4 class="header green lighter bigger">
-<i class="ace-icon fa fa-users blue"></i>
-User Registration
-</h4>
+                      <i class="ace-icon fa fa-users blue"></i>
+                      User Registration
+                      </h4>
+                     <div class="row">
+			                <div class="col-md-8">
+			                 <div class="alert alert-dismissible hide" id="errMsg" role="alert">
+			                  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			                   <span id="errData"></span>
+			                 </div>
+			                </div>
+			               </div>
 
                     <div class="space-6"></div>
                     <p> Silahkan Masukkan Data Diri Anda </p>
 
-                    <form>
+                    <form id="formRegister">
                       <fieldset>
 
                         <label class="block clearfix">
                           <span class="block input-icon input-icon-right">
-<input type="text" class="form-control" placeholder="Username" />
-<i class="ace-icon fa fa-user"></i>
-</span>
+                            <input type="text" name="name" class="form-control" placeholder="Username" />
+                            <i class="ace-icon fa fa-user"></i>
+                            </span>
                         </label>
 
                         <label class="block clearfix">
                           <span class="block input-icon input-icon-right">
-<input type="email" class="form-control" placeholder="Email" />
-<i class="ace-icon fa fa-envelope"></i>
-</span>
+                            <input type="email" name="email" class="form-control" placeholder="Email" />
+                            <i class="ace-icon fa fa-envelope"></i>
+                            </span>
                         </label>
 
                         <label class="block clearfix">
                           <span class="block input-icon input-icon-right">
-<input type="password" class="form-control" placeholder="Password" />
-<i class="ace-icon fa fa-lock"></i>
-</span>
+                            <input type="password" name="password" class="form-control" placeholder="Password" />
+                            <i class="ace-icon fa fa-lock"></i>
+                            </span>
                         </label>
 
                         <label class="block clearfix">
                           <span class="block input-icon input-icon-right">
-<input type="password" class="form-control" placeholder="Repeat password" />
-<i class="ace-icon fa fa-retweet"></i>
-</span>
-                        </label>
-
-                        <label class="block clearfix">
-                          <span class="block input-icon input-icon-right">
-<input type="text" class="form-control" placeholder="Level" />
-<i class="ace-icon fa fa-user"></i>
-</span>
-                        </label>
-
-                        <label class="block clearfix">
-                          <span class="block input-icon input-icon-right">
-<input type="text" class="form-control" placeholder="Position" />
-<i class="ace-icon fa fa-user"></i>
-</span>
+                            <input type="password" class="form-control" placeholder="Repeat password" />
+                            <i class="ace-icon fa fa-retweet"></i>
+                            </span>
                         </label>
 
                         <label class="block">
                           <input type="checkbox" class="ace" />
                           <span class="lbl">
-I accept the
-<a href="#">User Agreement</a>
-</span>
+                            I accept the
+                            <a href="#">User Agreement</a>
+                            </span>
                         </label>
 
                         <div class="space-24"></div>
@@ -227,7 +223,7 @@ I accept the
                             <span class="bigger-110">Reset</span>
                           </button>
 
-                          <button type="button" class="width-65 pull-right btn btn-sm btn-success">
+                          <button type="button" id="btnRegister" class="width-65 pull-right btn btn-sm btn-success">
                             <span class="bigger-110">Register</span>
 
                             <i class="ace-icon fa fa-arrow-right icon-on-right"></i>
@@ -271,6 +267,7 @@ I accept the
 
   <!--[if !IE]> -->
   <script src={{asset( 'assets/js/jquery-2.1.4.min.js')}}></script>
+  <script src={{asset('assets/js/jquery.gritter.min.js')}}></script>
 
   <!-- <![endif]-->
 
@@ -282,6 +279,68 @@ I accept the
   </script>
 
   <!-- inline scripts related to this page -->
+  <script>
+ 	    $(document).ready(function(){
+		
+ 	    });
+		
+ 	    // ini adalah proses submit data menggunakan Ajax
+ 	    $("#btnRegister").click(function(event) {
+ 	      // kasih ini dong biar gag hard reload
+ 	      event.preventDefault();
+ 	      $.ajax({
+ 	        url: '{{route("register.store")}}', // url post data
+ 	        dataType: 'JSON',
+ 	        type: 'POST',
+ 	        contentType: 'application/x-www-form-urlencoded',
+ 	        data: $("#formRegister").serialize(), // data tadi diserialize berdasarkan name
+ 	        success: function( data, textStatus, jQxhr ){
+ 	            console.log('status =>', textStatus);
+ 	            console.log('data =>', data);
+				// clear validation error messsages
+ 	            $('#errMsg').addClass('hide');
+ 	            $('#errData').html('login');
+ 	            // scroll up
+ 	            // $('html, body').animate({
+ 	            //     scrollTop: $("#nav-top").offset().top
+ 	            // }, 2000);
+ 	            // tampilkan pesan sukses
+ 	            showNotifSuccess();
+ 	            // clear data inputan
+ 	            $('#formRegister').find("input[type=text], textarea").val("");
+ 	            // kembali kelist User
+              window.location.replace('{{route("page.login")}}');
+ 	        },
+ 	        error: function( data, textStatus, errorThrown ){
+ 	          var messages = jQuery.parseJSON(data.responseText);
+ 		      console.log( errorThrown );
+ 		      // $('html, body').animate({
+ 		      //     scrollTop: $("#nav-top").offset().top
+ 		      // }, 2000);
+ 		      // scroll up 
+ 		      // tampilkan pesan error
+ 		      $('#errData').html('');
+ 		      $('#errMsg').addClass('alert-warning');
+ 		      $('#errMsg').removeClass('hide');
+ 		      $.each(messages, function(i, val) {
+ 		        $('#errData').append('<p>'+ i +' : ' + val +'</p>')
+ 		        console.log(i,val);
+ 		      });          
+ 		      // jangan clear data
+ 	        }
+ 	      });
+ 	    });
+		
+ 	    function showNotifSuccess(){
+ 	    	$.gritter.add({
+				title: 'Succes',
+				text: 'Data User berhasil di tambahkan',
+				class_name: 'gritter-info'
+			});
+			
+ 		  }
+ 	</script>
+
   <script type="text/javascript">
     jQuery(function($) {
       $(document).on('click', '.toolbar a[data-target]', function(e) {

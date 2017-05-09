@@ -33,6 +33,9 @@ class AppServiceProvider extends ServiceProvider
         $this->app->when('App\Http\Controllers\SiswaController')
             ->needs('App\Domain\Contracts\SiswaInterface')
             ->give('App\Domain\Repositories\SiswaRepository');
+        $this->app->when('App\Http\Controllers\RegisterController')
+            ->needs('App\Domain\Contracts\RegisterInterface')
+            ->give('App\Domain\Repositories\RegisterRepository');
         $this->app->when('App\Http\Controllers\ActivityController')
             ->needs('App\Domain\Contracts\ActivityInterface')
             ->give('App\Domain\Repositories\ActivityRepository');
