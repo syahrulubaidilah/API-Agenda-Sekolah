@@ -27,6 +27,9 @@ class UserTableSeeder extends Seeder
         ['id' => 4, 'name' => 'Fitri', 'email' => 'fitri@gmail.com', 'password' => bcrypt('qwerty'), 'level' => '1', 'position' => 'staf', 'created_at' => \Carbon\Carbon::now()],
         ['id' => 5, 'name' => 'Dea', 'email' => 'dea@gmail.com', 'password' => bcrypt('qwerty'), 'level' => '1', 'position' => 'staf', 'created_at' => \Carbon\Carbon::now()],
         ['id' => 6, 'name' => 'Siwi', 'email' => 'siwi@gmail.com', 'password' => bcrypt('qwerty'), 'level' => '1', 'position' => 'staf', 'created_at' => \Carbon\Carbon::now()],
+        ['id' => 7, 'name' => 'Syahrul', 'email' => 'syahrul@gmail.com', 'password' => bcrypt('qwerty'), 'level' => '1', 'position' => 'staf', 'created_at' => \Carbon\Carbon::now()],
+        ['id' => 8, 'name' => 'Alfira', 'email' => 'alfira@gmail.com', 'password' => bcrypt('qwerty'), 'level' => '1', 'position' => 'staf', 'created_at' => \Carbon\Carbon::now()],
+        ['id' => 9, 'name' => 'Edi Santoso', 'email' => 'cyber@gmail.com', 'password' => bcrypt('qwerty'), 'level' => '1', 'position' => 'staf', 'created_at' => \Carbon\Carbon::now()],
         ];
         
         //insert batch

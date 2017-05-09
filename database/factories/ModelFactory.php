@@ -25,12 +25,12 @@ $factory->define(App\Domain\Entities\User::class, function (Faker\Generator $fak
 $factory->define(App\Domain\Entities\Activity::class, function (Faker\Generator $faker) {
 
      return [
-        'name' => $faker->name,
+        'name' => $faker->randomElement($array = array ('Ulangan','Lomba','Upacara','Rapat','Study Tour','Pertukaran Pelajar')),
         'description' => $faker->randomElement($array = array ('Penting','Santai')),
         'date_activity' => $faker->date,
         'time' => $faker->time,
         'place' => $faker->randomElement($array = array ('Aula','Lapangan','Kelas')),
         'participant' => $faker->randomElement($array = array ('Semua Siswa','Semua Warga Sekolah','Semua Guru','Siswa / Guru Pilihan')),
-        'user_id' => $faker->randomElement($array = array ('1','2','3','4','5','6'))
+        'user_id' => $faker->randomElement($array = array ('1','2','3','4','5','6','7','8','9'))
      ];
 });
