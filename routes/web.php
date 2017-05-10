@@ -34,4 +34,6 @@ Route::get('/calendar', function () {
     return view('pages.calendar');
 })->name('page.calendar');
 
-Route::get('/login','Auth\LoginController@getLogin')->name('page.login');
+ 
+
+ 

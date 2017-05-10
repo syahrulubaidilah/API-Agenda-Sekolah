@@ -61,14 +61,14 @@
                       <fieldset>
                         <label class="block clearfix">
                           <span class="block input-icon input-icon-right">
-                            <input type="text" name="email" class="form-control" placeholder="Email"/>
+                            <input type="text" name="email" class="form-control" placeholder="Email" required="true"/>
                             <i class="ace-icon fa fa-user"></i>
                             </span>
                         </label>
 
                         <label class="block clearfix">
                           <span class="block input-icon input-icon-right">
-                            <input type="password" name="password" class="form-control" placeholder="Password" />
+                            <input type="password" name="password" class="form-control" placeholder="Password" required="true"/>
                             <i class="ace-icon fa fa-lock"></i>
                             </span>
                         </label>
@@ -130,7 +130,7 @@
                       <fieldset>
                         <label class="block clearfix">
                           <span class="block input-icon input-icon-right">
-                            <input type="email" class="form-control" placeholder="Email" />
+                            <input type="email" class="form-control" placeholder="Email" required="true"/>
                             <i class="ace-icon fa fa-envelope"></i>
                             </span>
                         </label>
@@ -164,14 +164,6 @@
                       <i class="ace-icon fa fa-users blue"></i>
                       User Registration
                       </h4>
-                     <div class="row">
-			                <div class="col-md-8">
-			                 <div class="alert alert-dismissible hide" id="errMsg" role="alert">
-			                  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			                   <span id="errData"></span>
-			                 </div>
-			                </div>
-			               </div>
 
                     <div class="space-6"></div>
                     <p> Silahkan Masukkan Data Diri Anda </p>
@@ -181,28 +173,28 @@
 
                         <label class="block clearfix">
                           <span class="block input-icon input-icon-right">
-                            <input type="text" name="name" class="form-control" placeholder="Username" />
+                            <input type="text" name="name" class="form-control" placeholder="Username" required="true"/>
                             <i class="ace-icon fa fa-user"></i>
                             </span>
                         </label>
 
                         <label class="block clearfix">
                           <span class="block input-icon input-icon-right">
-                            <input type="email" name="email" class="form-control" placeholder="Email" />
+                            <input type="email" name="email" class="form-control" placeholder="Email" required="true"/>
                             <i class="ace-icon fa fa-envelope"></i>
                             </span>
                         </label>
 
                         <label class="block clearfix">
                           <span class="block input-icon input-icon-right">
-                            <input type="password" name="password" class="form-control" placeholder="Password" />
+                            <input type="password" name="password" class="form-control" placeholder="Password" required="true"/>
                             <i class="ace-icon fa fa-lock"></i>
                             </span>
                         </label>
 
                         <label class="block clearfix">
                           <span class="block input-icon input-icon-right">
-                            <input type="password" class="form-control" placeholder="Repeat password" />
+                            <input type="password" class="form-control" placeholder="Repeat password" required="true"/>
                             <i class="ace-icon fa fa-retweet"></i>
                             </span>
                         </label>
@@ -223,7 +215,7 @@
                             <span class="bigger-110">Reset</span>
                           </button>
 
-                          <button type="button" id="btnRegister" class="width-65 pull-right btn btn-sm btn-success">
+                          <button type="submit" id="btnRegister" class="width-65 pull-right btn btn-sm btn-success">
                             <span class="bigger-110">Register</span>
 
                             <i class="ace-icon fa fa-arrow-right icon-on-right"></i>
