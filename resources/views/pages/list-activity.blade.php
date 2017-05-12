@@ -68,13 +68,14 @@
                       <th>Peserta</th>
                       <th>Status</th>
                       <th>Pembuat</th>
+                      <th>Detail</th>
                       <th></th>
                     </thead>
                     <tbody>
                        @foreach ($activities as $activity)
                       <tr>
                         <td>
-                          <img height="150" class="thumbnail inline no-margin-bottom" alt="Domain Owner's Avatar" src="{{ $activity->image }}" />
+                          <img height="150" class="thumbnail inline no-margin-bottom" src="{{ $activity->image }}" />
                         </td>
                         <td>{{ $activity->name }}</td>
                         <td>{{ $activity->description }}</td>
@@ -91,6 +92,12 @@
                           @endif
                         </td>
                         <td>{{ $activity->users->name === null ? "null" : $activity->users->name }}</td>
+                        <td>
+                              <a class="green bigger-140 show-details-btn" title="Show Details" href={{route('page.detail-activity',['id' => $activity->id])}}>
+																<i class="ace-icon fa fa-angle-double-right"></i>
+																<span class="sr-only">Details</span>
+															</a>
+                        </td>
                         <td>
                           <a class="btn btn-info fa fa-pencil bigger-120" href={{route('page.edit-activity',['id' => $activity->id])}}>
                             <i class="pe-7s-pen"></i>

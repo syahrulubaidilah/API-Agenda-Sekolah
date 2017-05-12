@@ -27,6 +27,7 @@ Route::get('/guru/{id}/edit','Pages\MemberController@edit')->name('page.edit-gur
 Route::get('/activity','Pages\ActivityController@index')->name('page.list-activity');
 Route::get('/activity/create','Pages\ActivityController@create')->name('page.create-activity');
 Route::get('/activity/{id}/edit','Pages\ActivityController@edit')->name('page.edit-activity');
+Route::get('/activity/{id}/detail','Pages\ActivityController@detail')->name('page.detail-activity');
 
 Route::get('/calendar', function () {
     return view('pages.calendar');
