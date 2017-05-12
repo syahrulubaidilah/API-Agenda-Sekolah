@@ -18,11 +18,9 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:api');
 
 Route::resource('user','UserController');
-Route::resource('siswa','SiswaController');
 Route::resource('guru','GuruController');
 Route::resource('activity','ActivityController');
 Route::resource('register','RegisterController');
-Route::get('list-siswa','UserController@getListSiswa')->name('user.list.siswa');
 Route::get('list-guru','UserController@getListGuru')->name('user.list.guru');
 Route::get('list-staf','UserController@getListStaf')->name('user.list.staf');
 Route::post('post-login', 'Auth\LoginController@postLogin')->name('api.login');

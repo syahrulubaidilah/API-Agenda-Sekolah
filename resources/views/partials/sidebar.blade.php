@@ -48,19 +48,10 @@
           <b class="arrow"></b>
         </li>
 
-        <li class="" id="nav-siswa">
-          <a href={{route('page.list-siswa')}}>
-            <i class="menu-icon fa fa-list-alt"></i>
-            <span class="menu-text"> Siswa </span>
-          </a>
-
-          <b class="arrow"></b>
-        </li>
-
         <li class="" id="nav-guru">
           <a href={{route('page.list-guru')}}>
             <i class="menu-icon fa fa-list-alt"></i>
-            <span class="menu-text"> Guru </span>
+            <span class="menu-text"> Member </span>
           </a>
 
           <b class="arrow"></b>
@@ -69,7 +60,7 @@
         <li class="" id="nav-staf">
           <a href={{route('page.list-staf')}}>
             <i class="menu-icon fa fa-list-alt"></i>
-            <span class="menu-text"> Staf </span>
+            <span class="menu-text"> Admin </span>
           </a>
 
           <b class="arrow"></b>
