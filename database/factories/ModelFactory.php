@@ -17,7 +17,7 @@ $factory->define(App\Domain\Entities\User::class, function (Faker\Generator $fak
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
         'password' => $faker->randomElement($array = array ('qwerty','123456')),
-        'level' => $faker->randomElement($array = array ('0','1','2')),
+        'level' => $faker->randomElement($array = array ('0','1',)),
         'position' => $faker->randomElement($array = array ('Siswa','Staf','Guru'))
      ];
 });
