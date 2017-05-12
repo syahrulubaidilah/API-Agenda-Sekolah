@@ -111,6 +111,14 @@
 									</div>
 								</div>
 
+								<div class="form-group">
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-1-5">Status</label>
+
+									<div class="col-sm-9">
+										<input type="text" id="form-field-1-5"  name="status" placeholder="Status" class="col-xs-10 col-sm-5" />
+									</div>
+								</div>
+
 								<!--<div class="form-group">
 									<label class="col-sm-3 control-label no-padding-right" for="form-field-1-5">User</label>
 

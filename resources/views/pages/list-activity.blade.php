@@ -77,6 +77,14 @@
                         <td>{{ $activity->time }}</td>
                         <td>{{ $activity->place }}</td>
                         <td>{{ $activity->participant }}</td>
+                        <td>
+                          @if($activity->status == 0)
+                            <span class="label label-default">Draft</span>
+                          @elseif($activity->status == 1)
+                            <span class="label label-primary">Publish</span>@else
+                            <span class="label label-danger">Expired</span>
+                          @endif
+                        </td>
                         <td>{{ $activity->users->name === null ? "null" : $activity->users->name }}</td>
                         <td>
                           <a class="btn btn-info fa fa-pencil bigger-120" href={{route('page.edit-activity',['id' => $activity->id])}}>

@@ -31,6 +31,7 @@ $factory->define(App\Domain\Entities\Activity::class, function (Faker\Generator 
         'time' => $faker->time,
         'place' => $faker->randomElement($array = array ('Aula','Lapangan','Kelas')),
         'participant' => $faker->randomElement($array = array ('Semua Siswa','Semua Warga Sekolah','Semua Guru','Siswa / Guru Pilihan')),
+        'status' => $faker->randomElement($array = array ('0','1','2')),
         'user_id' => $faker->randomElement($array = array ('1','2','3','4','5','6','7','8','9'))
      ];
 });

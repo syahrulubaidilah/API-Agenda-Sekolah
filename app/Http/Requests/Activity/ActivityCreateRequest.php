@@ -34,6 +34,7 @@ class ActivityCreateRequest extends Request
         'time'   => 'Time',
         'place'   => 'Place',
         'participant'   => 'Participant',
+        'level'   => 'Level'
         //'user_Id'   => 'User_Id'
     ];
 
@@ -51,6 +52,7 @@ class ActivityCreateRequest extends Request
             'time'   => 'required|max:30',
             'place'   => 'required|max:30',
             'participant'   => 'required|max:30',
+            'level'   => 'Level'
             //'user_Id'   => 'required|max:30'
         ];
     }

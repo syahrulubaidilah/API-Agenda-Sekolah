@@ -21,6 +21,7 @@ class CreateActivitysTable extends Migration
             $table->string('time');
             $table->string('place');
             $table->string('participant');
+            $table->tinyinteger('status',false);
             $table->uuid('user_id');
             $table->timestamps();
             $table->softDeletes();
