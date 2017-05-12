@@ -173,28 +173,28 @@
 
                         <label class="block clearfix">
                           <span class="block input-icon input-icon-right">
-                            <input type="text" name="name" class="form-control" placeholder="Username" required="true"/>
+                            <input type="text" name="name" class="form-control" placeholder="Username" required/>
                             <i class="ace-icon fa fa-user"></i>
                             </span>
                         </label>
 
                         <label class="block clearfix">
                           <span class="block input-icon input-icon-right">
-                            <input type="email" name="email" class="form-control" placeholder="Email" required="true"/>
+                            <input type="email" name="email" class="form-control" placeholder="Email" required/>
                             <i class="ace-icon fa fa-envelope"></i>
                             </span>
                         </label>
 
                         <label class="block clearfix">
                           <span class="block input-icon input-icon-right">
-                            <input type="password" name="password" class="form-control" placeholder="Password" required="true"/>
+                            <input type="password" name="password" class="form-control" placeholder="Password" required/>
                             <i class="ace-icon fa fa-lock"></i>
                             </span>
                         </label>
 
                         <label class="block clearfix">
                           <span class="block input-icon input-icon-right">
-                            <input type="password" class="form-control" placeholder="Repeat password" required="true"/>
+                            <input type="password" class="form-control" placeholder="Repeat password" required/>
                             <i class="ace-icon fa fa-retweet"></i>
                             </span>
                         </label>
@@ -277,6 +277,7 @@
  	    });
 		
  	    // ini adalah proses submit data menggunakan Ajax
+      $("#formRegister").validate();
  	    $("#btnRegister").click(function(event) {
  	      // kasih ini dong biar gag hard reload
  	      event.preventDefault();

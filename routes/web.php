@@ -12,6 +12,7 @@
 */
 
 Route::get('/','Auth\LoginController@getLogin')->name('landingpage');
+Route::get('/login','Auth\LoginController@getLogin')->name('page.login');
 Route::get('/dashboard', function () {
     return view('pages.dashboard');
 })->name('page.dashboard');
