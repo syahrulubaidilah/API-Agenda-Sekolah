@@ -59,6 +59,7 @@ class ActivityRepository extends AbstractRepository implements ActivityInterface
         // execute sql insert
         return parent::create([
             'name'    => e($data['name']),
+            'image'    => e($data['image']),
             'description'   => e($data['description']),
             'date_activity' => e($data['date_activity']),
             'time'   => e($data['time']),
@@ -79,6 +80,7 @@ class ActivityRepository extends AbstractRepository implements ActivityInterface
     {
         return parent::update($id, [
             'name'    => e($data['name']),
+            'image'    => e($data['image']),
             'description'   => e($data['description']),
             'date_activity' => e($data['date_activity']),
             'time'   => e($data['time']),

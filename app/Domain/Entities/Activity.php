@@ -11,7 +11,7 @@ class Activity extends Entities
     use SoftDeletes;
     
     protected $fillable = [
-        'name', 'description', 'date_activity', 'time', 'place', 'participant', 'status', 'user_id',
+        'name', 'image', 'description', 'date_activity', 'time', 'place', 'participant', 'status', 'user_id',
     ];
 
     protected $primaryKey = 'id';

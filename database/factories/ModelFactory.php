@@ -27,6 +27,7 @@ $factory->define(App\Domain\Entities\Activity::class, function (Faker\Generator 
      return [
         'name' => $faker->randomElement($array = array ('Ulangan','Lomba','Upacara','Rapat','Study Tour','Pertukaran Pelajar')),
         'description' => $faker->randomElement($array = array ('Penting','Santai')),
+        'image' => $faker->randomElement($array = array ('http://1.bp.blogspot.com/-au7Gt3nwyIU/VZ3-P2XjlrI/AAAAAAAABa4/ks2Y7UPd2kM/s1600/gb607.jpg')),
         'date_activity' => $faker->date,
         'time' => $faker->time,
         'place' => $faker->randomElement($array = array ('Aula','Lapangan','Kelas')),

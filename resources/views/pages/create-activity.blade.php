@@ -61,6 +61,14 @@
 								</div>
 
 								<div class="form-group">
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Gambar / Foto</label>
+
+									<div class="col-sm-9">
+										<input type="text" id="form-field-1" name="image" placeholder="URL Gambar / Foto" class="col-xs-10 col-sm-5" />
+									</div>
+								</div>
+
+								<div class="form-group">
 									<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">Description</label>
 
 									<div class="col-sm-9">

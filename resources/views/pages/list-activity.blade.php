@@ -59,18 +59,23 @@
                   </div>
                   <table id="saimple-table" class="table  table-bordered table-hover">
                     <thead>
+                      <th>Gambar</th>
                       <th>Nama</th>
                       <th>Deskripsi</th>
                       <th><i class="fa fa-calendar"></i> Tanggal</th>
                       <th><i class="fa fa-clock-o"></i> Waktu</th>
                       <th>Tempat</th>
                       <th>Peserta</th>
+                      <th>Status</th>
                       <th>Pembuat</th>
                       <th></th>
                     </thead>
                     <tbody>
                        @foreach ($activities as $activity)
                       <tr>
+                        <td>
+                          <img height="150" class="thumbnail inline no-margin-bottom" alt="Domain Owner's Avatar" src="{{ $activity->image }}" />
+                        </td>
                         <td>{{ $activity->name }}</td>
                         <td>{{ $activity->description }}</td>
                         <td>{{ $activity->date_activity }}</td>

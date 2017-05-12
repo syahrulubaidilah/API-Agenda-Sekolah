@@ -47,6 +47,7 @@ class ActivityCreateRequest extends Request
     {
         return [
             'name'    => 'required|max:225',
+            'image'    => 'required|max:225',
             'description' => 'required|max:60',
             'date_activity'   => 'required|max:50',
             'time'   => 'required|max:30',
