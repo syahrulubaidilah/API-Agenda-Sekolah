@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Guru')
+@section('title', 'Member')
 @section('content')
       <div class="main-content-inner">
         <div class="breadcrumbs ace-save-state" id="breadcrumbs">
@@ -8,7 +8,7 @@
               <i class="ace-icon fa fa-home home-icon"></i>
               <a href="#">Home</a>
             </li>
-            <li class="active">Guru</li>
+            <li class="active">Member</li>
           </ul>
           <!-- /.breadcrumb -->
 
@@ -72,7 +72,7 @@
                         <td>{{ $user->email }}</td>
                         <td>
                           @if($user->level == 0)
-                            <span class="label label-primary">Guru</span>
+                            <span class="label label-primary">Member</span>
                           @endif
                         </td>
                         <td>{{ $user->position }}</td>

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Guru;
+namespace App\Http\Requests\Member;
 
 use App\Http\Requests\Request;
 use Illuminate\Contracts\Validation\Validator;
@@ -10,7 +10,7 @@ use Illuminate\Contracts\Validation\Validator;
  *
  * @package App\Http\Requests\User
  */
-class GuruEditRequest extends Request
+class MemberEditRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.

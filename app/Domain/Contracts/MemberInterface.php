@@ -6,7 +6,7 @@ namespace App\Domain\Contracts;
  * Interface UserInterface
  * @package App\Domain\Contracts
  */
-interface GuruInterface {
+interface MemberInterface {
 
     /**
      * @param int $limit

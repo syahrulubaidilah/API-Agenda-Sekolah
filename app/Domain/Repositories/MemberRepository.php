@@ -3,15 +3,15 @@
 namespace App\Domain\Repositories;
 
 use App\Domain\Entities\User;
-use App\Domain\Contracts\GuruInterface;
+use App\Domain\Contracts\MemberInterface;
 use App\Domain\Contracts\Crudable;
 
 
 /**
- * Class GuruRepository
+ * Class MemberRepository
  * @package App\Domain\Repositories
  */
-class GuruRepository extends AbstractRepository implements GuruInterface, Crudable
+class MemberRepository extends AbstractRepository implements MemberInterface, Crudable
 {
 
     /**
@@ -20,7 +20,7 @@ class GuruRepository extends AbstractRepository implements GuruInterface, Crudab
     protected $model;
 
     /**
-     * GuruRepository constructor.
+     * MemberRepository constructor.
      * @param User $user
      */
     public function __construct(User $user)

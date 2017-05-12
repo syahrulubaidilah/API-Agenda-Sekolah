@@ -13,7 +13,7 @@
 							<i class="ace-icon fa fa-home home-icon"></i>
 							<a href="#">Home</a>
 						</li>
-						<li class="active">Form Create Guru</li>
+						<li class="active">Form Create Member</li>
 					</ul>
 					<!-- /.breadcrumb -->
 
@@ -31,7 +31,7 @@
 				<div class="page-content">
 					<div class="page-header">
 						<h1>
-							Form Input Data Guru
+							Form Input Data Member
 							<small>
 									<i class="ace-icon fa fa-angle-double-right"></i>
 								</small>

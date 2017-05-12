@@ -2,24 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\Guru\GuruCreateRequest;
-use App\Http\Requests\Guru\GuruEditRequest;
+use App\Http\Requests\Member\MemberCreateRequest;
+use App\Http\Requests\Member\MemberEditRequest;
 use Illuminate\Http\Request;
-use App\Domain\Contracts\GuruInterface;
+use App\Domain\Contracts\MemberInterface;
 
-class GuruController extends Controller
+class MemberController extends Controller
 {
 
     /**
-     * @var GuruInterface
+     * @var MemberInterface
      */
     protected $user;
 
     /**
      * UserController constructor.
-     * @param GuruInterface $user
+     * @param MemberInterface $user
      */
-    public function __construct(GuruInterface $user)
+    public function __construct(MemberInterface $user)
     {
         $this->user = $user;
     }
@@ -65,7 +65,7 @@ class GuruController extends Controller
      * @apiParam {Float} phone phone of user
      * @apiSuccess {Number} id id of user
      */
-    public function store(GuruCreateRequest $request)
+    public function store(MemberCreateRequest $request)
     {
         return $this->user->create($request->all());
     }
@@ -84,7 +84,7 @@ class GuruController extends Controller
      *
      * @apiError EmailHasRegitered The Email must diffrerent.
      */
-    public function update(GuruEditRequest $request, $id)
+    public function update(MemberEditRequest $request, $id)
     {
         return $this->user->update($id, $request->all());
     }
@@ -105,7 +105,7 @@ class GuruController extends Controller
         return $this->user->delete($id);
     }
 
-    public function getListGuru(Request $request)
+    public function getListMember(Request $request)
     {
         return $this->user->getList(10, $request->input('page'), $column = ['*'], '', $request->input('search'),$level=0);
     }

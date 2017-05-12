@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Pages;
 
-use App\Http\Requests\Guru\GuruCreateRequest;
+use App\Http\Requests\Member\MemberCreateRequest;
 use Illuminate\Http\Request;
-use App\Domain\Repositories\GuruRepository;
+use App\Domain\Repositories\MemberRepository;
 use App\Http\Controllers\Controller;
 
-class GuruController extends Controller
+class MemberController extends Controller
 {
     /**
      * @var UserInterface
@@ -17,7 +17,7 @@ class GuruController extends Controller
      * UserController constructor.
      * @param UserInterface $user
      */
-    public function __construct(GuruRepository $user)
+    public function __construct(MemberRepository $user)
     {
         $this->user = $user;
     }
@@ -26,7 +26,7 @@ class GuruController extends Controller
         $user_guru = $this->user->getList(10, $request->input('page'), $column = ['*'], '', $request->input('search'));
         return view('pages.list-guru', compact('user_guru')); 
     }
-    public function createGuru()
+    public function createMember()
     {
         return view('pages.create-guru'); 
     }
