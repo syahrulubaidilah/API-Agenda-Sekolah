@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.dashboard')
 @section('title', 'Calendar')
 @section('style')
 <!-- page specific plugin styles -->

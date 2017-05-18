@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.dashboard')
 @section('title', 'Form Create Activity')
 @section('style')
 			<!-- page specific plugin styles -->

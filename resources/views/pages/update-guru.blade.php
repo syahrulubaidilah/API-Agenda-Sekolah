@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.dashboard')
 @section('title', 'Form Update User')
 @section('style')
 			<!-- page specific plugin styles -->

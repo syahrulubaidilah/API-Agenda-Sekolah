@@ -19,6 +19,7 @@ class UserController extends Controller
      */
     public function __construct(UserRepository $user)
     {
+        $this->middleware('auth');
         $this->user = $user;
     }
      public function staf(Request $request)

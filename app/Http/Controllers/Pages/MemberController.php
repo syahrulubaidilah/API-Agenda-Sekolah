@@ -19,6 +19,7 @@ class MemberController extends Controller
      */
     public function __construct(MemberRepository $user)
     {
+        $this->middleware('auth');
         $this->user = $user;
     }
      public function guru(Request $request)

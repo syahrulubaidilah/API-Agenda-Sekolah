@@ -22,6 +22,7 @@ class ActivityController extends Controller
      */
     public function __construct(ActivityRepository $activity, UserRepository $user)
     {
+        $this->middleware('auth');
         $this->activity = $activity;
         $this->user = $user;
     }
