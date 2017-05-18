@@ -1,128 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-		<meta charset="utf-8" />
-		<title>Agendaku - @yield('title')</title>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<meta name="description" content="overview &amp; stats" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-		<!-- bootstrap & fontawesome -->
-		<link rel="stylesheet" href={{asset('assets/css/bootstrap.min.css')}} />
-		<link rel="stylesheet" href={{asset('assets/font-awesome/4.5.0/css/font-awesome.min.css')}} />
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
-		<!-- page specific plugin styles -->
-		@yield('style')
-		<!-- text fonts -->
-		<link rel="stylesheet" href={{asset('assets/css/fonts.googleapis.com.css')}} />
+    <!-- Styles -->
+    <link href="/css/app.css" rel="stylesheet">
 
-		<!-- ace styles -->
-		<link rel="stylesheet" href={{asset('assets/css/ace.min.css')}} class="ace-main-stylesheet" id="main-ace-style" />
-		<link rel="stylesheet" href={{asset('assets/css/ace-skins.min.css')}} />
-		<link rel="stylesheet" href={{asset('assets/css/ace-rtl.min.css')}} />
-		<link rel="stylesheet" type="text/css" href={{asset('assets/css/sweetalert.css')}}>
+    <!-- Scripts -->
+    <script>
+        window.Laravel = <?php echo json_encode([
+            'csrfToken' => csrf_token(),
+        ]); ?>
+    </script>
+    @yield('styles')
+</head>
+<body>
+    <div id="app">
+        <nav class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
 
-		<!-- ace settings handler -->
-		<script src={{asset('assets/js/ace-extra.min.js')}}></script>
-		@yield('styles')
-	</head>
+                    <!-- Collapsed Hamburger -->
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                        <span class="sr-only">Toggle Navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
 
-	<body class="no-skin">
-		@include("partials.header")
-		@include("partials.sidebar")
-		
-		<div class="main-content">
-			@yield('content')
-		</div>
-		<!-- /.main-content -->
+                    <!-- Branding Image -->
+                    <a class="navbar-brand" href="{{ url('/') }}">
+                        {{ config('app.name', 'Laravel') }}
+                    </a>
+                </div>
 
-			@include("partials.footer")
+                <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                    <!-- Left Side Of Navbar -->
+                    <ul class="nav navbar-nav">
+                        &nbsp;
+                    </ul>
 
-			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
-				<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
-			</a>
-		</div><!-- /.main-container -->
+                    <!-- Right Side Of Navbar -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <!-- Authentication Links -->
+                        @if (Auth::guest())
+                            <li><a href="{{ url('/login') }}">Login</a></li>
+                            <li><a href="{{ url('/register') }}">Register</a></li>
+                        @else
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
 
-		<!-- basic scripts -->
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="{{ url('/logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            Logout
+                                        </a>
 
-		<!--[if !IE]> -->
-		<script src={{asset('assets/js/jquery-2.1.4.min.js')}}></script>
+                                        <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                        @endif
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
-		<!-- <![endif]-->
+        @yield('content')
+    </div>
 
-		<!--[if IE]>
-<script src="assets/js/jquery-1.11.3.min.js"></script>
-<![endif]-->
-		<script type="text/javascript">
-			if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
-		</script>
-		<script src={{asset('assets/js/bootstrap.min.js')}}></script>
-
-		@yield('scripts')
-		
-		<!-- ace scripts -->
-		<script src={{asset('assets/js/ace-elements.min.js')}}></script>
-		<script src={{asset('assets/js/ace.min.js')}}></script>
-		<script src={{asset('assets/js/sweetalert.min.js')}}></script>
-		<script>
-    		$(document).ready(function(){
-        	var pathname = window.location.pathname;
-        	console.log('url path =>',pathname);
-        	switch (pathname) {
-            case '/':
-                $('#nav-siswa').removeClass('active');
-                $('#nav-guru').removeClass('active');
-                $('#nav-staf').removeClass('active');
-				$('#nav-agenda').removeClass('active');
-                $('#nav-calendar').removeClass('active');
-                $('#nav-dashboard').addClass('active');
-                break; 
-            case '/siswa':
-                $('#nav-guru').removeClass('active');
-                $('#nav-staf').removeClass('active');
-				$('#nav-agenda').removeClass('active');
-                $('#nav-calendar').removeClass('active');
-                $('#nav-dashboard').removeClass('active');
-                $('#nav-siswa').addClass('active');
-                break; 
-            case '/guru':
-               $('#nav-siswa').removeClass('active');
-                $('#nav-staf').removeClass('active');
-				$('#nav-agenda').removeClass('active');
-                $('#nav-calendar').removeClass('active');
-                $('#nav-dashboard').removeClass('active');
-                $('#nav-guru').addClass('active');
-                break;  
-            case '/staf':
-                $('#nav-siswa').removeClass('active');
-                $('#nav-guru').removeClass('active');
-				$('#nav-agenda').removeClass('active');
-                $('#nav-calendar').removeClass('active');
-                $('#nav-dashboard').removeClass('active');
-                $('#nav-staf').addClass('active');
-                break;
-			case '/activity':
-                $('#nav-siswa').removeClass('active');
-                $('#nav-guru').removeClass('active');
-                $('#nav-staf').removeClass('active');
-                $('#nav-calendar').removeClass('active');
-                $('#nav-dashboard').removeClass('active');
-				$('#nav-agenda').addClass('active');
-                break;
-			case '/calendar':
-                $('#nav-siswa').removeClass('active');
-                $('#nav-guru').removeClass('active');
-                $('#nav-staf').removeClass('active');
-				$('#nav-agenda').removeClass('active');
-                $('#nav-dashboard').removeClass('active');
-                $('#nav-calendar').addClass('active');
-                break;  
-            default: 
-                text = "Looking forward to the Weekend";
-        	}
-    		});
-		</script>
-
-	</body>
+    <!-- Scripts -->
+    <script src="/js/app.js"></script>
+</body>
 </html>
