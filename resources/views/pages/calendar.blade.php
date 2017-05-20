@@ -1,9 +1,9 @@
 @extends('layouts.dashboard')
 @section('title', 'Calendar')
-@section('style')
+@section('styles')
 <!-- page specific plugin styles -->
-  <link rel="stylesheet" href="assets/css/jquery-ui.custom.min.css" />
-  <link rel="stylesheet" href="assets/css/fullcalendar.min.css" />
+  <link rel="stylesheet" href="{{asset('assets/css/jquery-ui.custom.min.css')}}" />
+  <link rel="stylesheet" href="{{asset('assets/css/fullcalendar.min.css')}}" />
 @endsection
 @section('content')
     <div class="main-content-inner">
@@ -183,14 +183,13 @@
   <script type="text/javascript">
         if ('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
   </script>
-  <script src="assets/js/bootstrap.min.js"></script>
 
   <!-- page specific plugin scripts -->
-  <script src="assets/js/jquery-ui.custom.min.js"></script>
-  <script src="assets/js/jquery.ui.touch-punch.min.js"></script>
-  <script src="assets/js/moment.min.js"></script>
-  <script src="assets/js/fullcalendar.min.js"></script>
-  <script src="assets/js/bootbox.js"></script>
+  <script src="{{asset('assets/js/jquery-ui.custom.min.js')}}"></script>
+  <script src="{{asset('assets/js/jquery.ui.touch-punch.min.js')}}"></script>
+  <script src="{{asset('assets/js/moment.min.js')}}"></script>
+  <script src="{{asset('assets/js/fullcalendar.min.js')}}"></script>
+  <script src="{{asset('assets/js/bootbox.js')}}"></script>
 
 
   <!-- inline scripts related to this page -->

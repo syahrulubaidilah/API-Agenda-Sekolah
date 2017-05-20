@@ -15,7 +15,6 @@
 		<link rel="stylesheet" href={{asset('assets/font-awesome/4.5.0/css/font-awesome.min.css')}} />
 
 		<!-- page specific plugin styles -->
-        @yield('styles')
 		<!-- text fonts -->
 		<link rel="stylesheet" href={{asset('assets/css/fonts.googleapis.com.css')}} />
 
@@ -27,6 +26,7 @@
 
 		<!-- ace settings handler -->
 		<script src={{asset('assets/js/ace-extra.min.js')}}></script>
+        @yield('styles')
 	</head>
 
 	<body class="no-skin">
@@ -56,12 +56,12 @@
 		</script>
 		<script src={{asset('assets/js/bootstrap.min.js')}}></script>
 
-		@yield('scripts')
 		
 		<!-- ace scripts -->
 		<script src={{asset('assets/js/ace-elements.min.js')}}></script>
 		<script src={{asset('assets/js/ace.min.js')}}></script>
 		<script src={{asset('assets/js/sweetalert.min.js')}}></script>
+		@yield('scripts')
 		<script>
     		$(document).ready(function(){
         	var pathname = window.location.pathname;
