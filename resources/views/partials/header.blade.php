@@ -280,7 +280,7 @@
 							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
 								<span class="user-info">
 									<small>Welcome,</small>
-									{{ Auth::user()->name }}
+									{{ isset(Auth::user()->name) ? Auth::user()->name : 'Not logged yet' }}
 								</span>
 
 								<i class="ace-icon fa fa-caret-down"></i>
