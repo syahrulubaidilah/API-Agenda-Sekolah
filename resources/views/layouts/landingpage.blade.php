@@ -41,7 +41,7 @@
 					<div class="col-md-4 col-xs-6">
 						<nav class="b-topBar__nav">
 							<ul>
-								<li><a href="#">Register</a></li>
+								<li><a href={{route('page.home')}}>Register</a></li>
 								<li><a href="#">Sign in</a></li>
 							</ul>
 						</nav>
