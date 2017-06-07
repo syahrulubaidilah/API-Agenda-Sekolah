@@ -10,8 +10,8 @@
 		<link href="css/master.css" rel="stylesheet">
 
 		<!--[if lt IE 9]>
-		<script src={{asset('//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv .js')}}></script>
-		<script src={{asset('//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min .js')}}></script>
+		<script src={{asset('//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')}}></script>
+		<script src={{asset('//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')}}></script>
 		<![endif]-->
 
 	</head>
@@ -41,8 +41,8 @@
 					<div class="col-md-4 col-xs-6">
 						<nav class="b-topBar__nav">
 							<ul>
-								<li><a href={{route('page.home')}}>Register</a></li>
-								<li><a href="#">Sign in</a></li>
+								<li><a href="{{ url('/register') }}">Register</a></li>
+								<li><a href="{{ url('/login') }}">Sign in</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -127,30 +127,30 @@
 			</div>
 		</footer><!--b-footer-->
 		<!--Main-->   
-		<script src={{asset('js/jquery-1.11.3.min .js')}}></script>
-		<script src={{asset('js/jquery-ui.min .js')}}></script>
-		<script src={{asset('js/bootstrap.min .js')}}></script>
-		<script src={{asset('js/modernizr.custom .js')}}></script>
+		<script src={{asset('js/jquery-1.11.3.min.js')}}></script>
+		<script src={{asset('js/jquery-ui.min.js')}}></script>
+		<script src={{asset('js/bootstrap.min.js')}}></script>
+		<script src={{asset('js/modernizr.custom.js')}}></script>
 
-		<script src={{asset('assets/rendro-easy-pie-chart/dist/jquery.easypiechart.min .js')}}></script>
-		<script src={{asset('js/waypoints.min .js')}}></script>
-		<script src={{asset('js/jquery.easypiechart.min .js')}}></script>
-		<script src={{asset('js/classie .js')}}></script>
+		<script src={{asset('asset/rendro-easy-pie-chart/dist/jquery.easypiechart.min.js')}}></script>
+		<script src={{asset('js/waypoints.min.js')}}></script>
+		<script src={{asset('js/jquery.easypiechart.min.js')}}></script>
+		<script src={{asset('js/classie.js')}}></script>
 
 		<!--Switcher-->
-		<script src={{asset('assets/switcher/js/switcher .js')}}></script>
+		<script src={{asset('asset/switcher/js/switcher.js')}}></script>
 		<!--Owl Carousel-->
-		<script src={{asset('assets/owl-carousel/owl.carousel.min .js')}}></script>
+		<script src={{asset('asset/owl-carousel/owl.carousel.min.js')}}></script>
 		<!--bxSlider-->
-		<script src={{asset('assets/bxslider/jquery.bxslider .js')}}></script>
+		<script src={{asset('asset/bxslider/jquery.bxslider.js')}}></script>
 		<!-- jQuery UI Slider -->
-		<script src={{asset('assets/slider/jquery.ui-slider .js')}}></script>
+		<script src={{asset('asset/slider/jquery.ui-slider.js')}}></script>
 
 		<!--Theme-->
-		<script src={{asset('js/jquery.smooth-scroll .js')}}></script>
-		<script src={{asset('js/wow.min .js')}}></script>
-		<script src={{asset('js/jquery.placeholder.min .js')}}></script>
-		<script src={{asset('js/theme .js')}}></script>
+		<script src={{asset('js/jquery.smooth-scroll.js')}}></script>
+		<script src={{asset('js/wow.min.js')}}></script>
+		<script src={{asset('js/jquery.placeholder.min.js')}}></script>
+		<script src={{asset('js/theme.js')}}></script>
 
 	</body>
 </html>
