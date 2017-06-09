@@ -56,6 +56,9 @@
                                 <a class="btn btn-link" href="{{ url('/register') }}">
                                     Register
                                 </a>
+                                <a class="btn btn-link" href={{route('page.home')}}>
+                                    Back
+                                </a>
                             </div>
                         </div>
                         

@@ -65,6 +65,9 @@
                                 <button type="submit" class="btn btn-primary">
                                     Register
                                 </button>
+                                <a class="btn btn-link" href={{route('page.home')}}>
+                                    Back
+                                </a>
                             </div>
                         </div>
                     </form>
