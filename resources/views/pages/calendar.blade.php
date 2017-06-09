@@ -245,25 +245,9 @@
           center: 'title',
           right: 'month,agendaWeek,agendaDay'
         },
-        events: [
-          {
-            title: 'All Day Event',
-            start: new Date(y, m, 1),
-            className: 'label-important'
-          },
-          {
-            title: 'Long Event',
-            start: moment().subtract(5, 'days').format('YYYY-MM-DD'),
-            end: moment().subtract(1, 'days').format('YYYY-MM-DD'),
-            className: 'label-success'
-          },
-          {
-            title: 'Some Event',
-            start: new Date(y, m, d - 3, 16, 0),
-            allDay: false,
-            className: 'label-info'
-          }
-        ]
+        events: {
+          url: "/api/event-calendars"          
+        }
         ,
 
         /**eventResize: function(event, delta, revertFunc) {
