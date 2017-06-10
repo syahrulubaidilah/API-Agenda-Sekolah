@@ -92,7 +92,7 @@
 									<label class="col-sm-3 control-label no-padding-right" for="form-field-1-9">End Date</label>
 										<div class="col-sm-9">
 											<div class="input-group">
-												<input class="form-control date-picker" name="end_date" id="id-date-picker-1" type="text" data-date-format="dd-mm-yyyy" />
+												<input class="form-control date-picker" name="end_date" id="id-date-picker-2" type="text" data-date-format="dd-mm-yyyy" />
 												<span class="input-group-addon">
 													<i class="fa fa-calendar bigger-110"></i>
 												</span>
