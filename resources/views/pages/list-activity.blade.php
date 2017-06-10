@@ -62,7 +62,8 @@
                       <th>Gambar</th>
                       <th>Nama</th>
                       <th>Deskripsi</th>
-                      <th><i class="fa fa-calendar"></i> Tanggal</th>
+                      <th><i class="fa fa-calendar"></i> Tanggal Mulai</th>
+                      <th><i class="fa fa-calendar"></i> Tanggal Selesai</th>
                       <th><i class="fa fa-clock-o"></i> Waktu</th>
                       <th>Tempat</th>
                       <th>Peserta</th>
@@ -79,7 +80,8 @@
                         </td>
                         <td>{{ $activity->name }}</td>
                         <td>{{ $activity->description }}</td>
-                        <td>{{ $activity->date_activity }}</td>
+                        <td>{{ $activity->start_date }}</td>
+                        <td>{{ $activity->end_date }}</td>
                         <td>{{ $activity->time }}</td>
                         <td>{{ $activity->place }}</td>
                         <td>{{ $activity->participant }}</td>

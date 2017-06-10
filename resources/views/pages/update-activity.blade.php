@@ -70,17 +70,27 @@
 								</div>
 
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-field-1-2">Date Activity</label>
-
-									<div class="col-sm-9">
-										<div class="input-group">
-											<span class="input-group-addon">
-												<i class="fa fa-calendar bigger-110"></i>
-											</span>
-
-											<input class="col-xs-10 col-sm-5" type="text" name="date_activity"  value="{{$activity->date_activity}}" id="date-range-picker" />
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-1-2">Start Date</label>
+										<div class=class="col-sm-9">
+											<div class="input-group">
+												<input class="form-control date-picker" name="start_date" id="id-date-picker-1" value="{{$activity->start_date}}" type="text" data-date-format="dd-mm-yyyy" />
+												<span class="input-group-addon">
+													<i class="fa fa-calendar bigger-110"></i>
+												</span>
+											</div>
 										</div>
-									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-1-9">End Date</label>
+										<div class="col-sm-9">
+											<div class="input-group">
+												<input class="form-control date-picker" name="end_date" id="id-date-picker-1" value="{{$activity->end_date}}" type="text" data-date-format="dd-mm-yyyy" />
+												<span class="input-group-addon">
+													<i class="fa fa-calendar bigger-110"></i>
+												</span>
+											</div>
+										</div>
 								</div>
 
 								<div class="form-group">
