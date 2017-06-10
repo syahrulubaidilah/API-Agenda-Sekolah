@@ -18,7 +18,8 @@ class CreateActivitysTable extends Migration
             $table->string('name');
             $table->string('image');
             $table->string('description');
-            $table->string('date_activity');
+            $table->date('start_date');
+            $table->date('end_date');
             $table->string('time');
             $table->string('place');
             $table->string('participant');

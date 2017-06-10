@@ -13,7 +13,7 @@
 				<div class="navbar-header pull-left" id="nav-top">
 					<a href="index.html" class="navbar-brand">
 						<small>
-							<i class="ace-icon fa fa-home"></i>
+							<i class="ace-icon fa fa-home fa-lg"></i>
 							Agendaku
 						</small>
 					</a>

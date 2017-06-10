@@ -30,7 +30,8 @@ class ActivityEditRequest extends Request
     protected $attrs = [
         'name'    => 'Name',
         'description'   => 'Description',
-        'date_activity' => 'Date_Activity',
+        'start_date' => 'Start_Date',
+        'end_date' => 'End_Date',
         'time'   => 'Time',
         'place'   => 'Place',
         'participant'   => 'Participant',
@@ -47,7 +48,8 @@ class ActivityEditRequest extends Request
         return [
             'name'    => 'required|max:225',
             'description' => 'required|max:60',
-            'date_activity'   => 'required|max:50',
+            'start_date'   => 'required|max:50',
+            'end_date'   => 'required|max:50',
             'time'   => 'required|max:30',
             'place'   => 'required|max:30',
             'participant'   => 'required|max:30',
