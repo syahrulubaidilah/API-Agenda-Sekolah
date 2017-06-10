@@ -66,7 +66,7 @@ class ActivityRepository extends AbstractRepository implements ActivityInterface
             'time'   => e($data['time']),
             'place'   => e($data['place']),
             'participant'   => e($data['participant']),
-            'status'   => e($data['participant']),
+            'status'   => e($data['status']),
             'user_id'   => '1'
         ]);
 
