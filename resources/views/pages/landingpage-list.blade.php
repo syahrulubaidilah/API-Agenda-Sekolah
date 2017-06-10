@@ -103,12 +103,7 @@
 					</div>
 					<div class="b-items__pagination wow zoomInUp" data-wow-delay="0.5s">
 						<div class="b-items__pagination-main">
-							<a data-toggle="modal" data-target="#myModal" href="#" class="m-left"><span class="fa fa-angle-left"></span></a>
-							<span class="m-active"><a href="#">1</a></span>
-							<span><a href="#">2</a></span>
-							<span><a href="#">3</a></span>
-							<span><a href="#">4</a></span>
-							<a href="#" class="m-right"><span class="fa fa-angle-right"></span></a>
+							{{$activities->links()}}
 						</div>
 					</div>
 				</div>

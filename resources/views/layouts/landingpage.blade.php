@@ -29,13 +29,13 @@
 					<div class="col-md-4 col-xs-6">
 						<div class="b-topBar__addr">
 							<span class="fa fa-map-marker"></span>
-							202 W 7TH ST, LOS ANGELES, CA 90014
+							Jl. Ngadiluwih Kepanjen, Malang, 65163
 						</div>
 					</div>
 					<div class="col-md-2 col-xs-6">
 						<div class="b-topBar__tel">
 							<span class="fa fa-phone"></span>
-							1-800- 624-5462
+							(0341) 395777
 						</div>
 					</div>
 					<div class="col-md-4 col-xs-6">
@@ -54,9 +54,8 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-3 col-xs-4">
-						<div class="b-nav__logo wow slideInLeft" data-wow-delay="0.3s">
-							<h3><a href="home.html">Auto<span>Club</span></a></h3>
-							<h2><a href="home.html">AUTO DEALER TEMPLATE</a></h2>
+						<div class="b-nav wow slideInLeft" data-wow-delay="0.3s">
+							<h3>AgendaKU</h3>
 						</div>
 					</div>
 					<div class="col-sm-9 col-xs-8">
@@ -98,9 +97,7 @@
 				<div class="row">
 					<div class="col-xs-4">
 						<div class="b-footer__company wow fadeInLeft" data-wow-delay="0.3s">
-							<div class="b-nav__logo">
-								<h3><a href="home.html">Auto<span>Club</span></a></h3>
-							</div>
+								<h3>SMK N 1 Kepanjen</h3>
 							<p>&copy; 2015 Designed by Templines &amp; Powered by WordPress.</p>
 						</div>
 					</div>
