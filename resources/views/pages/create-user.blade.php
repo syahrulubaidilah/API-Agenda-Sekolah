@@ -99,7 +99,6 @@
 
 								<div class="clearfix form-actions">
 									<div class="col-md-offset-3 col-md-9">
-										<div class="col-md-offset-3 col-md-9">
 										<button class="btn btn-info" id="btnSimpan" type="button">
 												<i class="ace-icon fa fa-check bigger-110"></i>
 												Submit
@@ -116,7 +115,6 @@
 												<i class="ace-icon fa fa-undo bigger-110"></i>
 												Back
 										</button>
-									</div>
 									</div>
 								</div>
 
