@@ -104,5 +104,10 @@ class ActivityController extends Controller
     {
         return $this->activity->delete($id);
     }
+    
+    public function calendar()
+    {
+        return $this->activity->calendar();
+    }
 
 }

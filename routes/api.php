@@ -25,7 +25,7 @@ Route::get('list-guru','UserController@getListMember')->name('user.list.guru');
 Route::get('list-staf','UserController@getListStaf')->name('user.list.staf');
 Route::post('post-login', 'Auth\LoginController@postLogin')->name('api.login');
 Route::get('logout', 'Auth\LoginController@getLogout')->name('api.logout');
-Route::get('events-calendar', 'Pages\ActivityController@calendar');
+Route::get('events-calendar', 'ActivityController@calendar');
 Route::get('event-calendars', function(){
     return [
     ['title'=> 'Event Pertama','end'=> '2017-06-15 03:53:56','start'=> '2017-06-10 03:53:56','allDay'=> 0,'className'=> 'label-important'],

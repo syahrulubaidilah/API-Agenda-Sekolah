@@ -246,7 +246,7 @@
           right: 'month,agendaWeek,agendaDay'
         },
         events: {
-          url: "/api/event-calendars"          
+          url: "/api/events-calendar"          
         }
         ,
 
