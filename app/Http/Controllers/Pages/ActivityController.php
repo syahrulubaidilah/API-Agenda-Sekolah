@@ -46,4 +46,10 @@ class ActivityController extends Controller
         $activity = $this->activity->findById($id);
         return view('pages.detail' ,compact('activity')); 
     }
+
+    public function calendar()
+    {
+        $activity = $this->activity->calendar();
+        return view('pages.update-activity' ,compact('activity'));
+    }
 }

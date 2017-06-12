@@ -11,7 +11,7 @@
 
 		<div class="b-breadCumbs s-shadow wow zoomInUp" data-wow-delay="0.5s">
 			<div class="container">
-				<a href="home.html" class="b-breadCumbs__page">Home</a><span class="fa fa-angle-right"></span><a href="listings.html" class="b-breadCumbs__page">Luxury Cars</a><span class="fa fa-angle-right"></span><a href="listingsTwo.html" class="b-breadCumbs__page">Nissan</a><span class="fa fa-angle-right"></span><a href="detail.html" class="b-breadCumbs__page m-active">Nissan Maxima</a>
+				<a href="#" class="b-breadCumbs__page">Home</a><span class="fa fa-angle-right"></span><a href="#" class="b-breadCumbs__page">Detail</a>
 			</div>
 		</div><!--b-breadCumbs-->
 
@@ -40,7 +40,6 @@
 						<div class="col-sm-9 col-xs-12">
 							<div class="b-detail__head-title">
 								<h1>{{ $activity->name }}</h1>
-								<h3>Fully Redesigned Upscale Midsize Car</h3>
 							</div>
 						</div>
 						<div class="col-sm-3 col-xs-12">
@@ -62,9 +61,8 @@
 								<div class="b-detail__main-info-images wow zoomInUp" data-wow-delay="0.5s">
 									<div class="row m-smallPadding">
 										<div class="col-xs-10">
-											<ul class="b-detail__main-info-images-big bxslider enable-bx-slider" data-pager-custom="#bx-pager" data-mode="horizontal" data-pager-slide="true" data-mode-pager="vertical" data-pager-qty="5">
 												<li class="s-relative">                                        
-													<img class="img-responsive center-block" src="media/620x485/big1.jpg"/>
+													<img class="img-responsive center-block" src="{{ $activity->image }}"/>
 												</li>
 											</ul>
 										</div>

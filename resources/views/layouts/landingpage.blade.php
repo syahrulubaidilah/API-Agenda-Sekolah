@@ -7,7 +7,7 @@
 
 		<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
 
-		<link href="css/master.css" rel="stylesheet">
+		<link href={{asset('css/master.css')}} rel="stylesheet">
 
 		<!--[if lt IE 9]>
 		<script src={{asset('//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')}}></script>

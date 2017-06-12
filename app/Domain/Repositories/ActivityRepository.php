@@ -130,4 +130,10 @@ class ActivityRepository extends AbstractRepository implements ActivityInterface
         return $activity;
     }
 
+    public function calendar()
+    {
+        $activity = $this->model->all();
+        return $activity;
+    }
+
 }
