@@ -78,26 +78,28 @@
 
 								<div class="form-group">
 									<label class="col-sm-3 control-label no-padding-right" for="form-field-1-2">Start Date</label>
-										<div class="col-sm-9">
-											<div class="input-group">
-												<input class="form-control date-picker" name="start_date" id="id-date-picker-1" type="text" data-date-format="yyyy-mm-dd" />
-												<span class="input-group-addon">
-													<i class="fa fa-calendar bigger-110"></i>
-												</span>
-											</div>
+									
+									<div class="col-sm-9 col-xs-10 col-sm-5">
+										<div class="input-group">
+											<input class="form-control date-picker" name="start_date" id="id-date-picker-1" type="text" data-date-format="yyyy-mm-dd" />
+											<span class="input-group-addon">
+												<i class="fa fa-calendar bigger-110"></i>
+											</span>
 										</div>
+									</div>
 								</div>
 
 								<div class="form-group">
 									<label class="col-sm-3 control-label no-padding-right" for="form-field-1-9">End Date</label>
-										<div class="col-sm-9">
-											<div class="input-group">
-												<input class="form-control date-picker" name="end_date" id="id-date-picker-2" type="text" data-date-format="yyyy-mm-dd" />
-												<span class="input-group-addon">
-													<i class="fa fa-calendar bigger-110"></i>
-												</span>
-											</div>
+										
+									<div class="col-sm-9 col-xs-10 col-sm-5">
+										<div class="input-group">
+											<input class="form-control date-picker" name="end_date" id="id-date-picker-2" type="text" data-date-format="yyyy-mm-dd" />
+											<span class="input-group-addon">
+												<i class="fa fa-calendar bigger-110"></i>
+											</span>
 										</div>
+									</div>
 								</div>
 
 								<div class="form-group">
@@ -132,8 +134,12 @@
 								<div class="form-group">
 									<label class="col-sm-3 control-label no-padding-right" for="form-field-1-5">Status</label>
 
-									<div class="col-sm-9">
-										<input type="text" id="form-field-1-5"  name="status" placeholder="Status" class="col-xs-10 col-sm-5" />
+									<div class="col-sm-9 col-xs-10 col-sm-5">
+										<select name="status" class="form-control" id="form-field-select-1">
+											<option value="0">Draft</option>
+											<option value="1">Publish</option>
+											<option value="2">Expired</option>
+										</select>
 									</div>
 								</div>
 
