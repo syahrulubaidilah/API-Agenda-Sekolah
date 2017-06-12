@@ -85,7 +85,8 @@
 									<div class="row m-smallPadding">
 										<div class="col-xs-6">
 											<ul>
-												<li>{{ $activity->date_activity }}</li>
+												<li>{{ $activity->start_date }}</li>
+												<li>{{ $activity->end_date }}</li>
 												<li>{{ $activity->time }}</li>
 												<li>{{ $activity->place }}</li>
 												<li>{{ $activity->participant }}</li>
@@ -93,7 +94,8 @@
 											<h5 class="b-items__cell-info-price">{{ $activity->users->name === null ? "null" : $activity->users->name }}</h5>
 										</div>
 										<div class="col-xs-6">
-											<a href={{route('page.detail')}} class="btn m-btn">VIEW DETAILS<span class="fa fa-angle-right"></span></a>
+											<a class="btn m-btn" href={{route('page.detail',['id' => $activity->id])}}>
+											VIEW DETAILS<span class="fa fa-angle-right"></span></a>
 										</div>
 									</div>
 								</div>

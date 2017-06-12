@@ -95,7 +95,8 @@
 										<a href="#">8-Speed Automatic</a>
 										<a href="#">Petrol</a>
 									</div>-->
-									<a href={{route('page.detail')}} class="btn m-btn">VIEW DETAILS<span class="fa fa-angle-right"></span></a>
+									<a class="btn m-btn" href={{route('page.detail',['id' => $activity->id])}}>
+									VIEW DETAILS<span class="fa fa-angle-right"></span></a>
 								</div>
 							</div>
 						</div>

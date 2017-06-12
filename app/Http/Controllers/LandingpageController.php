@@ -31,19 +31,22 @@ class LandingpageController extends Controller
     {
         return view('pages.landingpage-home');
     }
+
     public function list(Request $request)
     {
         $activities = $this->activity->getList(10, $request->input('name'), $column = ['*'], '', $request->input('search'));
         return view('pages.landingpage-list', compact('activities'));
     }
+
     public function table(Request $request)
     {
         $activities = $this->activity->getList(10, $request->input('name'), $column = ['*'], '', $request->input('search'));
         return view('pages.landingpage-table', compact('activities'));
     }
-     public function detail($id)
+
+    public function detail($id)
     {
         $activity = $this->activity->findById($id);
-        return view('pages.landingpage-detail' ,compact('activity')); 
+        return view('pages.landingpage-detail', compact('activity')); 
     }
 }

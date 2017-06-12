@@ -17,7 +17,7 @@ Route::get('/dashboard', 'HomeController@dashboard')->name('page.dashboard');
 Route::get('/', 'LandingpageController@index')->name('page.home');
 Route::get('/list', 'LandingpageController@list')->name('page.list');
 Route::get('/table', 'LandingpageController@table')->name('page.table');
-Route::get('/detail', 'LandingpageController@detail')->name('page.detail');
+Route::get('/detail/{id}/detail', 'LandingpageController@detail')->name('page.detail');
 
 Route::get('/member','Pages\MemberController@guru')->name('page.list-guru');
 Route::get('/admin','Pages\UserController@staf')->name('page.list-staf');

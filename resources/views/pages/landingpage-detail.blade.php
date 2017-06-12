@@ -39,14 +39,18 @@
 					<div class="row">
 						<div class="col-sm-9 col-xs-12">
 							<div class="b-detail__head-title">
-								<h1>Nissan Maxima SV Premium 2016</h1>
+								<h1>{{ $activity->name }}</h1>
 								<h3>Fully Redesigned Upscale Midsize Car</h3>
 							</div>
 						</div>
 						<div class="col-sm-3 col-xs-12">
 							<div class="b-detail__head-price">
-								<div class="b-detail__head-price-num">$44,380</div>
-								<p>Included Taxes &amp; Checkup</p>
+								@if($activity->status == 0)
+                       			      <span>Draft</span>
+                       			    @elseif($activity->status == 1)
+                       			      <span>Publish</span>@else
+                       			      <span>Expired</span>
+                       			    @endif
 							</div>
 						</div>
 					</div>
@@ -60,8 +64,7 @@
 										<div class="col-xs-10">
 											<ul class="b-detail__main-info-images-big bxslider enable-bx-slider" data-pager-custom="#bx-pager" data-mode="horizontal" data-pager-slide="true" data-mode-pager="vertical" data-pager-qty="5">
 												<li class="s-relative">                                        
-													<a data-toggle="modal" data-target="#myModal" href="#" class="b-items__cars-one-img-video"><span class="fa fa-film"></span>VIDEO</a>
-													<img class="img-responsive center-block" src="media/620x485/big1.jpg" alt="nissan" />
+													<img class="img-responsive center-block" src="media/620x485/big1.jpg"/>
 												</li>
 											</ul>
 										</div>
@@ -72,117 +75,61 @@
 						<div class="col-md-4 col-xs-12">
 							<aside class="b-detail__main-aside">
 								<div class="b-detail__main-aside-desc wow zoomInUp" data-wow-delay="0.5s">
-									<h2 class="s-titleDet">Description</h2>
+									<h2 class="s-titleDet">Detail</h2>
 									<div class="row">
 										<div class="col-xs-6">
-											<h4 class="b-detail__main-aside-desc-title">Make</h4>
+											<h4 class="b-detail__main-aside-desc-title">Pembuat</h4>
 										</div>
 										<div class="col-xs-6">
-											<p class="b-detail__main-aside-desc-value">Nissan</p>
+											<p class="b-detail__main-aside-desc-value">{{ $activity->users->name === null ? "null" : $activity->users->name }}</p>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-xs-6">
-											<h4 class="b-detail__main-aside-desc-title">Model</h4>
+											<h4 class="b-detail__main-aside-desc-title">Deskripsi</h4>
 										</div>
 										<div class="col-xs-6">
-											<p class="b-detail__main-aside-desc-value">Maxima</p>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-xs-6">
-											<h4 class="b-detail__main-aside-desc-title">Kilometres</h4>
-										</div>
-										<div class="col-xs-6">
-											<p class="b-detail__main-aside-desc-value">39,000 km</p>
+											<p class="b-detail__main-aside-desc-value">{{ $activity->description }}</p>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-xs-6">
-											<h4 class="b-detail__main-aside-desc-title">Body Type</h4>
+											<h4 class="b-detail__main-aside-desc-title">Tanggal Mulai</h4>
 										</div>
 										<div class="col-xs-6">
-											<p class="b-detail__main-aside-desc-value">Sedan</p>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-xs-6">
-											<h4 class="b-detail__main-aside-desc-title">Style/trim</h4>
-										</div>
-										<div class="col-xs-6">
-											<p class="b-detail__main-aside-desc-value">SV Premium</p>
+											<p class="b-detail__main-aside-desc-value">{{ $activity->start_date }}</p>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-xs-6">
-											<h4 class="b-detail__main-aside-desc-title">Engine</h4>
+											<h4 class="b-detail__main-aside-desc-title">Tanggal Selesai</h4>
 										</div>
 										<div class="col-xs-6">
-											<p class="b-detail__main-aside-desc-value">V-6 cyl</p>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-xs-6">
-											<h4 class="b-detail__main-aside-desc-title">Drivetrain</h4>
-										</div>
-										<div class="col-xs-6">
-											<p class="b-detail__main-aside-desc-value">EWD</p>
+											<p class="b-detail__main-aside-desc-value">{{ $activity->end_date }}</p>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-xs-6">
-											<h4 class="b-detail__main-aside-desc-title">Transmission</h4>
+											<h4 class="b-detail__main-aside-desc-title">Waktu</h4>
 										</div>
 										<div class="col-xs-6">
-											<p class="b-detail__main-aside-desc-value">Dual-Clutch Automatic</p>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-xs-6">
-											<h4 class="b-detail__main-aside-desc-title">Exterior Color</h4>
-										</div>
-										<div class="col-xs-6">
-											<p class="b-detail__main-aside-desc-value">Dark Grey</p>
+											<p class="b-detail__main-aside-desc-value">{{ $activity->time }}</p>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-xs-6">
-											<h4 class="b-detail__main-aside-desc-title">Interior color</h4>
+											<h4 class="b-detail__main-aside-desc-title">Tempat</h4>
 										</div>
 										<div class="col-xs-6">
-											<p class="b-detail__main-aside-desc-value">Jet Black</p>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-xs-6">
-											<h4 class="b-detail__main-aside-desc-title">Passangers/Doors</h4>
-										</div>
-										<div class="col-xs-6">
-											<p class="b-detail__main-aside-desc-value">5 Passengers / 4 Doors</p>
+											<p class="b-detail__main-aside-desc-value">{{ $activity->place }}</p>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-xs-6">
-											<h4 class="b-detail__main-aside-desc-title">Fuel Type</h4>
+											<h4 class="b-detail__main-aside-desc-title">Peserta</h4>
 										</div>
 										<div class="col-xs-6">
-											<p class="b-detail__main-aside-desc-value">Gasoline Fue</p>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-xs-6">
-											<h4 class="b-detail__main-aside-desc-title">City Fuel Economy </h4>
-										</div>
-										<div class="col-xs-6">
-											<p class="b-detail__main-aside-desc-value">10.8L/100km</p>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-xs-6">
-											<h4 class="b-detail__main-aside-desc-title">Hwy Fuel Economy</h4>
-										</div>
-										<div class="col-xs-6">
-											<p class="b-detail__main-aside-desc-value">7.7L/100km</p>
+											<p class="b-detail__main-aside-desc-value">{{ $activity->participant }}<</p>
 										</div>
 									</div>
 								</div>
