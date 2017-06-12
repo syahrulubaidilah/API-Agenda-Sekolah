@@ -15,6 +15,9 @@
 		<link rel="stylesheet" href={{asset('assets/font-awesome/4.5.0/css/font-awesome.min.css')}} />
 
 		<!-- page specific plugin styles -->
+			<!-- page specific plugin styles -->
+ 		<link rel="stylesheet" href={{asset('assets/css/jquery-ui.custom.min.css')}} />
+		<link rel="stylesheet" href={{asset('assets/css/jquery.gritter.min.css')}} />
 		<!-- text fonts -->
 		<link rel="stylesheet" href={{asset('assets/css/fonts.googleapis.com.css')}} />
 
@@ -59,9 +62,10 @@
 		
 		<!-- ace scripts -->
 		<script src={{asset('assets/js/ace-elements.min.js')}}></script>
+		<script src={{asset('assets/js/jquery.gritter.min.js')}}></script>
 		<script src={{asset('assets/js/ace.min.js')}}></script>
 		<script src={{asset('assets/js/sweetalert.min.js')}}></script>
-		@yield('scripts')
+		@yield('scripts')s
 		<script>
     		$(document).ready(function(){
         	var pathname = window.location.pathname;
