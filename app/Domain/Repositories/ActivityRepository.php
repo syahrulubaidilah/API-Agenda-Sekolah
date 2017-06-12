@@ -47,7 +47,12 @@ class ActivityRepository extends AbstractRepository implements ActivityInterface
     public function paginate($limit = 10, $page = 1, array $column = ['*'], $field, $search = '')
     {
         // query to aql
-        return parent::paginate($limit, $page, $column, 'name', $search);
+        $activity = $this->model
+        ->orderBy('created_at', 'desc')
+        ->where('name', 'like', '%' . $search . '%')
+        ->paginate($limit);
+        
+        return $activity;
     }
 
     /**
@@ -111,6 +116,18 @@ class ActivityRepository extends AbstractRepository implements ActivityInterface
     public function findById($id, array $columns = ['*'])
     {
         return parent::find($id, $columns);
+    }
+
+    public function getList($limit = 10, $page = 1, array $column = ['*'], $field, $search = '')
+    {
+        // query to aql
+        $activity = $this->model
+        ->orderBy('created_at', 'desc')
+        ->where('name', 'like', '%' . $search . '%')
+        ->where('status','1')
+        ->paginate($limit);
+        
+        return $activity;
     }
 
 }

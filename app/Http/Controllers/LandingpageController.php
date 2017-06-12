@@ -33,12 +33,12 @@ class LandingpageController extends Controller
     }
     public function list(Request $request)
     {
-        $activities = $this->activity->paginate(10, $request->input('name'), $column = ['*'], '', $request->input('search'));
+        $activities = $this->activity->getList(10, $request->input('name'), $column = ['*'], '', $request->input('search'));
         return view('pages.landingpage-list', compact('activities'));
     }
     public function table(Request $request)
     {
-        $activities = $this->activity->paginate(10, $request->input('name'), $column = ['*'], '', $request->input('search'));
+        $activities = $this->activity->getList(10, $request->input('name'), $column = ['*'], '', $request->input('search'));
         return view('pages.landingpage-table', compact('activities'));
     }
 }
