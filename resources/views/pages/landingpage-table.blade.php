@@ -93,7 +93,7 @@
 											<h5 class="b-items__cell-info-price">{{ $activity->users->name === null ? "null" : $activity->users->name }}</h5>
 										</div>
 										<div class="col-xs-6">
-											<a href="detail.html" class="btn m-btn">VIEW DETAILS<span class="fa fa-angle-right"></span></a>
+											<a href={{route('page.detail')}} class="btn m-btn">VIEW DETAILS<span class="fa fa-angle-right"></span></a>
 										</div>
 									</div>
 								</div>
