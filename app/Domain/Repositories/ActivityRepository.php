@@ -6,7 +6,6 @@ use App\Domain\Entities\Activity;
 use App\Domain\Contracts\ActivityInterface;
 use App\Domain\Contracts\Crudable;
 
-
 /**
  * Class ActivityRepository
  * @package App\Domain\Repositories
@@ -46,6 +45,16 @@ class ActivityRepository extends AbstractRepository implements ActivityInterface
      */
     public function paginate($limit = 10, $page = 1, array $column = ['*'], $field, $search = '')
     {
+        if(\Auth::user()->level == 0){
+        // query to aql
+        $activity = $this->model
+        ->orderBy('created_at', 'desc')
+        ->where('name', 'like', '%' . $search . '%')
+        ->where('user_id', \Auth::user()->id)
+        ->paginate($limit);
+        
+        return $activity;
+        }else{
         // query to aql
         $activity = $this->model
         ->orderBy('created_at', 'desc')
@@ -53,6 +62,7 @@ class ActivityRepository extends AbstractRepository implements ActivityInterface
         ->paginate($limit);
         
         return $activity;
+        }
     }
 
     /**
@@ -72,7 +82,7 @@ class ActivityRepository extends AbstractRepository implements ActivityInterface
             'place'   => e($data['place']),
             'participant'   => e($data['participant']),
             'status'   => e($data['status']),
-            'user_id'   => '1'
+            'user_id'   => \Auth::user()->id
         ]);
 
     }

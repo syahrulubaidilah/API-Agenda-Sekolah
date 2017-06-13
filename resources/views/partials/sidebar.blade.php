@@ -47,7 +47,7 @@
 
           <b class="arrow"></b>
         </li>
-
+        @if(Auth::user()->level == 1)                                        
         <li class="" id="nav-guru">
           <a href={{route('page.list-guru')}}>
             <i class="menu-icon fa fa-list-alt"></i>
@@ -65,6 +65,7 @@
 
           <b class="arrow"></b>
         </li>
+        @endif
 
         <li class="" id="nav-agenda">
           <a href={{route('page.list-activity')}}>
