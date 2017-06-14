@@ -57,6 +57,7 @@
 
 									<div class="col-sm-9">
 										<input type="text" id="form-field-1" name="name" placeholder="Activity Name" class="col-xs-10 col-sm-5" />
+										<input type="hidden" id="form-field-1" name="useri_id" placeholder="Activity Name" class="col-xs-10 col-sm-5" value={{Auth::user()->id}} />
 									</div>
 								</div>
 
