@@ -29,13 +29,14 @@ class ActivityCreateRequest extends Request
      */
     protected $attrs = [
         'name'    => 'Name',
+        'image'     => 'Image',
         'description'   => 'Description',
-        'date_activity' => 'Date_Activity',
+        'start_date' => 'Start_Date',
+        'end_date' => 'End_Date',
         'time'   => 'Time',
         'place'   => 'Place',
         'participant'   => 'Participant',
         'level'   => 'Level'
-        //'user_Id'   => 'User_Id'
     ];
 
     /**
@@ -55,7 +56,6 @@ class ActivityCreateRequest extends Request
             'place'   => 'required|max:30',
             'participant'   => 'required|max:30',
             'level'   => 'Level'
-            //'user_Id'   => 'required|max:30'
         ];
     }
 

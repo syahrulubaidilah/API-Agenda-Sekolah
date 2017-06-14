@@ -82,7 +82,7 @@ class ActivityRepository extends AbstractRepository implements ActivityInterface
             'place'   => e($data['place']),
             'participant'   => e($data['participant']),
             'status'   => e($data['status']),
-            'user_id'   => \Auth::user()->id
+            'user_id'   => \Auth::user()->id,
         ]);
 
     }

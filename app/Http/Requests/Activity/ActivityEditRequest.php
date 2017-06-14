@@ -29,13 +29,14 @@ class ActivityEditRequest extends Request
      */
     protected $attrs = [
         'name'    => 'Name',
+        'image'     => 'Image',
         'description'   => 'Description',
         'start_date' => 'Start_Date',
         'end_date' => 'End_Date',
         'time'   => 'Time',
         'place'   => 'Place',
         'participant'   => 'Participant',
-        // 'user_id'   => 'User_Id'
+        'level'   => 'Level'
     ];
 
     /**
@@ -47,13 +48,14 @@ class ActivityEditRequest extends Request
     {
         return [
             'name'    => 'required|max:225',
+            'image'    => 'required|max:225',
             'description' => 'required|max:60',
             'start_date'   => 'required|max:50',
             'end_date'   => 'required|max:50',
             'time'   => 'required|max:30',
             'place'   => 'required|max:30',
             'participant'   => 'required|max:30',
-            // 'user_id'   => 'required|max:30'
+            'level'   => 'Level'
         ];
     }
 
