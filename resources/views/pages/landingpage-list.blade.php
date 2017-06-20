@@ -3,7 +3,7 @@
 @section('styles')
 @endsection
 @section('content')
-	<section class="b-pageHeader">
+	<!--<section class="b-pageHeader">
 		<div class="container">
 			<h1 class=" wow zoomInLeft" data-wow-delay="0.5s">Auto Listings</h1>
 			<div class="b-pageHeader__search wow zoomInRight" data-wow-delay="0.5s">
@@ -11,12 +11,12 @@
 			</div>
 		</div>
 	</section>
-	<!--b-pageHeader-->
+	b-pageHeader-->
 
 	<div class="b-breadCumbs s-shadow">
 		<div class="container wow zoomInUp" data-wow-delay="0.5s">
 			<a href="home.html" class="b-breadCumbs__page">Home</a><span class="fa fa-angle-right"></span><a href="listings.html"
-			 class="b-breadCumbs__page m-active">Search Results</a>
+			 class="b-breadCumbs__page m-active">List</a>
 		</div>
 	</div>
 	<!--b-breadCumbs-->
@@ -37,14 +37,14 @@
 								<select name="select1" class="m-select">
 										<option value="" selected="">10 items</option>
 									</select>
-								<span class="fa fa-caret-down"></span>
+								<!--<span class="fa fa-caret-down"></span>-->
 							</div>
 							<div class="b-infoBar__select-one wow zoomInUp" data-wow-delay="0.5s">
 								<span class="b-infoBar__select-one-title">SORT BY</span>
 								<select name="select2" class="m-select">
 										<option value="" selected="">Last Added</option>
 									</select>
-								<span class="fa fa-caret-down"></span>
+								<!--<span class="fa fa-caret-down"></span>-->
 							</div>
 						</form>
 					</div>
