@@ -17,7 +17,6 @@ class LandingpageController extends Controller
      */
     public function __construct(ActivityRepository $activity, UserRepository $user)
     {
-        $this->middleware('guest');
         $this->activity = $activity;
         $this->user = $user;
     }
