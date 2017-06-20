@@ -1,9 +1,9 @@
 @extends('layouts.landingpage')
-@section('title', 'home')
+@section('title', 'Home')
 @section('styles')
 @endsection
 @section('content')
-		<section class="b-slider"> 
+		<!--<section class="b-slider"> 
 			<div id="carousel" class="slide carousel carousel-fade">
 				<div class="carousel-inner">
 					<div class="item active">
@@ -47,7 +47,7 @@
 					<span class="fa fa-angle-left m-control-left"></span>
 				</a>
 			</div>
-		</section><!--b-slider-->
+		</section>-->
 
 		<section class="b-welcome">
 			<div class="container">

@@ -54,9 +54,9 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-3 col-xs-4">
-						<div class="b-nav wow slideInLeft" data-wow-delay="0.3s">
-							<h3>AgendaKU</h3>
-						</div>
+						<!--<div class="b-nav wow slideInLeft" data-wow-delay="0.3s">-->
+							<h3><img class='img-responsive' src={{asset('logo.png')}} style="height:50px"/>Agenda KU</h3>
+						<!--</div>-->
 					</div>
 					<div class="col-sm-9 col-xs-8">
 						<div class="b-nav__list wow slideInRight" data-wow-delay="0.3s">

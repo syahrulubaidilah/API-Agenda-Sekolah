@@ -11,9 +11,9 @@
 				</button>
 
 				<div class="navbar-header pull-left" id="nav-top">
-					<a href="index.html" class="navbar-brand">
+					<a href="#" class="navbar-brand">
 						<small>
-							<i class="ace-icon fa fa-home fa-lg"></i>
+							<img class='img-responsive' src={{asset('logo.png')}} style="height:50px">
 							Agendaku
 						</small>
 					</a>
