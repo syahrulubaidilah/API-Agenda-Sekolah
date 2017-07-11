@@ -54,9 +54,9 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-3 col-xs-4">
-						<!--<div class="b-nav wow slideInLeft" data-wow-delay="0.3s">-->
-							<h3><img class='img-responsive' src={{asset('logo.png')}} style="height:50px"/>Agenda KU</h3>
-						<!--</div>-->
+						<div class="b-nav wow slideInLeft" data-wow-delay="0.3s">
+							<h3>Agenda KU</h3>
+						</div>
 					</div>
 					<div class="col-sm-9 col-xs-8">
 						<div class="b-nav__list wow slideInRight" data-wow-delay="0.3s">
@@ -103,19 +103,11 @@
 					</div>
 					<div class="col-xs-8">
 						<div class="b-footer__content wow fadeInRight" data-wow-delay="0.3s">
-							<div class="b-footer__content-social">
-								<a href="#"><span class="fa fa-facebook-square"></span></a>
-								<a href="#"><span class="fa fa-twitter-square"></span></a>
-								<a href="#"><span class="fa fa-google-plus-square"></span></a>
-								<a href="#"><span class="fa fa-instagram"></span></a>
-								<a href="#"><span class="fa fa-youtube-square"></span></a>
-								<a href="#"><span class="fa fa-skype"></span></a>
-							</div>
 							<nav class="b-footer__content-nav">
 								<ul>
-									<li><a href="home.html">Home</a></li>
-									<li><a href="404.html">Login</a></li>
-									<li><a href="listings.html">Register</a></li>
+									<li><a href={{route('page.home')}}>Home</a></li>
+									<li><a href="{{ url('/register') }}">Login</a></li>
+									<li><a href="{{ url('/register') }}">Register</a></li>
 								</ul>
 							</nav>
 						</div>

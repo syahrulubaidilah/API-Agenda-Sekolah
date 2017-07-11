@@ -13,7 +13,6 @@
 				<div class="navbar-header pull-left" id="nav-top">
 					<a href="#" class="navbar-brand">
 						<small>
-							<img class='img-responsive' src={{asset('logo.png')}} style="height:50px">
 							Agendaku
 						</small>
 					</a>

@@ -52,48 +52,53 @@
 		<section class="b-welcome">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-5 col-md-offset-2 col-sm-6 col-xs-12">
-						<div class="b-welcome__text wow fadeInLeft" data-wow-delay="0.3s" data-wow-offset="100">
-							<h2>WORLD'S LEADING CAR DEALER</h2>
-							<h3>WELCOME TO AUTOCLUB</h3>
-							<p>Curabitur libero. Donec facilisis velit eudsl est. Phasellus consequat. Aenean vita quam. Vivamus et nunc. Nunc consequat sem velde metus imperdiet lacinia. Dui estter neque molestie necd dignissim ac hendrerit quis purus. Etiam sit amet vec convallis massa scelerisque mattis. Sed placerat leo nec.</p>
-							<p>Ipsum midne ultrices magn eu tempor quam dolor eustrl sem. Donec quis dolel Donec pede quam placerat alterl tristique faucibus posuere lobortis.</p>
+					<div class="b-welcome__services">
+						<div class="col-md-3 col-xs-12">
+							<div class="row">
+								<div class="col-xs-12 m-padding">
+									<div class="b-welcome__services-auto wow zoomInLeft" data-wow-delay="0.3s">
+										<div class="b-welcome__services-img m-auto">
+											<span class="fa fa-calendar"></span>
+										</div>
+										<h3>Kalender</h3>
+									</div>
+								</div>
+								<div class="col-xs-12 text-right visible-md visible-lg">
+									<div class="m-circle wow slideInRight" data-wow-delay="0.3s">
+										<span class="b-welcome__services-circle"></span>
+									</div>
+								</div>
+								<div class="col-xs-12 m-padding">
+									<div class="b-welcome__services-buying wow zoomInLeft" data-wow-delay="0.3s">
+										<div class="b-welcome__services-img m-buying">
+											<span class="fa fa-bars"></span>
+										</div>
+										<h3>List</h3>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-12 col-md-6">
+						<div class="b-welcome__text wow zoomInUp" data-wow-delay="0.3s">
+							<h2>Welcome to Agenda KU</h2>
+							<p>Agenda KU adalah sebuah website untuk menampilkan agenda/kegiatan sekolah yang akan dilaksanakan</p>
 							<ul>
-								<li><span class="fa fa-check"></span>Donec facilisis velit eu est phasellus consequat </li>
-								<li><span class="fa fa-check"></span>Aenean vitae quam. Vivamus et nunc nunc consequat</li>
-								<li><span class="fa fa-check"></span>Sem vel metus imperdiet lacinia enean </li>
-								<li><span class="fa fa-check"></span>Dapibus aliquam augue fusce eleifend quisque tels</li>
+								<li><span class="fa fa-check"></span>Agenda KU ditampilkan dengan tampilan User Friendly</li>
+								<li><span class="fa fa-check"></span>User dapat membuat agendanya sendiri </li>
+								<li><span class="fa fa-check"></span>Agenda KU disertai fitur kalender</li>
 							</ul>
 						</div>
 					</div>
-					<div class="col-md-5 col-sm-6 col-xs-12">
-						<div class="b-welcome__services wow fadeInRight" data-wow-delay="0.3s" data-wow-offset="100">
+					<div class="b-welcome__services">
+						<div class="col-md-3 col-xs-12">
 							<div class="row">
-								<div class="col-xs-6 m-padding">
-									<div class="b-welcome__services-auto">
-										<div class="b-welcome__services-img m-auto">
-											<span class="fa fa-cab"></span>
-										</div>
-										<h3>AUTO LOANS</h3>
-									</div>
-								</div>
-								<div class="col-xs-6 m-padding">
-									<div class="b-welcome__services-trade">
+								<div class="col-xs-12 m-padding">
+									<div class="b-welcome__services-trade wow zoomInRight" data-wow-delay="0.3s">
 										<div class="b-welcome__services-img m-trade">
-											<span class="fa fa-male"></span>
+											<span class="fa fa-table"></span>
 										</div>
-										<h3>Trade-Ins</h3>
-									</div>
-								</div>
-								<div class="col-xs-12 text-center">
-									<span class="b-welcome__services-circle"></span>
-								</div>
-								<div class="col-xs-6 m-padding">
-									<div class="b-welcome__services-buying">
-										<div class="b-welcome__services-img m-buying">
-											<span class="fa fa-book"></span>
-										</div>
-										<h3>Buying guide</h3>
+										<h3>Tabel</h3>
 									</div>
 								</div>
 							</div>
